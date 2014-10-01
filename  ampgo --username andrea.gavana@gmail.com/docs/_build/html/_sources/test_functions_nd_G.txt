@@ -1,0 +1,39 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions G:
+
+|test_functions| N-D Test Functions G
+======================================
+
+
+
+.. autoclass:: go_benchmark.Gear
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Giunta
+
+-----
+
+
+
+.. autoclass:: go_benchmark.GoldsteinPrice
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Griewank
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Gulf
+

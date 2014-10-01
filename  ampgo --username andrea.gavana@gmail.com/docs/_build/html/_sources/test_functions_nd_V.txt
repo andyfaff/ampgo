@@ -1,0 +1,21 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions V:
+
+|test_functions| N-D Test Functions V
+======================================
+
+
+
+.. autoclass:: go_benchmark.VenterSobiezcczanskiSobieski
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Vincent
+

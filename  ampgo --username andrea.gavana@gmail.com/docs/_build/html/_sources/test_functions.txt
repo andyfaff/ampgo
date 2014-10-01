@@ -1,0 +1,764 @@
+.. include:: headings.inc
+
+.. currentmodule:: go_benchmark
+
+.. _test functions index:
+
+|test_functions| Test Functions Index
+=====================================
+
+This page contains the general index of the benchmark problems used to test different
+Global Optimization algorithms. It also shows some statistics on the "difficulty" of a multi-modal test problem, based
+on the average successful minimization across all the Global Optimizers tested in this benchmark exercise.
+
+The test suite currently contains:
+
+1. 18 one-dimensional test functions with multiple local/global minima;
+2. 184 multivariate problems (where the number of independent variables ranges from 2 to 17),
+   again with multiple local/global minima.
+
+
+Some of the multivariate problems are well known in the mathematical literature; for the less well-known
+functions, I have taken their definitions mostly from the following references:
+
+- A Literature Survey of Benchmark Functions For Global Optimization Problems (http://arxiv.org/pdf/1308.4008v1.pdf)
+- Test functions for optimization needs (http://www.zsd.ict.pwr.wroc.pl/files/docs/functions.pdf)
+- A Numerical Evaluation of Several Stochastic Algorithms on Selected Continuous Global 
+  Optimization Test Problems (http://folk.uib.no/ssu029/Pdf_file/Ali05.pdf)
+
+  
+Test Functions "Hardness"
+-------------------------
+
+The test suite contains a variety of Global Optimization problems, some of them are harder to solve than others,
+irrespectively of the algorithm chosen to minimize the test function. The following table has been obtained by
+running all the Global Optimizers available against all the N-D test functions for a collection of 100 random starting
+points, and then averaging the successful minimizations across all the optimizers.
+
+It can be easily seen that the :class:`~go_benchmark.DeVilliersGlasser02`, :class:`~go_benchmark.Damavandi` and
+:class:`~go_benchmark.CrossLegTable` were always hard problems for all the algorithms, while others like
+:class:`~go_benchmark.Bukin02` and :class:`~go_benchmark.CosineMixture` are amongst the easiest ones.
+
+.. cssclass:: pretty-table
+
+.. table:: Benchmark test functions "hardness"
+
+    +------------------------------+----+---------------------+
+    | Optimization Method          | N  | Overall Success (%) |
+    +==============================+====+=====================+
+    | DeVilliersGlasser02          | 5  | 0.00                |
+    +------------------------------+----+---------------------+
+    | Damavandi                    | 2  | 0.25                |
+    +------------------------------+----+---------------------+
+    | CrossLegTable                | 2  | 0.83                |
+    +------------------------------+----+---------------------+
+    | XinSheYang03                 | 2  | 1.08                |
+    +------------------------------+----+---------------------+
+    | SineEnvelope                 | 2  | 2.17                |
+    +------------------------------+----+---------------------+
+    | Whitley                      | 2  | 4.92                |
+    +------------------------------+----+---------------------+
+    | Zimmerman                    | 2  | 4.92                |
+    +------------------------------+----+---------------------+
+    | Griewank                     | 2  | 6.08                |
+    +------------------------------+----+---------------------+
+    | Trefethen                    | 2  | 6.58                |
+    +------------------------------+----+---------------------+
+    | Bukin06                      | 2  | 6.83                |
+    +------------------------------+----+---------------------+
+    | Cola                         | 17 | 7.50                |
+    +------------------------------+----+---------------------+
+    | CrownedCross                 | 2  | 8.42                |
+    +------------------------------+----+---------------------+
+    | RosenbrockModified           | 2  | 8.42                |
+    +------------------------------+----+---------------------+
+    | Salomon                      | 2  | 10.33               |
+    +------------------------------+----+---------------------+
+    | PowerSum                     | 4  | 10.50               |
+    +------------------------------+----+---------------------+
+    | Gulf                         | 3  | 10.92               |
+    +------------------------------+----+---------------------+
+    | NewFunction02                | 2  | 13.33               |
+    +------------------------------+----+---------------------+
+    | Mishra04                     | 2  | 13.50               |
+    +------------------------------+----+---------------------+
+    | Stochastic                   | 2  | 14.17               |
+    +------------------------------+----+---------------------+
+    | Kowalik                      | 4  | 14.83               |
+    +------------------------------+----+---------------------+
+    | ZeroSum                      | 2  | 15.08               |
+    +------------------------------+----+---------------------+
+    | DeVilliersGlasser01          | 4  | 16.92               |
+    +------------------------------+----+---------------------+
+    | Price02                      | 2  | 18.00               |
+    +------------------------------+----+---------------------+
+    | EggHolder                    | 2  | 18.92               |
+    +------------------------------+----+---------------------+
+    | Ripple01                     | 2  | 19.25               |
+    +------------------------------+----+---------------------+
+    | Mishra03                     | 2  | 20.42               |
+    +------------------------------+----+---------------------+
+    | XinSheYang01                 | 2  | 20.92               |
+    +------------------------------+----+---------------------+
+    | NewFunction01                | 2  | 21.17               |
+    +------------------------------+----+---------------------+
+    | DropWave                     | 2  | 21.25               |
+    +------------------------------+----+---------------------+
+    | Watson                       | 6  | 21.58               |
+    +------------------------------+----+---------------------+
+    | Branin02                     | 2  | 23.50               |
+    +------------------------------+----+---------------------+
+    | Schaffer01                   | 2  | 23.67               |
+    +------------------------------+----+---------------------+
+    | Schaffer03                   | 2  | 25.92               |
+    +------------------------------+----+---------------------+
+    | Easom                        | 2  | 26.08               |
+    +------------------------------+----+---------------------+
+    | XinSheYang04                 | 2  | 26.33               |
+    +------------------------------+----+---------------------+
+    | Tripod                       | 2  | 27.33               |
+    +------------------------------+----+---------------------+
+    | Weierstrass                  | 2  | 27.75               |
+    +------------------------------+----+---------------------+
+    | Deceptive                    | 2  | 28.25               |
+    +------------------------------+----+---------------------+
+    | Schaffer04                   | 2  | 28.75               |
+    +------------------------------+----+---------------------+
+    | XinSheYang02                 | 2  | 31.33               |
+    +------------------------------+----+---------------------+
+    | OddSquare                    | 2  | 31.75               |
+    +------------------------------+----+---------------------+
+    | Powell                       | 4  | 32.58               |
+    +------------------------------+----+---------------------+
+    | Exp2                         | 2  | 32.67               |
+    +------------------------------+----+---------------------+
+    | Paviani                      | 10 | 33.33               |
+    +------------------------------+----+---------------------+
+    | Pathological                 | 2  | 33.75               |
+    +------------------------------+----+---------------------+
+    | Schwefel06                   | 2  | 34.67               |
+    +------------------------------+----+---------------------+
+    | HelicalValley                | 3  | 34.75               |
+    +------------------------------+----+---------------------+
+    | Shekel05                     | 4  | 35.42               |
+    +------------------------------+----+---------------------+
+    | Wavy                         | 2  | 37.00               |
+    +------------------------------+----+---------------------+
+    | WayburnSeader02              | 2  | 37.33               |
+    +------------------------------+----+---------------------+
+    | Shubert03                    | 2  | 37.92               |
+    +------------------------------+----+---------------------+
+    | TestTubeHolder               | 2  | 37.92               |
+    +------------------------------+----+---------------------+
+    | Corana                       | 4  | 38.08               |
+    +------------------------------+----+---------------------+
+    | YaoLiu09                     | 2  | 38.42               |
+    +------------------------------+----+---------------------+
+    | Dolan                        | 5  | 39.00               |
+    +------------------------------+----+---------------------+
+    | Shubert01                    | 2  | 39.42               |
+    +------------------------------+----+---------------------+
+    | Rastrigin                    | 2  | 39.50               |
+    +------------------------------+----+---------------------+
+    | Schaffer02                   | 2  | 39.58               |
+    +------------------------------+----+---------------------+
+    | Chichinadze                  | 2  | 40.33               |
+    +------------------------------+----+---------------------+
+    | Penalty02                    | 2  | 41.08               |
+    +------------------------------+----+---------------------+
+    | Levy05                       | 2  | 41.17               |
+    +------------------------------+----+---------------------+
+    | UrsemWaves                   | 2  | 41.33               |
+    +------------------------------+----+---------------------+
+    | Price03                      | 2  | 41.50               |
+    +------------------------------+----+---------------------+
+    | FreudensteinRoth             | 2  | 41.58               |
+    +------------------------------+----+---------------------+
+    | Xor                          | 9  | 41.83               |
+    +------------------------------+----+---------------------+
+    | Hansen                       | 2  | 41.92               |
+    +------------------------------+----+---------------------+
+    | Leon                         | 2  | 42.50               |
+    +------------------------------+----+---------------------+
+    | Schwefel21                   | 2  | 42.92               |
+    +------------------------------+----+---------------------+
+    | Trid                         | 6  | 43.83               |
+    +------------------------------+----+---------------------+
+    | Rosenbrock                   | 2  | 44.17               |
+    +------------------------------+----+---------------------+
+    | Langermann                   | 2  | 45.67               |
+    +------------------------------+----+---------------------+
+    | Ripple25                     | 2  | 46.33               |
+    +------------------------------+----+---------------------+
+    | Shekel10                     | 4  | 47.83               |
+    +------------------------------+----+---------------------+
+    | Ackley                       | 2  | 48.25               |
+    +------------------------------+----+---------------------+
+    | Hartmann6                    | 6  | 48.50               |
+    +------------------------------+----+---------------------+
+    | ElAttarVidyasagarDutta       | 2  | 48.67               |
+    +------------------------------+----+---------------------+
+    | Shekel07                     | 4  | 48.83               |
+    +------------------------------+----+---------------------+
+    | LennardJones                 | 6  | 49.08               |
+    +------------------------------+----+---------------------+
+    | Ursem03                      | 2  | 49.50               |
+    +------------------------------+----+---------------------+
+    | VenterSobiezcczanskiSobieski | 2  | 49.58               |
+    +------------------------------+----+---------------------+
+    | Trigonometric02              | 2  | 49.58               |
+    +------------------------------+----+---------------------+
+    | Price04                      | 2  | 49.83               |
+    +------------------------------+----+---------------------+
+    | Cube                         | 2  | 49.92               |
+    +------------------------------+----+---------------------+
+    | BartelsConn                  | 2  | 50.00               |
+    +------------------------------+----+---------------------+
+    | MieleCantrell                | 4  | 50.83               |
+    +------------------------------+----+---------------------+
+    | Mishra05                     | 2  | 50.92               |
+    +------------------------------+----+---------------------+
+    | PermFunction01               | 2  | 51.00               |
+    +------------------------------+----+---------------------+
+    | BoxBetts                     | 3  | 52.17               |
+    +------------------------------+----+---------------------+
+    | Mishra08                     | 2  | 53.25               |
+    +------------------------------+----+---------------------+
+    | Decanomial                   | 2  | 53.92               |
+    +------------------------------+----+---------------------+
+    | Shubert04                    | 2  | 54.92               |
+    +------------------------------+----+---------------------+
+    | Mishra09                     | 3  | 55.58               |
+    +------------------------------+----+---------------------+
+    | WayburnSeader01              | 2  | 55.83               |
+    +------------------------------+----+---------------------+
+    | JennrichSampson              | 2  | 56.25               |
+    +------------------------------+----+---------------------+
+    | Mishra06                     | 2  | 57.08               |
+    +------------------------------+----+---------------------+
+    | Cigar                        | 2  | 57.50               |
+    +------------------------------+----+---------------------+
+    | Step                         | 2  | 58.25               |
+    +------------------------------+----+---------------------+
+    | Judge                        | 2  | 58.33               |
+    +------------------------------+----+---------------------+
+    | Bird                         | 2  | 59.00               |
+    +------------------------------+----+---------------------+
+    | Schwefel20                   | 2  | 59.33               |
+    +------------------------------+----+---------------------+
+    | Schwefel22                   | 2  | 59.42               |
+    +------------------------------+----+---------------------+
+    | DeflectedCorrugatedSpring    | 2  | 59.50               |
+    +------------------------------+----+---------------------+
+    | Hartmann3                    | 3  | 59.83               |
+    +------------------------------+----+---------------------+
+    | Schwefel36                   | 2  | 60.33               |
+    +------------------------------+----+---------------------+
+    | Quintic                      | 2  | 62.67               |
+    +------------------------------+----+---------------------+
+    | Schwefel26                   | 2  | 62.67               |
+    +------------------------------+----+---------------------+
+    | Rana                         | 2  | 63.25               |
+    +------------------------------+----+---------------------+
+    | Penalty01                    | 2  | 64.50               |
+    +------------------------------+----+---------------------+
+    | PermFunction02               | 2  | 64.75               |
+    +------------------------------+----+---------------------+
+    | EggCrate                     | 2  | 64.92               |
+    +------------------------------+----+---------------------+
+    | Alpine01                     | 2  | 65.17               |
+    +------------------------------+----+---------------------+
+    | GoldsteinPrice               | 2  | 65.50               |
+    +------------------------------+----+---------------------+
+    | YaoLiu04                     | 2  | 65.67               |
+    +------------------------------+----+---------------------+
+    | Pinter                       | 2  | 66.25               |
+    +------------------------------+----+---------------------+
+    | Beale                        | 2  | 66.25               |
+    +------------------------------+----+---------------------+
+    | Levy13                       | 2  | 66.33               |
+    +------------------------------+----+---------------------+
+    | Ursem04                      | 2  | 66.42               |
+    +------------------------------+----+---------------------+
+    | StretchedV                   | 2  | 68.00               |
+    +------------------------------+----+---------------------+
+    | Gear                         | 4  | 68.08               |
+    +------------------------------+----+---------------------+
+    | Alpine02                     | 2  | 68.17               |
+    +------------------------------+----+---------------------+
+    | Mishra10                     | 2  | 68.33               |
+    +------------------------------+----+---------------------+
+    | Bukin04                      | 2  | 68.92               |
+    +------------------------------+----+---------------------+
+    | RotatedEllipse01             | 2  | 69.25               |
+    +------------------------------+----+---------------------+
+    | Branin01                     | 2  | 69.50               |
+    +------------------------------+----+---------------------+
+    | NeedleEye                    | 2  | 69.58               |
+    +------------------------------+----+---------------------+
+    | Holzman                      | 3  | 69.75               |
+    +------------------------------+----+---------------------+
+    | Mishra11                     | 2  | 70.08               |
+    +------------------------------+----+---------------------+
+    | HimmelBlau                   | 2  | 70.50               |
+    +------------------------------+----+---------------------+
+    | StyblinskiTang               | 2  | 70.50               |
+    +------------------------------+----+---------------------+
+    | Levy03                       | 2  | 71.83               |
+    +------------------------------+----+---------------------+
+    | Colville                     | 4  | 72.00               |
+    +------------------------------+----+---------------------+
+    | Matyas                       | 2  | 72.00               |
+    +------------------------------+----+---------------------+
+    | NewFunction03                | 2  | 72.42               |
+    +------------------------------+----+---------------------+
+    | Qing                         | 2  | 73.17               |
+    +------------------------------+----+---------------------+
+    | CrossInTray                  | 2  | 74.08               |
+    +------------------------------+----+---------------------+
+    | Price01                      | 2  | 74.33               |
+    +------------------------------+----+---------------------+
+    | RotatedEllipse02             | 2  | 74.92               |
+    +------------------------------+----+---------------------+
+    | Wolfe                        | 3  | 75.00               |
+    +------------------------------+----+---------------------+
+    | CarromTable                  | 2  | 75.17               |
+    +------------------------------+----+---------------------+
+    | Mishra07                     | 2  | 75.33               |
+    +------------------------------+----+---------------------+
+    | Deb02                        | 2  | 75.42               |
+    +------------------------------+----+---------------------+
+    | Deb01                        | 2  | 75.50               |
+    +------------------------------+----+---------------------+
+    | Zirilli                      | 2  | 76.58               |
+    +------------------------------+----+---------------------+
+    | Treccani                     | 2  | 78.08               |
+    +------------------------------+----+---------------------+
+    | PenHolder                    | 2  | 78.42               |
+    +------------------------------+----+---------------------+
+    | ThreeHumpCamel               | 2  | 78.83               |
+    +------------------------------+----+---------------------+
+    | Schwefel04                   | 2  | 79.75               |
+    +------------------------------+----+---------------------+
+    | HolderTable                  | 2  | 80.08               |
+    +------------------------------+----+---------------------+
+    | Parsopoulos                  | 2  | 80.50               |
+    +------------------------------+----+---------------------+
+    | DeckkersAarts                | 2  | 81.17               |
+    +------------------------------+----+---------------------+
+    | Michalewicz                  | 2  | 81.25               |
+    +------------------------------+----+---------------------+
+    | Sargan                       | 2  | 81.25               |
+    +------------------------------+----+---------------------+
+    | McCormick                    | 2  | 81.50               |
+    +------------------------------+----+---------------------+
+    | DixonPrice                   | 2  | 81.58               |
+    +------------------------------+----+---------------------+
+    | MultiModal                   | 2  | 81.67               |
+    +------------------------------+----+---------------------+
+    | Bohachevsky                  | 2  | 81.75               |
+    +------------------------------+----+---------------------+
+    | Brent                        | 2  | 81.92               |
+    +------------------------------+----+---------------------+
+    | Zettl                        | 2  | 81.92               |
+    +------------------------------+----+---------------------+
+    | Adjiman                      | 2  | 82.08               |
+    +------------------------------+----+---------------------+
+    | Schwefel01                   | 2  | 82.08               |
+    +------------------------------+----+---------------------+
+    | Brown                        | 2  | 82.17               |
+    +------------------------------+----+---------------------+
+    | SixHumpCamel                 | 2  | 82.17               |
+    +------------------------------+----+---------------------+
+    | Zacharov                     | 2  | 82.33               |
+    +------------------------------+----+---------------------+
+    | Sphere                       | 2  | 82.75               |
+    +------------------------------+----+---------------------+
+    | Schwefel02                   | 2  | 83.00               |
+    +------------------------------+----+---------------------+
+    | Quadratic                    | 2  | 83.17               |
+    +------------------------------+----+---------------------+
+    | Mishra01                     | 2  | 83.83               |
+    +------------------------------+----+---------------------+
+    | Csendes                      | 2  | 84.17               |
+    +------------------------------+----+---------------------+
+    | Infinity                     | 2  | 84.67               |
+    +------------------------------+----+---------------------+
+    | Ursem01                      | 2  | 84.67               |
+    +------------------------------+----+---------------------+
+    | Giunta                       | 2  | 85.00               |
+    +------------------------------+----+---------------------+
+    | Vincent                      | 2  | 85.00               |
+    +------------------------------+----+---------------------+
+    | Hosaki                       | 2  | 85.00               |
+    +------------------------------+----+---------------------+
+    | Exponential                  | 2  | 85.33               |
+    +------------------------------+----+---------------------+
+    | SchmidtVetters               | 3  | 89.25               |
+    +------------------------------+----+---------------------+
+    | Plateau                      | 2  | 89.42               |
+    +------------------------------+----+---------------------+
+    | Trigonometric01              | 2  | 90.83               |
+    +------------------------------+----+---------------------+
+    | Katsuura                     | 2  | 91.00               |
+    +------------------------------+----+---------------------+
+    | Sodp                         | 2  | 91.25               |
+    +------------------------------+----+---------------------+
+    | Mishra02                     | 2  | 91.67               |
+    +------------------------------+----+---------------------+
+    | Keane                        | 2  | 92.83               |
+    +------------------------------+----+---------------------+
+    | AMGM                         | 2  | 95.17               |
+    +------------------------------+----+---------------------+
+    | Bukin02                      | 2  | 100.00              |
+    +------------------------------+----+---------------------+
+    | CosineMixture                | 2  | 100.00              |
+    +------------------------------+----+---------------------+
+
+|
+
+Multidimensional Test Functions Index
+-------------------------------------
+ 
+- :ref:`N-D Test Functions A`
+
+  1. :class:`~go_benchmark.Ackley`
+  2. :class:`~go_benchmark.Adjiman`
+  3. :class:`~go_benchmark.Alpine01`
+  4. :class:`~go_benchmark.Alpine02`
+  5. :class:`~go_benchmark.AMGM`
+
+-----
+
+- :ref:`N-D Test Functions B`
+
+  1. :class:`~go_benchmark.BartelsConn`
+  2. :class:`~go_benchmark.Beale`
+  3. :class:`~go_benchmark.Bird`
+  4. :class:`~go_benchmark.Bohachevsky`
+  5. :class:`~go_benchmark.BoxBetts`
+  6. :class:`~go_benchmark.Branin01`
+  7. :class:`~go_benchmark.Branin02`
+  8. :class:`~go_benchmark.Brent`
+  9. :class:`~go_benchmark.Brown`
+  10. :class:`~go_benchmark.Bukin02`
+  11. :class:`~go_benchmark.Bukin04`
+  12. :class:`~go_benchmark.Bukin06`
+
+-----
+
+- :ref:`N-D Test Functions C`
+
+  1. :class:`~go_benchmark.CarromTable`
+  2. :class:`~go_benchmark.Chichinadze`
+  3. :class:`~go_benchmark.Cigar`
+  4. :class:`~go_benchmark.Cola`
+  5. :class:`~go_benchmark.Colville`
+  6. :class:`~go_benchmark.Corana`
+  7. :class:`~go_benchmark.CosineMixture`
+  8. :class:`~go_benchmark.CrossInTray`
+  9. :class:`~go_benchmark.CrossLegTable`
+  10. :class:`~go_benchmark.CrownedCross`
+  11. :class:`~go_benchmark.Csendes`
+  12. :class:`~go_benchmark.Cube`
+
+-----
+
+- :ref:`N-D Test Functions D`
+
+  1. :class:`~go_benchmark.Damavandi`
+  2. :class:`~go_benchmark.Deb01`
+  3. :class:`~go_benchmark.Deb02`
+  4. :class:`~go_benchmark.Decanomial`
+  5. :class:`~go_benchmark.Deceptive`
+  6. :class:`~go_benchmark.DeckkersAarts`
+  7. :class:`~go_benchmark.DeflectedCorrugatedSpring`
+  8. :class:`~go_benchmark.DeVilliersGlasser01`
+  9. :class:`~go_benchmark.DeVilliersGlasser02`
+  10. :class:`~go_benchmark.DixonPrice`
+  11. :class:`~go_benchmark.Dolan`
+  12. :class:`~go_benchmark.DropWave`
+
+-----
+
+- :ref:`N-D Test Functions E`
+
+  1. :class:`~go_benchmark.Easom`
+  2. :class:`~go_benchmark.EggCrate`
+  3. :class:`~go_benchmark.EggHolder`
+  4. :class:`~go_benchmark.ElAttarVidyasagarDutta`
+  5. :class:`~go_benchmark.Exp2`
+  6. :class:`~go_benchmark.Exponential`
+
+-----
+
+- :ref:`N-D Test Functions F`
+
+  1. :class:`~go_benchmark.FreudensteinRoth`
+
+-----
+
+- :ref:`N-D Test Functions G`
+
+  1. :class:`~go_benchmark.Gear`
+  2. :class:`~go_benchmark.Giunta`
+  3. :class:`~go_benchmark.GoldsteinPrice`
+  4. :class:`~go_benchmark.Griewank`
+  5. :class:`~go_benchmark.Gulf`
+
+-----
+
+- :ref:`N-D Test Functions H`
+
+  1. :class:`~go_benchmark.Hansen`
+  2. :class:`~go_benchmark.Hartmann3`
+  3. :class:`~go_benchmark.Hartmann6`
+  4. :class:`~go_benchmark.HelicalValley`
+  5. :class:`~go_benchmark.HimmelBlau`
+  6. :class:`~go_benchmark.HolderTable`
+  7. :class:`~go_benchmark.Holzman`
+  8. :class:`~go_benchmark.Hosaki`
+
+-----
+
+- :ref:`N-D Test Functions I`
+
+  1. :class:`~go_benchmark.Infinity`
+
+-----
+
+- :ref:`N-D Test Functions J`
+
+  1. :class:`~go_benchmark.JennrichSampson`
+  2. :class:`~go_benchmark.Judge`
+
+-----
+
+- :ref:`N-D Test Functions K`
+
+  1. :class:`~go_benchmark.Katsuura`
+  2. :class:`~go_benchmark.Keane`
+  3. :class:`~go_benchmark.Kowalik`
+
+-----
+
+- :ref:`N-D Test Functions L`
+
+  1. :class:`~go_benchmark.Langermann`
+  2. :class:`~go_benchmark.LennardJones`
+  3. :class:`~go_benchmark.Leon`
+  4. :class:`~go_benchmark.Levy03`
+  5. :class:`~go_benchmark.Levy05`
+  6. :class:`~go_benchmark.Levy13`
+
+-----
+
+- :ref:`N-D Test Functions M`
+
+  1. :class:`~go_benchmark.Matyas`
+  2. :class:`~go_benchmark.McCormick`
+  3. :class:`~go_benchmark.Michalewicz`
+  4. :class:`~go_benchmark.MieleCantrell`
+  5. :class:`~go_benchmark.Mishra01`
+  6. :class:`~go_benchmark.Mishra02`
+  7. :class:`~go_benchmark.Mishra03`
+  8. :class:`~go_benchmark.Mishra04`
+  9. :class:`~go_benchmark.Mishra05`
+  10. :class:`~go_benchmark.Mishra06`
+  11. :class:`~go_benchmark.Mishra07`
+  12. :class:`~go_benchmark.Mishra08`
+  13. :class:`~go_benchmark.Mishra09`
+  14. :class:`~go_benchmark.Mishra10`
+  15. :class:`~go_benchmark.Mishra11`
+  16. :class:`~go_benchmark.MultiModal`
+
+-----
+
+- :ref:`N-D Test Functions N`
+
+  1. :class:`~go_benchmark.NeedleEye`
+  2. :class:`~go_benchmark.NewFunction01`
+  3. :class:`~go_benchmark.NewFunction02`
+  4. :class:`~go_benchmark.NewFunction03`
+
+-----
+
+- :ref:`N-D Test Functions O`
+
+  1. :class:`~go_benchmark.OddSquare`
+
+-----
+
+- :ref:`N-D Test Functions P`
+
+  1. :class:`~go_benchmark.Parsopoulos`
+  2. :class:`~go_benchmark.Pathological`
+  3. :class:`~go_benchmark.Paviani`
+  4. :class:`~go_benchmark.Penalty01`
+  5. :class:`~go_benchmark.Penalty02`
+  6. :class:`~go_benchmark.PenHolder`
+  7. :class:`~go_benchmark.PermFunction01`
+  8. :class:`~go_benchmark.PermFunction02`
+  9. :class:`~go_benchmark.Pinter`
+  10. :class:`~go_benchmark.Plateau`
+  11. :class:`~go_benchmark.Powell`
+  12. :class:`~go_benchmark.PowerSum`
+  13. :class:`~go_benchmark.Price01`
+  14. :class:`~go_benchmark.Price02`
+  15. :class:`~go_benchmark.Price03`
+  16. :class:`~go_benchmark.Price04`
+
+-----
+
+- :ref:`N-D Test Functions Q`
+
+  1. :class:`~go_benchmark.Qing`
+  2. :class:`~go_benchmark.Quadratic`
+  3. :class:`~go_benchmark.Quintic`
+
+-----
+
+- :ref:`N-D Test Functions R`
+
+  1. :class:`~go_benchmark.Rana`
+  2. :class:`~go_benchmark.Rastrigin`
+  3. :class:`~go_benchmark.Ripple01`
+  4. :class:`~go_benchmark.Ripple25`
+  5. :class:`~go_benchmark.Rosenbrock`
+  6. :class:`~go_benchmark.RosenbrockModified`
+  7. :class:`~go_benchmark.RotatedEllipse01`
+  8. :class:`~go_benchmark.RotatedEllipse02`
+
+-----
+
+- :ref:`N-D Test Functions S`
+
+  1. :class:`~go_benchmark.Salomon`
+  2. :class:`~go_benchmark.Sargan`
+  3. :class:`~go_benchmark.Schaffer01`
+  4. :class:`~go_benchmark.Schaffer02`
+  5. :class:`~go_benchmark.Schaffer03`
+  6. :class:`~go_benchmark.Schaffer04`
+  7. :class:`~go_benchmark.SchmidtVetters`
+  8. :class:`~go_benchmark.Schwefel01`
+  9. :class:`~go_benchmark.Schwefel02`
+  10. :class:`~go_benchmark.Schwefel04`
+  11. :class:`~go_benchmark.Schwefel06`
+  12. :class:`~go_benchmark.Schwefel20`
+  13. :class:`~go_benchmark.Schwefel21`
+  14. :class:`~go_benchmark.Schwefel22`
+  15. :class:`~go_benchmark.Schwefel26`
+  16. :class:`~go_benchmark.Schwefel36`
+  17. :class:`~go_benchmark.Shekel05`
+  18. :class:`~go_benchmark.Shekel07`
+  19. :class:`~go_benchmark.Shekel10`
+  20. :class:`~go_benchmark.Shubert01`
+  21. :class:`~go_benchmark.Shubert03`
+  22. :class:`~go_benchmark.Shubert04`
+  23. :class:`~go_benchmark.SineEnvelope`
+  24. :class:`~go_benchmark.SixHumpCamel`
+  25. :class:`~go_benchmark.Sodp`
+  26. :class:`~go_benchmark.Sphere`
+  27. :class:`~go_benchmark.Step`
+  28. :class:`~go_benchmark.Stochastic`
+  29. :class:`~go_benchmark.StretchedV`
+  30. :class:`~go_benchmark.StyblinskiTang`
+
+-----
+
+- :ref:`N-D Test Functions T`
+
+  1. :class:`~go_benchmark.TestTubeHolder`
+  2. :class:`~go_benchmark.ThreeHumpCamel`
+  3. :class:`~go_benchmark.Treccani`
+  4. :class:`~go_benchmark.Trefethen`
+  5. :class:`~go_benchmark.Trid`
+  6. :class:`~go_benchmark.Trigonometric01`
+  7. :class:`~go_benchmark.Trigonometric02`
+  8. :class:`~go_benchmark.Tripod`
+
+-----
+
+- :ref:`N-D Test Functions U`
+
+  1. :class:`~go_benchmark.Ursem01`
+  2. :class:`~go_benchmark.Ursem03`
+  3. :class:`~go_benchmark.Ursem04`
+  4. :class:`~go_benchmark.UrsemWaves`
+
+-----
+
+- :ref:`N-D Test Functions V`
+
+  1. :class:`~go_benchmark.VenterSobiezcczanskiSobieski`
+  2. :class:`~go_benchmark.Vincent`
+
+-----
+
+- :ref:`N-D Test Functions W`
+
+  1. :class:`~go_benchmark.Watson`
+  2. :class:`~go_benchmark.Wavy`
+  3. :class:`~go_benchmark.WayburnSeader01`
+  4. :class:`~go_benchmark.WayburnSeader02`
+  5. :class:`~go_benchmark.Weierstrass`
+  6. :class:`~go_benchmark.Whitley`
+  7. :class:`~go_benchmark.Wolfe`
+
+-----
+
+- :ref:`N-D Test Functions X`
+
+  1. :class:`~go_benchmark.XinSheYang01`
+  2. :class:`~go_benchmark.XinSheYang02`
+  3. :class:`~go_benchmark.XinSheYang03`
+  4. :class:`~go_benchmark.XinSheYang04`
+  5. :class:`~go_benchmark.Xor`
+
+-----
+
+- :ref:`N-D Test Functions Y`
+
+  1. :class:`~go_benchmark.YaoLiu04`
+  2. :class:`~go_benchmark.YaoLiu09`
+
+-----
+
+- :ref:`N-D Test Functions Z`
+
+  1. :class:`~go_benchmark.Zacharov`
+  2. :class:`~go_benchmark.ZeroSum`
+  3. :class:`~go_benchmark.Zettl`
+  4. :class:`~go_benchmark.Zimmerman`
+  5. :class:`~go_benchmark.Zirilli`
+
+-----
+
+
+|
+   
+Univariate Test Functions Index
+-------------------------------
+
+- :ref:`1-D Test Functions`
+
+  1. :class:`~go_benchmark.Problem02`
+  2. :class:`~go_benchmark.Problem03`
+  3. :class:`~go_benchmark.Problem04`
+  4. :class:`~go_benchmark.Problem05`
+  5. :class:`~go_benchmark.Problem06`
+  6. :class:`~go_benchmark.Problem07`
+  7. :class:`~go_benchmark.Problem08`
+  8. :class:`~go_benchmark.Problem09`
+  9. :class:`~go_benchmark.Problem10`
+  10. :class:`~go_benchmark.Problem11`
+  11. :class:`~go_benchmark.Problem12`
+  12. :class:`~go_benchmark.Problem13`
+  13. :class:`~go_benchmark.Problem14`
+  14. :class:`~go_benchmark.Problem15`
+  15. :class:`~go_benchmark.Problem18`
+  16. :class:`~go_benchmark.Problem20`
+  17. :class:`~go_benchmark.Problem21`
+  18. :class:`~go_benchmark.Problem22`
+	
+	

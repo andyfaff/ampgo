@@ -1,0 +1,39 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions Z:
+
+|test_functions| N-D Test Functions Z
+======================================
+
+
+
+.. autoclass:: go_benchmark.Zacharov
+
+-----
+
+
+
+.. autoclass:: go_benchmark.ZeroSum
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Zettl
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Zimmerman
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Zirilli
+

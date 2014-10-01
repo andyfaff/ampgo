@@ -1,0 +1,345 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions B &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions C" href="test_functions_nd_C.html" />
+    <link rel="prev" title="N-D Test Functions A" href="test_functions_nd_A.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_C.html" title="N-D Test Functions C"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_A.html" title="N-D Test Functions A"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions B</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-b">
+<span id="n-d-test-functions-b"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions B<a class="headerlink" href="#test-functions-n-d-test-functions-b" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.BartelsConn">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">BartelsConn</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.BartelsConn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bartels-Conn test objective function.</p>
+<p>This class defines the Bartels-Conn global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/86f9d32daeda12c2db016868b11345bddfd56b79.png" alt="f_{\text{BartelsConn}}(\mathbf{x}) = \lvert {x_1^2 + x_2^2 + x_1x_2} \rvert + \lvert {\sin(x_1)} \rvert + \lvert {\cos(x_2)} \rvert"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/9479281c91e8220b33050faa5474b724a60cf1ea.png" alt="x_i \in [-50, 50]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Bartels-Conn function" src="_images/BartelsConn.png" />
+<p class="caption"><strong>Two-dimensional Bartels-Conn function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/e34b261aad599f38d94d2910160d047fe9e1a17d.png" alt="f(x_i) = 1"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Beale">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Beale</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Beale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Beale test objective function.</p>
+<p>This class defines the Beale global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/245217837f6bc637a063f37bd43d731260c45c24.png" alt="f_{\text{Beale}}(\mathbf{x}) = \left(x_1 x_2 - x_1 + 1.5\right)^{2} + \left(x_1 x_2^{2} - x_1 + 2.25\right)^{2} + \left(x_1 x_2^{3} - x_1 + 2.625\right)^{2}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Beale function" src="_images/Beale.png" />
+<p class="caption"><strong>Two-dimensional Beale function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/7556b9d5a91ab3ce2ed1352ec7eb8ac0444d94e4.png" alt="\mathbf{x} = [3, 0.5]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Bird">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Bird</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Bird" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bird test objective function.</p>
+<p>This class defines the Bird global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/a1e6cece66cb54f437593eed9031980c82e87db7.png" alt="f_{\text{Bird}}(\mathbf{x}) = \left(x_1 - x_2\right)^{2} + e^{\left[1 - \sin\left(x_1\right) \right]^{2}} \cos\left(x_2\right) + e^{\left[1 - \cos\left(x_2\right)\right]^{2}} \sin\left(x_1\right)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/550244574963351248b8b30f9d583095c065c220.png" alt="x_i \in [-2\pi, 2\pi]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Bird function" src="_images/Bird.png" />
+<p class="caption"><strong>Two-dimensional Bird function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/c7ebb4cd96767720975d0afba9e4c75a94bba71d.png" alt="f(x_i) = -106.7645367198034"/> for <img class="math" src="_images/math/ff6b2bd667693e7bee7849630b77d7b7bb9dcc2c.png" alt="\mathbf{x} = [4.701055751981055 , 3.152946019601391]"/> or
+<img class="math" src="_images/math/6500fed0ae9df23ef7d80a1f58be43795146a646.png" alt="\mathbf{x} = [-1.582142172055011, -3.130246799635430]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Bohachevsky">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Bohachevsky</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Bohachevsky" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bohachevsky test objective function.</p>
+<p>This class defines the Bohachevsky global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/02246e00b06982cb71dd984f213e9a8ad5e293e0.png" alt="f_{\text{Bohachevsky}}(\mathbf{x}) = \sum_{i=1}^{n-1}\left[x_i^2 + 2x_{i+1}^2 - 0.3\cos(3\pi x_i) - 0.4\cos(4\pi x_{i+1}) + 0.7\right]"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/fca9e26666540be67aae472b6068981e5e8b1471.png" alt="x_i \in [-15, 15]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Bohachevsky function" src="_images/Bohachevsky.png" />
+<p class="caption"><strong>Two-dimensional Bohachevsky function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.BoxBetts">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">BoxBetts</tt><big>(</big><em>dimensions=3</em><big>)</big><a class="headerlink" href="#go_benchmark.BoxBetts" title="Permalink to this definition">¶</a></dt>
+<dd><p>BoxBetts test objective function.</p>
+<p>This class defines the Box-Betts global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/5e3b41c1e5b429f93f6aff83d33c5cbe4cfbe82c.png" alt="f_{\text{BoxBetts}}(\mathbf{x}) = \sum_{i=1}^k g(x_i)^2"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/7ba7b0a5e6a8960f8dd423640d3c1ba34e4cbc0a.png" alt="g(x) = e^{-0.1(i+1)x_1} - e^{-0.1(i+1)x_2} - \left[(e^{-0.1(i+1)}) - e^{-(i+1)}x_3\right]"/></p>
+</div><p>And <img class="math" src="_images/math/5c593c45953fbca6d0da4893f2126c6f16bf6cf1.png" alt="k = 10"/>.</p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/cfdb7cf4c83d950319d282846531d581cafe092b.png" alt="x_1 \in [0.9, 1.2], x_2 \in [9, 11.2], x_3 \in [0.9, 1.2]"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/54416a2cfa5f9c8d99eac3a814babf4e357b264a.png" alt="\mathbf{x} = [1, 10, 1]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Branin01">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Branin01</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Branin01" title="Permalink to this definition">¶</a></dt>
+<dd><p>Branin 1 test objective function.</p>
+<p>This class defines the Branin 1 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/1e276cce20fc8615b647b6cb4c333598b263865b.png" alt="f_{\text{Branin01}}(\mathbf{x}) = \left(- 1.275 \frac{x_1^{2}}{\pi^{2}} + 5 \frac{x_1}{\pi} + x_2 -6\right)^{2} + \left(10 - \frac{5}{4 \pi} \right) \cos\left(x_1\right) + 10"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/eb86aee84170be0b8d3183e5792db32f5725762b.png" alt="x_1 \in [-5, 10], x_2 \in [0, 15]"/></p>
+<div class="figure align-center">
+<img alt="Branin 1 function" src="_images/Branin01.png" />
+<p class="caption"><strong>Two-dimensional Branin 1 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/41524b7d1d05b1bf8d56b11d016b52852e18da2a.png" alt="f(x_i) = 0.39788735772973816"/> for <img class="math" src="_images/math/003a9a4aac1fa4f782c62f9481f5a9df16ca2643.png" alt="\mathbf{x} = [-\pi, 12.275]"/> or
+<img class="math" src="_images/math/0318ee6c1845a21be7641a633748fa305eb0fbac.png" alt="\mathbf{x} = [\pi, 2.275]"/> or <img class="math" src="_images/math/2da2e1b76a199e8f421b18d3e3471d5b988ec44b.png" alt="\mathbf{x} = [9.42478, 2.475]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Branin02">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Branin02</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Branin02" title="Permalink to this definition">¶</a></dt>
+<dd><p>Branin 2 test objective function.</p>
+<p>This class defines the Branin 2 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/3124491751371583e74180c5365dfb8f5bc4210e.png" alt="f_{\text{Branin02}}(\mathbf{x}) = \left(- 1.275 \frac{x_1^{2}}{\pi^{2}} + 5 \frac{x_1}{\pi} + x_2 -6\right)^{2} + \left(10 - \frac{5}{4 \pi} \right) \cos\left(x_1\right) \cos\left(x_2\right) + \log(x_1^2+x_2^2 +1) + 10"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/b4e877d210b8c99a277da78c333f2e87d93feeae.png" alt="x_i \in [-5, 15]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Branin 2 function" src="_images/Branin02.png" />
+<p class="caption"><strong>Two-dimensional Branin 2 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/43a59763eeb11896725ab619757ba426c877afa3.png" alt="f(x_i) = 5.559037"/> for <img class="math" src="_images/math/3961655f0193910d273164cd8e73a52dad4e06fd.png" alt="\mathbf{x} = [-3.2, 12.53]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Brent">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Brent</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Brent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brent test objective function.</p>
+<p>This class defines the Brent global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/f9ef5f1be300f68570530badd476a23dcbfd7756.png" alt="f_{\text{Brent}}(\mathbf{x}) = (x_1 + 10)^2 + (x_2 + 10)^2 + e^{(-x_1^2-x_2^2)}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Brent function" src="_images/Brent.png" />
+<p class="caption"><strong>Two-dimensional Brent function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/3bf01f9b5da15614949c5a71e671d242187d3b95.png" alt="\mathbf{x} = [-10, -10]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Brown">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Brown</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Brown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brown test objective function.</p>
+<p>This class defines the Brown global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/5376b7cb74159ed8abccbff5bb021da18f77f353.png" alt="f_{\text{Brown}}(\mathbf{x}) = \sum_{i=1}^{n-1}\left[ \left(x_i^2\right)^{x_{i+1}^2+1} + \left(x_{i+1}^2\right)^{x_i^2+1} \right]"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/0c11019405ea0856aeb25fbdd6d05b00b32e7e0e.png" alt="x_i \in [-1, 4]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Brown function" src="_images/Brown.png" />
+<p class="caption"><strong>Two-dimensional Brown function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Bukin02">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Bukin02</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Bukin02" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bukin 2 test objective function.</p>
+<p>This class defines the Bukin 2 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/45f9f6b63b4afaa62ac1cc0aca2a2e81cec3f71e.png" alt="f_{\text{Bukin02}}(\mathbf{x}) = 100 (x_2 - 0.01x_1^2 + 1) + 0.01(x_1 + 10)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/32f10acd15d93bf61fdea3d1954ea0f2ea51d975.png" alt="x_1 \in [-15, -5], x_2 \in [-3, 3]"/></p>
+<div class="figure align-center">
+<img alt="Bukin 2 function" src="_images/Bukin02.png" />
+<p class="caption"><strong>Two-dimensional Bukin 2 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/d48ed59171692b77e95b251deb1673a36785fa96.png" alt="\mathbf{x} = [-10, 0]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Bukin04">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Bukin04</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Bukin04" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bukin 4 test objective function.</p>
+<p>This class defines the Bukin 4 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/f9a055a19497888502cc273c893fd4fe37324d3b.png" alt="f_{\text{Bukin04}}(\mathbf{x}) = 100 x_2^{2} + 0.01 \lvert{x_1 + 10} \rvert"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/32f10acd15d93bf61fdea3d1954ea0f2ea51d975.png" alt="x_1 \in [-15, -5], x_2 \in [-3, 3]"/></p>
+<div class="figure align-center">
+<img alt="Bukin 4 function" src="_images/Bukin04.png" />
+<p class="caption"><strong>Two-dimensional Bukin 4 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/d48ed59171692b77e95b251deb1673a36785fa96.png" alt="\mathbf{x} = [-10, 0]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Bukin06">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Bukin06</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Bukin06" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bukin 6 test objective function.</p>
+<p>This class defines the Bukin 6 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/1dedca0492554d1d918610565ec38b4428a6245d.png" alt="f_{\text{Bukin06}}(\mathbf{x}) = 100 \sqrt{ \lvert{x_2 - 0.01 x_1^{2}} \rvert} + 0.01 \lvert{x_1 + 10} \rvert"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/32f10acd15d93bf61fdea3d1954ea0f2ea51d975.png" alt="x_1 \in [-15, -5], x_2 \in [-3, 3]"/></p>
+<div class="figure align-center">
+<img alt="Bukin 6 function" src="_images/Bukin06.png" />
+<p class="caption"><strong>Two-dimensional Bukin 6 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/6449283db0e33dd2d949047efc0c724e9811aa63.png" alt="\mathbf{x} = [-10, 1]"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_A.html"
+                        title="previous chapter"> N-D Test Functions A</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_C.html"
+                        title="next chapter"> N-D Test Functions C</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_B.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_C.html" title="N-D Test Functions C"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_A.html" title="N-D Test Functions A"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions B</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

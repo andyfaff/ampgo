@@ -1,0 +1,15 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions I:
+
+|test_functions| N-D Test Functions I
+======================================
+
+
+
+.. autoclass:: go_benchmark.Infinity
+

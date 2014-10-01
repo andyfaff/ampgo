@@ -1,0 +1,253 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions W &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions X" href="test_functions_nd_X.html" />
+    <link rel="prev" title="N-D Test Functions V" href="test_functions_nd_V.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_X.html" title="N-D Test Functions X"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_V.html" title="N-D Test Functions V"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions W</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-w">
+<span id="n-d-test-functions-w"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions W<a class="headerlink" href="#test-functions-n-d-test-functions-w" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.Watson">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Watson</tt><big>(</big><em>dimensions=6</em><big>)</big><a class="headerlink" href="#go_benchmark.Watson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Watson test objective function.</p>
+<p>This class defines the Watson global optimization problem. This 
+is a unimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/edda0287e0c3d161d02e25b729864e98e402439b.png" alt="f_{\text{Watson}}(\mathbf{x}) = \sum_{i=0}^{29} \left\{ \sum_{j=0}^4 ((j - 1)a_i^j x_{j+1}) - \left[ \sum_{j=0}^5 a_i^j x_{j+1} \right ]^2 - 1 \right\}^2 + x_1^2"/></p>
+</div><p>Where, in this exercise, <img class="math" src="_images/math/fbe8a7aabcfd360b0771514b35f5807f156c6be5.png" alt="a_i = i/29"/>.</p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/b7a53fa3c9c2f313c2a86c222fdfbbeaf4b5a3ed.png" alt="x_i \in [-5, 5]"/> for <img class="math" src="_images/math/3fd94b735e8e496ce69384c21816b01693760288.png" alt="i=1,...,6"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/1b5311bb4be5af0960f80140852fc70e45dc676a.png" alt="f(x_i) = 0.002288"/> for <img class="math" src="_images/math/6b3586c898a22817ad72e0f2f2d622c342ad67bd.png" alt="\mathbf{x} = [-0.0158, 1.012, -0.2329, 1.260, -1.513, 0.9928]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Wavy">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Wavy</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Wavy" title="Permalink to this definition">¶</a></dt>
+<dd><p>W / Wavy test objective function.</p>
+<p>This class defines the W / Wavy global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/af1463014eda91ee8de91ed7bdeb6debd2706d61.png" alt="f_{\text{Wavy}}(\mathbf{x}) = 1 - \frac{1}{n} \sum_{i=1}^{n} \cos(kx_i)e^{-\frac{x_i^2}{2}}"/></p>
+</div><p>Where, in this exercise, <img class="math" src="_images/math/5c593c45953fbca6d0da4893f2126c6f16bf6cf1.png" alt="k = 10"/>. The number of local minima is <img class="math" src="_images/math/509a0d29031b8cf887718fa94045f61c7a97942e.png" alt="kn"/> and <img class="math" src="_images/math/9157b50c0770185cad96931d8d493466b2983227.png" alt="(k + 1)n"/> for odd and even <img class="math" src="_images/math/8c325612684d41304b9751c175df7bcc0f61f64f.png" alt="k"/> respectively.</p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/f3c18fa54f78b0fbb91f6c094697293de5e0b3f9.png" alt="x_i \in [-\pi, \pi]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="W / Wavy function" src="_images/Wavy.png" />
+<p class="caption"><strong>Two-dimensional W / Wavy function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.WayburnSeader01">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">WayburnSeader01</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.WayburnSeader01" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wayburn and Seader 1 test objective function.</p>
+<p>This class defines the Wayburn and Seader 1 global optimization problem. This 
+is a unimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/83cd0a7dbb3535bc4106c6c23257ea767a5419b0.png" alt="f_{\text{WayburnSeader01}}(\mathbf{x}) = (x_1^6 + x_2^4 - 17)^2 + (2x_1 + x_2 - 4)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/b7a53fa3c9c2f313c2a86c222fdfbbeaf4b5a3ed.png" alt="x_i \in [-5, 5]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Wayburn and Seader 1 function" src="_images/WayburnSeader01.png" />
+<p class="caption"><strong>Two-dimensional Wayburn and Seader 1 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/f293ed6d993e1d9892bced5d4f409f0a74cc40d6.png" alt="\mathbf{x} = [1, 2]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.WayburnSeader02">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">WayburnSeader02</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.WayburnSeader02" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wayburn and Seader 2 test objective function.</p>
+<p>This class defines the Wayburn and Seader 2 global optimization problem. This 
+is a unimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/990be194ff5d87d2b15fec0893a170bfa5677b3b.png" alt="f_{\text{WayburnSeader02}}(\mathbf{x}) = \left[ 1.613 - 4(x_1 - 0.3125)^2 - 4(x_2 - 1.625)^2 \right]^2 + (x_2 - 1)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/286a33626f115cb9d7e75a098b287cf93b7916e5.png" alt="x_i \in [-500, 500]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Wayburn and Seader 2 function" src="_images/WayburnSeader02.png" />
+<p class="caption"><strong>Two-dimensional Wayburn and Seader 2 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/b117022a43083e1f1edb1fca27f3200db815b2b9.png" alt="\mathbf{x} = [0.2, 1]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Weierstrass">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Weierstrass</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Weierstrass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Weierstrass test objective function.</p>
+<p>This class defines the Weierstrass global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/1bc139bde96f08a1d941759e448b88a68a7369aa.png" alt="f_{\text{Weierstrass}}(\mathbf{x}) = \sum_{i=1}^{n} \left [ \sum_{k=0}^{kmax} a^k \cos \left( 2 \pi b^k (x_i + 0.5) \right) - n \sum_{k=0}^{kmax} a^k \cos(\pi b^k) \right ]"/></p>
+</div><p>Where, in this exercise, <img class="math" src="_images/math/d5dd8f98ec50a71a0989649060ce65c2d68f137a.png" alt="kmax = 20"/>, <img class="math" src="_images/math/581e9747a1f7f7468baea523fc3821e058b40e31.png" alt="a = 0.5"/> and <img class="math" src="_images/math/246ec286b9641f91f9dfa14932e47171e2fad854.png" alt="b = 3"/>.</p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/95ff94da73788fc2234f6d2f9037e3c7df81a147.png" alt="x_i \in [-0.5, 0.5]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Weierstrass function" src="_images/Weierstrass.png" />
+<p class="caption"><strong>Two-dimensional Weierstrass function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/0836a559b1b21c05f0965f41126e138802978136.png" alt="f(x_i) = 4"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Whitley">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Whitley</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Whitley" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whitley test objective function.</p>
+<p>This class defines the Whitley global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/547f15968bc97fb68942a1bdc08dca77ed2687cd.png" alt="f_{\text{Whitley}}(\mathbf{x}) = \sum_{i=1}^n \sum_{j=1}^n \left[\frac{(100(x_i^2-x_j)^2 + (1-x_j)^2)^2}{4000} - \cos(100(x_i^2-x_j)^2 + (1-x_j)^2)+1 \right]"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/3825846d98928e737251a1183cf6de356b0abc81.png" alt="x_i \in [-10.24, 10.24]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Whitley function" src="_images/Whitley.png" />
+<p class="caption"><strong>Two-dimensional Whitley function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/6c75eb8978ee0840709244e93e95693ba1825888.png" alt="x_i = 1"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Wolfe">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Wolfe</tt><big>(</big><em>dimensions=3</em><big>)</big><a class="headerlink" href="#go_benchmark.Wolfe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wolfe test objective function.</p>
+<p>This class defines the Wolfe global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/d5ff5d73631105d9248f6e1dbcb6dfd451e37493.png" alt="f_{\text{Wolfe}}(\mathbf{x}) = \frac{4}{3}(x_1^2 + x_2^2 - x_1x_2)^{0.75} + x_3"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/4ccbc8f05068478e57d7a9f37fccf74917eabaae.png" alt="x_i \in [0, 2]"/> for <img class="math" src="_images/math/ebdc951cf2ca60ce8b5c97e2003726b5c2d40dde.png" alt="i=1,2,3"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/ebdc951cf2ca60ce8b5c97e2003726b5c2d40dde.png" alt="i=1,2,3"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_V.html"
+                        title="previous chapter"> N-D Test Functions V</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_X.html"
+                        title="next chapter"> N-D Test Functions X</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_W.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_X.html" title="N-D Test Functions X"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_V.html" title="N-D Test Functions V"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions W</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions D:
+
+|test_functions| N-D Test Functions D
+======================================
+
+
+
+.. autoclass:: go_benchmark.Damavandi
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Deb01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Deb02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Decanomial
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Deceptive
+
+-----
+
+
+
+.. autoclass:: go_benchmark.DeckkersAarts
+
+-----
+
+
+
+.. autoclass:: go_benchmark.DeflectedCorrugatedSpring
+
+-----
+
+
+
+.. autoclass:: go_benchmark.DeVilliersGlasser01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.DeVilliersGlasser02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.DixonPrice
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Dolan
+
+-----
+
+
+
+.. autoclass:: go_benchmark.DropWave
+

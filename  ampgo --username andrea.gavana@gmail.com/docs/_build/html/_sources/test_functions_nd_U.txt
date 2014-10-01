@@ -1,0 +1,33 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions U:
+
+|test_functions| N-D Test Functions U
+======================================
+
+
+
+.. autoclass:: go_benchmark.Ursem01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Ursem03
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Ursem04
+
+-----
+
+
+
+.. autoclass:: go_benchmark.UrsemWaves
+

@@ -1,0 +1,45 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions L:
+
+|test_functions| N-D Test Functions L
+======================================
+
+
+
+.. autoclass:: go_benchmark.Langermann
+
+-----
+
+
+
+.. autoclass:: go_benchmark.LennardJones
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Leon
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Levy03
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Levy05
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Levy13
+

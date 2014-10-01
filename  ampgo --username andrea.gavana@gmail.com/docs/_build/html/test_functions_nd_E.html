@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions E &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions F" href="test_functions_nd_F.html" />
+    <link rel="prev" title="N-D Test Functions D" href="test_functions_nd_D.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_F.html" title="N-D Test Functions F"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_D.html" title="N-D Test Functions D"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions E</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-e">
+<span id="n-d-test-functions-e"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions E<a class="headerlink" href="#test-functions-n-d-test-functions-e" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.Easom">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Easom</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Easom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Easom test objective function.</p>
+<p>This class defines the Easom global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/666d3f98a9cd57d3684e0c3014b3b2b24afbb432.png" alt="f_{\text{Easom}}(\mathbf{x}) = a - \frac{a}{e^{b \sqrt{\frac{\sum_{i=1}^{n} x_i^{2}}{n}}}} + e - e^{\frac{\sum_{i=1}^{n} \cos\left(c x_i\right)}{n}}"/></p>
+</div><p>Where, in this exercise, <img class="math" src="_images/math/41b7052b327eae05b0f35648a70451285bab00fa.png" alt="a = 20, b = 0.2"/> and <img class="math" src="_images/math/3de1c9ccb7cbe13db6749ab5bd04b79c3d61b119.png" alt="c = 2\pi"/>.</p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/33bdb423b6ec61d9668e76b556c95c96b2bb72ef.png" alt="x_i \in [-100, 100]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Easom function" src="_images/Easom.png" />
+<p class="caption"><strong>Two-dimensional Easom function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.EggCrate">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">EggCrate</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.EggCrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Egg Crate test objective function.</p>
+<p>This class defines the Egg Crate global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/c9771b40c468a773f09622806cf1da512c451a61.png" alt="f_{\text{EggCrate}}(\mathbf{x}) = x_1^2 + x_2^2 + 25 \left[ \sin^2(x_1) + \sin^2(x_2) \right]"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/b7a53fa3c9c2f313c2a86c222fdfbbeaf4b5a3ed.png" alt="x_i \in [-5, 5]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Egg Crate function" src="_images/EggCrate.png" />
+<p class="caption"><strong>Two-dimensional Egg Crate function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.EggHolder">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">EggHolder</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.EggHolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Egg Holder test objective function.</p>
+<p>This class defines the Egg Holder global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/10f8847735991da3b7340e14095cb9c9d214a4ef.png" alt="f_{\text{EggHolder}}(\mathbf{x}) = - x_{1} \sin\left(\sqrt{\lvert{x_{1} - x_{2} -47}\rvert}\right) - \left(x_{2} + 47\right) \sin\left(\sqrt{\left|{\frac{1}{2} x_{1} + x_{2} + 47}\right|}\right)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d88fdeebb4f3543267875d520e6b38f84e9a243b.png" alt="x_i \in [-512, 512]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Egg Holder function" src="_images/EggHolder.png" />
+<p class="caption"><strong>Two-dimensional Egg Holder function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/28be3e88cdf32dda56869c0bca870722e281df35.png" alt="f(x_i) = -959.640662711"/> for <img class="math" src="_images/math/71279a2f23fe69dc21f106a6b6890e10f5d27571.png" alt="\mathbf{x} = [512, 404.2319]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.ElAttarVidyasagarDutta">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">ElAttarVidyasagarDutta</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.ElAttarVidyasagarDutta" title="Permalink to this definition">¶</a></dt>
+<dd><p>El-Attar-Vidyasagar-Dutta test objective function.</p>
+<p>This class defines the El-Attar-Vidyasagar-Dutta function global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/c053ccf476fa8b870025cbd76676a57b200bc998.png" alt="f_{\text{ElAttarVidyasagarDutta}}(\mathbf{x}) = (x_1^2 + x_2 - 10)^2 + (x_1 + x_2^2 - 7)^2 + (x_1^2 + x_2^3 - 1)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/33bdb423b6ec61d9668e76b556c95c96b2bb72ef.png" alt="x_i \in [-100, 100]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="El-Attar-Vidyasagar-Dutta function" src="_images/ElAttarVidyasagarDutta.png" />
+<p class="caption"><strong>Two-dimensional El-Attar-Vidyasagar-Dutta function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/aea3ee9fb50dac66329298ba1c2768e71ba05e9c.png" alt="f(x_i) = 1.712780354"/> for <img class="math" src="_images/math/5a70bd19960b7731d560b5c5d4c1dd29401affce.png" alt="\mathbf{x} = [3.40918683, -2.17143304]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Exp2">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Exp2</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Exp2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exp2 test objective function.</p>
+<p>This class defines the Exp2 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/95b384a6f15380d693db9c385731cb904fbf65c3.png" alt="f_{\text{Exp2}}(\mathbf{x}) = \sum_{i=0}^9 \left ( e^{-ix_1/10} - 5e^{-ix_2/10} -e^{-i/10} + 5e^{-i} \right )^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/e5cccc28ef66f0ce2a2510a87fb96ecd83484bd5.png" alt="x_i \in [0, 20]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Exp2 function" src="_images/Exp2.png" />
+<p class="caption"><strong>Two-dimensional Exp2 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/d7e7fb3f6ec596bd1eb73778555bc08d9b046091.png" alt="x_i = [1, 0.1]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Exponential">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Exponential</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Exponential" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exponential test objective function.</p>
+<p>This class defines the Exponential global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/64bda259d69f1aca7146a55c0303932e997b4279.png" alt="f_{\text{Exponential}}(\mathbf{x}) = -e^{-0.5 \sum_{i=1}^n x_i^2}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/69d20098894c45659a72bd07f85a904ff6726b1e.png" alt="x_i \in [-1, 1]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Exponential function" src="_images/Exponential.png" />
+<p class="caption"><strong>Two-dimensional Exponential function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/4fc3083ce816724e22dbb637cd12e47f32504981.png" alt="f(x_i) = -1"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_D.html"
+                        title="previous chapter"> N-D Test Functions D</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_F.html"
+                        title="next chapter"> N-D Test Functions F</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_E.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_F.html" title="N-D Test Functions F"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_D.html" title="N-D Test Functions D"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions E</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

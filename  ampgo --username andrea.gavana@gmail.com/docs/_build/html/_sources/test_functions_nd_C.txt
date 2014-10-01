@@ -1,0 +1,81 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions C:
+
+|test_functions| N-D Test Functions C
+======================================
+
+
+
+.. autoclass:: go_benchmark.CarromTable
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Chichinadze
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Cigar
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Cola
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Colville
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Corana
+
+-----
+
+
+
+.. autoclass:: go_benchmark.CosineMixture
+
+-----
+
+
+
+.. autoclass:: go_benchmark.CrossInTray
+
+-----
+
+
+
+.. autoclass:: go_benchmark.CrossLegTable
+
+-----
+
+
+
+.. autoclass:: go_benchmark.CrownedCross
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Csendes
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Cube
+

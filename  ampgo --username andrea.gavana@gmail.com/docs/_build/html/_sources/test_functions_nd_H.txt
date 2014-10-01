@@ -1,0 +1,57 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions H:
+
+|test_functions| N-D Test Functions H
+======================================
+
+
+
+.. autoclass:: go_benchmark.Hansen
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Hartmann3
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Hartmann6
+
+-----
+
+
+
+.. autoclass:: go_benchmark.HelicalValley
+
+-----
+
+
+
+.. autoclass:: go_benchmark.HimmelBlau
+
+-----
+
+
+
+.. autoclass:: go_benchmark.HolderTable
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Holzman
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Hosaki
+

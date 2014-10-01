@@ -1,0 +1,221 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions G &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions H" href="test_functions_nd_H.html" />
+    <link rel="prev" title="N-D Test Functions F" href="test_functions_nd_F.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_H.html" title="N-D Test Functions H"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_F.html" title="N-D Test Functions F"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions G</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-g">
+<span id="n-d-test-functions-g"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions G<a class="headerlink" href="#test-functions-n-d-test-functions-g" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.Gear">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Gear</tt><big>(</big><em>dimensions=4</em><big>)</big><a class="headerlink" href="#go_benchmark.Gear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gear test objective function.</p>
+<p>This class defines the Gear global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/297c8255ab363239baa413f354454dfa1507a301.png" alt="f_{\text{Gear}}(\mathbf{x}) = \left \{ \frac{1.0}{6.931} - \frac{\lfloor x_1\rfloor \lfloor x_2 \rfloor } {\lfloor x_3 \rfloor \lfloor x_4 \rfloor } \right\}^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/dede825b8eb6d5fc4458fe32630b03f0e24b49f1.png" alt="x_i \in [12, 60]"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/b76385647ed35b4cd3c9369d5d5309048c522a38.png" alt="f(x_i) = 2.7 \cdot 10^{-12}"/> for <img class="math" src="_images/math/ff60dadef62a5b6f9030bf858fc411f15672edb1.png" alt="\mathbf{x} = [16, 19, 43, 49]"/>, where the various
+<img class="math" src="_images/math/67bc6daa9d6b964201d6cef60cbeb1ac5fd26ead.png" alt="x_i"/> may be permuted.</p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Giunta">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Giunta</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Giunta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Giunta test objective function.</p>
+<p>This class defines the Giunta global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/4f94e6fac92562b0bb497a09e7087ed756ca30ff.png" alt="f_{\text{Giunta}}(\mathbf{x}) = 0.6 + \sum_{i=1}^{n} \left[\sin^{2}\left(1 - \frac{16}{15} x_i\right) - \frac{1}{50} \sin\left(4 - \frac{64}{15} x_i\right) - \sin\left(1 - \frac{16}{15} x_i\right)\right]"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/69d20098894c45659a72bd07f85a904ff6726b1e.png" alt="x_i \in [-1, 1]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Giunta function" src="_images/Giunta.png" />
+<p class="caption"><strong>Two-dimensional Giunta function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/804c994f3067d149d1d71b19f96837f57014443a.png" alt="f(x_i) = 0.06447042053690566"/> for <img class="math" src="_images/math/458f23f04ef9f66ab15404a755124ad3dbded63a.png" alt="\mathbf{x} = [0.4673200277395354, 0.4673200169591304]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.GoldsteinPrice">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">GoldsteinPrice</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.GoldsteinPrice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Goldstein-Price test objective function.</p>
+<p>This class defines the Goldstein-Price global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/62e850b32ec9dcf39e20f8b8a1bd11b074e6ced0.png" alt="f_{\text{GoldsteinPrice}}(\mathbf{x}) = \left[ 1+(x_1+x_2+1)^2(19-14x_1+3x_1^2-14x_2+6x_1x_2+3x_2^2) \right] \left[ 30+(2x_1-3x_2)^2(18-32x_1+12x_1^2+48x_2-36x_1x_2+27x_2^2) \right]"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/3220cc226a0abf06f00e70257db97b5c754120f7.png" alt="x_i \in [-2, 2]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Goldstein-Price function" src="_images/GoldsteinPrice.png" />
+<p class="caption"><strong>Two-dimensional Goldstein-Price function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/e711ed7ef462f229b17d7d6bd98f496ae83b6783.png" alt="f(x_i) = 3"/> for <img class="math" src="_images/math/b1a4998088c07bbc6ec2c94d0e59f3f49c3e4fc1.png" alt="\mathbf{x} = [0, -1]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Griewank">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Griewank</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Griewank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Griewank test objective function.</p>
+<p>This class defines the Griewank global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/c0688c5947a7c5f4c2d9c2a3467f0d6f814978cc.png" alt="f_{\text{Griewank}}(\mathbf{x}) = \frac{1}{4000}\sum_{i=1}^n x_i^2 - \prod_{i=1}^n\cos\left(\frac{x_i}{\sqrt{i}}\right) + 1"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/0e2220a1d45e6496e4278b9191e14b72dbf2da2b.png" alt="x_i \in [-600, 600]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Griewank function" src="_images/Griewank.png" />
+<p class="caption"><strong>Two-dimensional Griewank function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Gulf">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Gulf</tt><big>(</big><em>dimensions=3</em><big>)</big><a class="headerlink" href="#go_benchmark.Gulf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gulf test objective function.</p>
+<p>This class defines the Gulf global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/59484f37e9b334db1cafa36411e593abb0e048c8.png" alt="f_{\text{Gulf}}(\mathbf{x}) = \sum_{i=1}^m \left( e^{-\frac{\lvert y_i - x_2 \rvert^{x_3}}{x_1}    }  - t_i \right)"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/a38ad5fb61dee8c6ed344e687aa89bd226d15066.png" alt="t_i = i/100 \\
+y_i = 25 + [-50 \log(t_i)]^{2/3}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/96a3ee6ecb764ba6669d36899fea5c563488b3f5.png" alt="x_i \in [0, 60]"/> for <img class="math" src="_images/math/ebdc951cf2ca60ce8b5c97e2003726b5c2d40dde.png" alt="i=1,2,3"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/213fecbadfdaff832486b641e83587ac11937340.png" alt="\mathbf{x} = [50, 25, 1.5]"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_F.html"
+                        title="previous chapter"> N-D Test Functions F</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_H.html"
+                        title="next chapter"> N-D Test Functions H</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_G.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_H.html" title="N-D Test Functions H"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_F.html" title="N-D Test Functions F"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions G</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

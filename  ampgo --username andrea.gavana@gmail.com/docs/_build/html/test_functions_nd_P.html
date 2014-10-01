@@ -1,0 +1,423 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions P &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions Q" href="test_functions_nd_Q.html" />
+    <link rel="prev" title="N-D Test Functions O" href="test_functions_nd_O.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_Q.html" title="N-D Test Functions Q"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_O.html" title="N-D Test Functions O"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions P</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-p">
+<span id="n-d-test-functions-p"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions P<a class="headerlink" href="#test-functions-n-d-test-functions-p" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.Parsopoulos">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Parsopoulos</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Parsopoulos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parsopoulos test objective function.</p>
+<p>This class defines the Parsopoulos global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/e4d3d35ac1491e56094599efef723fbb60f19e47.png" alt="f_{\text{Parsopoulos}}(\mathbf{x}) = \cos(x_1)^2 + \sin(x_2)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/b7a53fa3c9c2f313c2a86c222fdfbbeaf4b5a3ed.png" alt="x_i \in [-5, 5]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Parsopoulos function" src="_images/Parsopoulos.png" />
+<p class="caption"><strong>Two-dimensional Parsopoulos function</strong></p>
+</div>
+<p><em>Global optimum</em>: This function has inﬁnite number of global minima in R2, at points <img class="math" src="_images/math/cb06c94bbd694014be3d1a1bfc57b825286f41f2.png" alt="\left(k\frac{\pi}{2}, \lambda \pi \right)"/>,
+where <img class="math" src="_images/math/478eabc9338e448f87f974680a2d5b49ba7e4882.png" alt="k = \pm1, \pm3, ..."/> and <img class="math" src="_images/math/bdd61cb20ef51a2767ca923b6e1970b964247dd6.png" alt="\lambda = 0, \pm1, \pm2, ..."/></p>
+<p>In the given domain problem, function has 12 global minima all equal to zero.</p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Pathological">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Pathological</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Pathological" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pathological test objective function.</p>
+<p>This class defines the Pathological global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/0ab9738ea72fb85465f8a222585f41bf25f76536.png" alt="f_{\text{Pathological}}(\mathbf{x}) = \sum_{i=1}^{n -1} \frac{\sin^{2}\left(\sqrt{100 x_{i+1}^{2} + x_{i}^{2}}\right) -0.5}{0.001 \left(x_{i} - x_{i+1}\right)^{4} + 0.50}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/33bdb423b6ec61d9668e76b556c95c96b2bb72ef.png" alt="x_i \in [-100, 100]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Pathological function" src="_images/Pathological.png" />
+<p class="caption"><strong>Two-dimensional Pathological function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/f55639e91b3b7e3ba1a0074def4a12ec309575c5.png" alt="f(x_i) = -1.99600798403"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Paviani">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Paviani</tt><big>(</big><em>dimensions=10</em><big>)</big><a class="headerlink" href="#go_benchmark.Paviani" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paviani test objective function.</p>
+<p>This class defines the Paviani global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/e9004b1ed31a772bbb76eb6168f17ab8f46ef6af.png" alt="f_{\text{Paviani}}(\mathbf{x}) = \sum_{i=1}^{10} \left[\log^{2}\left(10 - x_i\right) + \log^{2}\left(x_i -2\right)\right] - \left(\prod_{i=1}^{10} x_i^{10} \right)^{0.2}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/636468723f60098daa93400984ff0cd953b9408c.png" alt="x_i \in [2.001, 9.999]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/beb7553950dcacd85a2bed920119b9b8b7ae3b46.png" alt="f(x_i) = -45.7784684040686"/> for <img class="math" src="_images/math/0c393c3e536bfb8e8bb6ee3fcfeddc46a097189a.png" alt="x_i = 9.350266"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Penalty01">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Penalty01</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Penalty01" title="Permalink to this definition">¶</a></dt>
+<dd><p>Penalty 1 test objective function.</p>
+<p>This class defines the Penalty 1 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/8f84d6bf1a7c879c73145193287f25d29159af83.png" alt="f_{\text{Penalty01}}(\mathbf{x}) = \frac{\pi}{30} \left\{10 \sin^2(\pi y_1) + \sum_{i=1}^{n-1} (y_i - 1)^2 \left[1 + 10 \sin^2(\pi y_{i+1}) \right ] + (y_n - 1)^2 \right \} + \sum_{i=1}^n u(x_i, 10, 100, 4)"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/86217c9b6f2fa01a0cd40651b497856d83c84a14.png" alt="y_i = 1 + \frac{1}{4}(x_i + 1)"/></p>
+</div><p>And:</p>
+<div class="math">
+<p><img src="_images/math/560154f1fd6ab4942b90bb5ba3a018b4cba5a5c4.png" alt="u(x_i, a, k, m) = \begin{cases} k(x_i - a)^m &amp; \textrm{if} \hspace{5pt} x_i &gt; a \\
+0 &amp; \textrm{if} \hspace{5pt} -a \leq x_i \leq a \\
+k(-x_i - a)^m &amp; \textrm{if} \hspace{5pt} x_i &lt; -a \end{cases}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/9479281c91e8220b33050faa5474b724a60cf1ea.png" alt="x_i \in [-50, 50]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Penalty 1 function" src="_images/Penalty01.png" />
+<p class="caption"><strong>Two-dimensional Penalty 1 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/ebae831b7e0e5c768b3568b37e11cfc7b1dc006b.png" alt="x_i = -1"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Penalty02">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Penalty02</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Penalty02" title="Permalink to this definition">¶</a></dt>
+<dd><p>Penalty 2 test objective function.</p>
+<p>This class defines the Penalty 2 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/e2fd35c148a58b75bd0725f24ce8ea75772f8f1f.png" alt="f_{\text{Penalty02}}(\mathbf{x}) = 0.1 \left\{\sin^2(3\pi x_1) + \sum_{i=1}^{n-1} (x_i - 1)^2 \left[1 + \sin^2(3\pi x_{i+1}) \right ] + (x_n - 1)^2 \left [1 + \sin^2(2 \pi x_n) \right ]\right \} + \sum_{i=1}^n u(x_i, 5, 100, 4)"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/560154f1fd6ab4942b90bb5ba3a018b4cba5a5c4.png" alt="u(x_i, a, k, m) = \begin{cases} k(x_i - a)^m &amp; \textrm{if} \hspace{5pt} x_i &gt; a \\
+0 &amp; \textrm{if} \hspace{5pt} -a \leq x_i \leq a \\
+k(-x_i - a)^m &amp; \textrm{if} \hspace{5pt} x_i &lt; -a \end{cases}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/9479281c91e8220b33050faa5474b724a60cf1ea.png" alt="x_i \in [-50, 50]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Penalty 2 function" src="_images/Penalty02.png" />
+<p class="caption"><strong>Two-dimensional Penalty 2 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/6c75eb8978ee0840709244e93e95693ba1825888.png" alt="x_i = 1"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.PenHolder">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">PenHolder</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.PenHolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>PenHolder test objective function.</p>
+<p>This class defines the PenHolder global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/1d81e8a7cd0964751bd2cbae7654b1dabf75f563.png" alt="f_{\text{PenHolder}}(\mathbf{x}) = -e^{\left|{e^{\left|{- \frac{\sqrt{x_{1}^{2} + x_{2}^{2}}}{\pi} + 1}\right|} \cos\left(x_{1}\right) \cos\left(x_{2}\right)}\right|^{-1}}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/64a0f2c8fc7fe30ca047d2d61f93c549fc261011.png" alt="x_i \in [-11, 11]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="PenHolder function" src="_images/PenHolder.png" />
+<p class="caption"><strong>Two-dimensional PenHolder function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/7462f7e8b4688d0d46c5c24b329bfb3008187922.png" alt="f(x_i) = -0.9635348327265058"/> for <img class="math" src="_images/math/d153eaa3be7dda4e258b128642145f0162a9874d.png" alt="x_i = \pm 9.646167671043401"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.PermFunction01">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">PermFunction01</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.PermFunction01" title="Permalink to this definition">¶</a></dt>
+<dd><p>PermFunction 1 test objective function.</p>
+<p>This class defines the Perm Function 1 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/86131159d3a5713942ef9fa746f9e644c00ba1dd.png" alt="f_{\text{PermFunction01}}(\mathbf{x}) = \sum_{k=1}^n \left\{ \sum_{j=1}^n (j^k + \beta) \left[ \left(\frac{x_j}{j}\right)^k - 1 \right] \right\}^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/e90363f6e33a222e1f7df54a9864b6465e704e3e.png" alt="x_i \in [-n, n+1]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="PermFunction 1 function" src="_images/PermFunction01.png" />
+<p class="caption"><strong>Two-dimensional PermFunction 1 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/d0a68c8e6587abcf984129cac6179bfd0b1bb550.png" alt="x_i = i"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.PermFunction02">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">PermFunction02</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.PermFunction02" title="Permalink to this definition">¶</a></dt>
+<dd><p>PermFunction 2 test objective function.</p>
+<p>This class defines the Perm Function 2 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/2d6413650ad49e513fd577f73a3245f5964c44e5.png" alt="f_{\text{PermFunction02}}(\mathbf{x}) = \sum_{k=1}^n \left\{ \sum_{j=1}^n (j + \beta) \left[ \left(x_j^k - \frac{1}{j} \right ) \right] \right\}^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/e90363f6e33a222e1f7df54a9864b6465e704e3e.png" alt="x_i \in [-n, n+1]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="PermFunction 2 function" src="_images/PermFunction02.png" />
+<p class="caption"><strong>Two-dimensional PermFunction 2 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/54db768742fe2b83643575be8cfd9d2ca6ba007c.png" alt="x_i = \frac{1}{i}"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Pinter">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Pinter</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Pinter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pinter test objective function.</p>
+<p>This class defines the Pinter global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/6bdb0773f24e195fef0d751134f6593e04254682.png" alt="f_{\text{Pinter}}(\mathbf{x}) = \sum_{i=1}^n ix_i^2 + \sum_{i=1}^n 20i \sin^2 A + \sum_{i=1}^n i \log_{10} (1 + iB^2)"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/5e9b79fd1c3cebf85b051bb5d730f95f355faa50.png" alt="\begin{cases} A = x_{i-1} \sin x_i + \sin x_{i+1} \\
+B = x_{i-1}^2 - 2x_i + 3x_{i+1} - \cos x_i + 1 \end{cases}"/></p>
+</div><p>Where <img class="math" src="_images/math/1db933ddd7dbbca0413512c480bc8346bb5c5eef.png" alt="x_0 = x_n"/> and <img class="math" src="_images/math/1c1f29ada00b31aaf1b7aab952be96d8114dcce4.png" alt="x_{n+1} = x_1"/>.</p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Pinter function" src="_images/Pinter.png" />
+<p class="caption"><strong>Two-dimensional Pinter function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Plateau">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Plateau</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Plateau" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plateau test objective function.</p>
+<p>This class defines the Plateau global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/0f0332c0c96eb545f5919c1105691420999ba1eb.png" alt="f_{\text{Plateau}}(\mathbf{x}) = 30 + \sum_{i=1}^n \lfloor x_i \rfloor"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/670fd074f4bb495bf2a1d327d769de738121e329.png" alt="x_i \in [-5.12, 5.12]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Plateau function" src="_images/Plateau.png" />
+<p class="caption"><strong>Two-dimensional Plateau function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/a84cacfcc2c98118ae7c8eea711cbddf2f7b8f66.png" alt="f(x_i) = 30"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Powell">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Powell</tt><big>(</big><em>dimensions=4</em><big>)</big><a class="headerlink" href="#go_benchmark.Powell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Powell test objective function.</p>
+<p>This class defines the Powell global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/c30dd8c48956d8ac0f2a8e91e35138e7f81f088b.png" alt="f_{\text{Powell}}(\mathbf{x}) = (x_3+10x_1)^2+5(x_2-x_4)^2+(x_1-2x_2)^4+10(x_3-x_4)^4"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/a8851241896afaa6b5f64eff8d113a185f56a5ed.png" alt="x_i \in [-4, 5]"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.PowerSum">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">PowerSum</tt><big>(</big><em>dimensions=4</em><big>)</big><a class="headerlink" href="#go_benchmark.PowerSum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Power sum test objective function.</p>
+<p>This class defines the Power Sum global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/9021e8055786a6b5e161b7d05ed33d707ca68bd4.png" alt="f_{\text{PowerSum}}(\mathbf{x}) = \sum_{k=1}^n\left[\left(\sum_{i=1}^n x_i^k \right) - b_k \right]^2"/></p>
+</div><p>Where, in this exercise, <img class="math" src="_images/math/60aa4fd2d6f185448a71c22abdde0bce511e1128.png" alt="\mathbf{b} = [8, 18, 44, 114]"/></p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/e85f9417023b4ca79e827af77dce3a90c436cad5.png" alt="x_i \in [0, 4]"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/2a08212ee3af188ac51fd229b1d4454e31240664.png" alt="\mathbf{x} = [1, 2, 2, 3]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Price01">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Price01</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Price01" title="Permalink to this definition">¶</a></dt>
+<dd><p>Price 1 test objective function.</p>
+<p>This class defines the Price 1 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/a8e8c3b1b1a70190ea13e2678bb39edbdebd7e06.png" alt="f_{\text{Price01}}(\mathbf{x}) = (\lvert x_1 \rvert - 5)^2 + (\lvert x_2 \rvert - 5)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/286a33626f115cb9d7e75a098b287cf93b7916e5.png" alt="x_i \in [-500, 500]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Price 1 function" src="_images/Price01.png" />
+<p class="caption"><strong>Two-dimensional Price 1 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/cd95f5af33014209054fd8efcac99754f0937c94.png" alt="f(x_i) = 0.0"/> for <img class="math" src="_images/math/418e74c9c24b213c723e292c30dbf8df56578d19.png" alt="\mathbf{x} = [5, 5]"/> or <img class="math" src="_images/math/649c0673ea0c64fdb099e46030c8c3948cf25c13.png" alt="\mathbf{x} = [5, -5]"/>
+or <img class="math" src="_images/math/9ac5f7de3a7a0bc077c698d871ab71f70ecdf449.png" alt="\mathbf{x} = [-5, 5]"/> or <img class="math" src="_images/math/c919182eb588895f12fa465da74a349e5f99f8b1.png" alt="\mathbf{x} = [-5, -5]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Price02">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Price02</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Price02" title="Permalink to this definition">¶</a></dt>
+<dd><p>Price 2 test objective function.</p>
+<p>This class defines the Price 2 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/5fa2c9ee67547b382520ee7c3c11f2e2312406ac.png" alt="f_{\text{Price02}}(\mathbf{x}) = 1 + \sin^2(x_1) + \sin^2(x_2) - 0.1e^{(-x_1^2 - x_2^2)}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Price 2 function" src="_images/Price02.png" />
+<p class="caption"><strong>Two-dimensional Price 2 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/a0fa2f9dd809f3a2fe772ae9690a4fd2e263363a.png" alt="f(x_i) = 0.9"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Price03">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Price03</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Price03" title="Permalink to this definition">¶</a></dt>
+<dd><p>Price 3 test objective function.</p>
+<p>This class defines the Price 3 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/ed1c7bd06827610a030b02fcddadfb13ff9b31da.png" alt="f_{\text{Price03}}(\mathbf{x}) = 100(x_2 - x_1^2)^2 + \left[6.4(x_2 - 0.5)^2 - x_1 - 0.6 \right]^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/9479281c91e8220b33050faa5474b724a60cf1ea.png" alt="x_i \in [-50, 50]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Price 3 function" src="_images/Price03.png" />
+<p class="caption"><strong>Two-dimensional Price 3 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/c919182eb588895f12fa465da74a349e5f99f8b1.png" alt="\mathbf{x} = [-5, -5]"/>, <img class="math" src="_images/math/9ac5f7de3a7a0bc077c698d871ab71f70ecdf449.png" alt="\mathbf{x} = [-5, 5]"/>,
+<img class="math" src="_images/math/649c0673ea0c64fdb099e46030c8c3948cf25c13.png" alt="\mathbf{x} = [5, -5]"/>, <img class="math" src="_images/math/418e74c9c24b213c723e292c30dbf8df56578d19.png" alt="\mathbf{x} = [5, 5]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Price04">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Price04</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Price04" title="Permalink to this definition">¶</a></dt>
+<dd><p>Price 4 test objective function.</p>
+<p>This class defines the Price 4 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/c15a0b2c30504e9d7f8f9412986fff39d327c7c8.png" alt="f_{\text{Price04}}(\mathbf{x}) = (2x_1^3x_2 - x_2^3)^2 + (6x_1 - x_2^2 + x_2)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/9479281c91e8220b33050faa5474b724a60cf1ea.png" alt="x_i \in [-50, 50]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Price 4 function" src="_images/Price04.png" />
+<p class="caption"><strong>Two-dimensional Price 4 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/ae446016118c18b04012af8feda9cc5e2e1808a6.png" alt="\mathbf{x} = [0, 0]"/>, <img class="math" src="_images/math/cfebedfefc02ae410982d1be30f4a9063b7de936.png" alt="\mathbf{x} = [2, 4]"/> and
+<img class="math" src="_images/math/0481e55c9268e119e9d1f1452a36fa9f90e9713e.png" alt="\mathbf{x} = [1.464, -2.506]"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_O.html"
+                        title="previous chapter"> N-D Test Functions O</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_Q.html"
+                        title="next chapter"> N-D Test Functions Q</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_P.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_Q.html" title="N-D Test Functions Q"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_O.html" title="N-D Test Functions O"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions P</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

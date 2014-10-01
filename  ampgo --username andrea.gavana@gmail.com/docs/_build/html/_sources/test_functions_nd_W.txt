@@ -1,0 +1,51 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions W:
+
+|test_functions| N-D Test Functions W
+======================================
+
+
+
+.. autoclass:: go_benchmark.Watson
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Wavy
+
+-----
+
+
+
+.. autoclass:: go_benchmark.WayburnSeader01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.WayburnSeader02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Weierstrass
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Whitley
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Wolfe
+

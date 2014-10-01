@@ -1,0 +1,351 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions C &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions D" href="test_functions_nd_D.html" />
+    <link rel="prev" title="N-D Test Functions B" href="test_functions_nd_B.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_D.html" title="N-D Test Functions D"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_B.html" title="N-D Test Functions B"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions C</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-c">
+<span id="n-d-test-functions-c"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions C<a class="headerlink" href="#test-functions-n-d-test-functions-c" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.CarromTable">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">CarromTable</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.CarromTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>CarromTable test objective function.</p>
+<p>This class defines the CarromTable global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/1e85da29143fb000bbcc7ed9fbf5ee8dce2d9220.png" alt="f_{\text{CarromTable}}(\mathbf{x}) = - \frac{1}{30} e^{2 \left|{1 - \frac{\sqrt{x_{1}^{2} + x_{2}^{2}}}{\pi}}\right|} \cos^{2}\left(x_{1}\right) \cos^{2}\left(x_{2}\right)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="CarromTable function" src="_images/CarromTable.png" />
+<p class="caption"><strong>Two-dimensional CarromTable function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/518b9f8a7fa95a8519d219d242916b1e7ce280f1.png" alt="f(x_i) = -24.15681551650653"/> for <img class="math" src="_images/math/b4bacaf274a814799f2a746238de8067a09221f5.png" alt="x_i = \pm 9.646157266348881"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Chichinadze">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Chichinadze</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Chichinadze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chichinadze test objective function.</p>
+<p>This class defines the Chichinadze global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/c358f0af3f7a41df83ebeb28615f1f5f90956cbf.png" alt="f_{\text{Chichinadze}}(\mathbf{x}) = x_{1}^{2} - 12 x_{1} + 8 \sin\left(\frac{5}{2} \pi x_{1}\right) + 10 \cos\left(\frac{1}{2} \pi x_{1}\right) + 11 - 0.2 \frac{\sqrt{5}}{e^{\frac{1}{2} \left(x_{2} -0.5\right)^{2}}}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/292d5c0e898bdbf6ba6ae08a62a7750af442c17a.png" alt="x_i \in [-30, 30]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Chichinadze function" src="_images/Chichinadze.png" />
+<p class="caption"><strong>Two-dimensional Chichinadze function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/08f7ea35c93c8e0ec6ddbca1961ab56a09cd163c.png" alt="f(x_i) = -42.94438701899098"/> for <img class="math" src="_images/math/5f05f88427975a946afc3cd8c5370fc8c0cef4e2.png" alt="\mathbf{x} = [6.189866586965680, 0.5]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Cigar">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Cigar</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Cigar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cigar test objective function.</p>
+<p>This class defines the Cigar global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/5810c950f9377e14fdf0a3856d1e00bbbe96bbbe.png" alt="f_{\text{Cigar}}(\mathbf{x}) = x_1^2 + 10^6\sum_{i=2}^{n} x_i^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/33bdb423b6ec61d9668e76b556c95c96b2bb72ef.png" alt="x_i \in [-100, 100]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Cigar function" src="_images/Cigar.png" />
+<p class="caption"><strong>Two-dimensional Cigar function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Cola">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Cola</tt><big>(</big><em>dimensions=17</em><big>)</big><a class="headerlink" href="#go_benchmark.Cola" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cola test objective function.</p>
+<p>This class defines the Cola global optimization problem. The 17-dimensional function computes
+indirectly the formula <img class="math" src="_images/math/7a4a4297b8e4008633916c4dc26e8b4b60d963d8.png" alt="f(n, u)"/> by setting <img class="math" src="_images/math/f9c0dfaf493df75211595361dd3e9bd11644599e.png" alt="x_0 = y_0, x_1 = u_0, x_i = u_{2(i−2)}, y_i = u_{2(i−2)+1}"/> :</p>
+<div class="math">
+<p><img src="_images/math/e887d6457fd28cbe84bcbf201c38af99a9396eaa.png" alt="f_{\text{Cola}}(\mathbf{x}) = \sum_{i&lt;j}^{n} \left (r_{i,j} - d_{i,j} \right )^2"/></p>
+</div><p>Where <img class="math" src="_images/math/0544e0bae94d762ce0f61ee5692c2f47d352a964.png" alt="r_{i,j}"/> is given by:</p>
+<div class="math">
+<p><img src="_images/math/b5d36f9bc37fb0c20a7c0368d9a88337b3b74188.png" alt="r_{i,j} = \sqrt{(x_i - x_j)^2 + (y_i - y_j)^2}"/></p>
+</div><p>And <img class="math" src="_images/math/96ab646de7704969b91c76a214126b45f2b07b25.png" alt="d"/> is a symmetric matrix given by:</p>
+<div class="math">
+<p><img src="_images/math/ff0c1fb88112b9fb6d119f6999d2add82f8ae22b.png" alt="\mathbf{d} = \left [ d_{ij} \right ] = \begin{pmatrix}
+1.27 &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; \\
+1.69 &amp; 1.43 &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; \\ 
+2.04 &amp; 2.35 &amp; 2.43 &amp;  &amp;  &amp;  &amp;  &amp;  &amp; \\ 
+3.09 &amp; 3.18 &amp; 3.26 &amp; 2.85  &amp;  &amp;  &amp;  &amp;  &amp; \\ 
+3.20 &amp; 3.22 &amp; 3.27 &amp; 2.88 &amp; 1.55 &amp;  &amp;  &amp;  &amp; \\ 
+2.86 &amp; 2.56 &amp; 2.58 &amp; 2.59 &amp; 3.12 &amp; 3.06  &amp;  &amp;  &amp; \\ 
+3.17 &amp; 3.18 &amp; 3.18 &amp; 3.12 &amp; 1.31 &amp; 1.64 &amp; 3.00  &amp; \\ 
+3.21 &amp; 3.18 &amp; 3.18 &amp; 3.17 &amp; 1.70 &amp; 1.36 &amp; 2.95 &amp; 1.32  &amp; \\ 
+2.38 &amp; 2.31 &amp; 2.42 &amp; 1.94 &amp; 2.85 &amp; 2.81 &amp; 2.56 &amp; 2.91 &amp; 2.97 
+\end{pmatrix}"/></p>
+</div><p>This function has bounds <img class="math" src="_images/math/a337e2692f215ad30fa2c3a5360078bc8487e39f.png" alt="0 \leq x_0 \leq 4"/> and <img class="math" src="_images/math/fd304595345741da171b8a6818ef308ec3b2231c.png" alt="-4 \leq x_i \leq 4"/> for <img class="math" src="_images/math/eb6b2760233b6b8077e41780e4d6df312462b270.png" alt="i = 1,...,n-1"/>. It
+has a global minimum of 11.7464.</p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Colville">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Colville</tt><big>(</big><em>dimensions=4</em><big>)</big><a class="headerlink" href="#go_benchmark.Colville" title="Permalink to this definition">¶</a></dt>
+<dd><p>Colville test objective function.</p>
+<p>This class defines the Colville global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/d63baa85dff10a2679fa7b9dfa2dc206b7651dce.png" alt="f_{\text{Colville}}(\mathbf{x}) = \left(x_{1} -1\right)^{2} + 100 \left(x_{1}^{2} - x_{2}\right)^{2} + 10.1 \left(x_{2} -1\right)^{2} + \left(x_{3} -1\right)^{2} + 90 \left(x_{3}^{2} - x_{4}\right)^{2} + 10.1 \left(x_{4} -1\right)^{2} + 19.8 \frac{x_{4} -1}{x_{2}}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/6c75eb8978ee0840709244e93e95693ba1825888.png" alt="x_i = 1"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Corana">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Corana</tt><big>(</big><em>dimensions=4</em><big>)</big><a class="headerlink" href="#go_benchmark.Corana" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corana test objective function.</p>
+<p>This class defines the Corana global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/f26b4f4f9ba4603649e6e8cfcc4c69071165b69d.png" alt="f_{\text{Corana}}(\mathbf{x}) = \begin{cases} \sum_{i=1}^n 0.15 d_i [z_i - 0.05\textrm{sgn}(z_i)]^2 &amp; \textrm{if}|x_i-z_i| &lt; 0.05 \\
+       d_ix_i^2 &amp; \textrm{otherwise}\end{cases}"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/7bf4b8c0784e6c4ee257f679bdeb488f354303e5.png" alt="z_i = 0.2 \lfloor |x_i/s_i|+0.49999\rfloor\textrm{sgn}(x_i), d_i=(1,1000,10,100, ...)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/b7a53fa3c9c2f313c2a86c222fdfbbeaf4b5a3ed.png" alt="x_i \in [-5, 5]"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.CosineMixture">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">CosineMixture</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.CosineMixture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cosine Mixture test objective function.</p>
+<p>This class defines the Cosine Mixture global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/4b280396c39297eae9e21450cd858c290ca6fc46.png" alt="f_{\text{CosineMixture}}(\mathbf{x}) = -0.1 \sum_{i=1}^n \cos(5 \pi x_i) - \sum_{i=1}^n x_i^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/69d20098894c45659a72bd07f85a904ff6726b1e.png" alt="x_i \in [-1, 1]"/> for <img class="math" src="_images/math/0bbc84ad7cf66af0e4f33c3415a5be5caf83efbb.png" alt="i=1,...,N"/>.</p>
+<div class="figure align-center">
+<img alt="Cosine Mixture function" src="_images/CosineMixture.png" />
+<p class="caption"><strong>Two-dimensional Cosine Mixture function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/7f844ced9a567e9b71dc9d67beb7654dbd356455.png" alt="f(x_i) = -0.1N"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/0bbc84ad7cf66af0e4f33c3415a5be5caf83efbb.png" alt="i=1,...,N"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.CrossInTray">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">CrossInTray</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.CrossInTray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cross-in-Tray test objective function.</p>
+<p>This class defines the Cross-in-Tray global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/5e949631aab8f142322123230e38b77da4224481.png" alt="f_{\text{CrossInTray}}(\mathbf{x}) = - 0.0001 \left(\left|{e^{\left|{100 - \frac{\sqrt{x_{1}^{2} + x_{2}^{2}}}{\pi}}\right|} \sin\left(x_{1}\right) \sin\left(x_{2}\right)}\right| + 1\right)^{0.1}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/fca9e26666540be67aae472b6068981e5e8b1471.png" alt="x_i \in [-15, 15]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Cross-in-Tray function" src="_images/CrossInTray.png" />
+<p class="caption"><strong>Two-dimensional Cross-in-Tray function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/0a9dfadd8fb91431e9fa341e298ee8ec5fb96924.png" alt="f(x_i) = -2.062611870822739"/> for <img class="math" src="_images/math/0085bd02df6db56aa534cd450408e83811d7c8fe.png" alt="x_i = \pm 1.349406608602084"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.CrossLegTable">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">CrossLegTable</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.CrossLegTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cross-Leg-Table test objective function.</p>
+<p>This class defines the Cross-Leg-Table global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/9e80fcec9c87046a9ebbce8b629306ccc9253661.png" alt="f_{\text{CrossLegTable}}(\mathbf{x}) = - \frac{1}{\left(\left|{e^{\left|{100 - \frac{\sqrt{x_{1}^{2} + x_{2}^{2}}}{\pi}}\right|} \sin\left(x_{1}\right) \sin\left(x_{2}\right)}\right| + 1\right)^{0.1}}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Cross-Leg-Table function" src="_images/CrossLegTable.png" />
+<p class="caption"><strong>Two-dimensional Cross-Leg-Table function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/4fc3083ce816724e22dbb637cd12e47f32504981.png" alt="f(x_i) = -1"/>. The global minimum is found on the planes <img class="math" src="_images/math/a3dc3ecf2fcb08b3ca53e2f8a39760158a8a63a3.png" alt="x_1 = 0"/> and <img class="math" src="_images/math/05828ed4feb79128b2e290b0ec46e6fa8f16a5ab.png" alt="x_2 = 0"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.CrownedCross">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">CrownedCross</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.CrownedCross" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crowned Cross test objective function.</p>
+<p>This class defines the Crowned Cross global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/d67daadf3ec720eda4a35a3c57a2fdc778744c63.png" alt="f_{\text{CrownedCross}}(\mathbf{x}) = 0.0001 \left(\left|{e^{\left|{100- \frac{\sqrt{x_{1}^{2} + x_{2}^{2}}}{\pi}}\right|} \sin\left(x_{1}\right) \sin\left(x_{2}\right)}\right| + 1\right)^{0.1}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Crowned Cross function" src="_images/CrownedCross.png" />
+<p class="caption"><strong>Two-dimensional Crowned Cross function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/2e1aa68ad4a27552d5ac28ad62ae61e96f220ab5.png" alt="f(x_i) = 0.0001"/>. The global minimum is found on the planes <img class="math" src="_images/math/a3dc3ecf2fcb08b3ca53e2f8a39760158a8a63a3.png" alt="x_1 = 0"/> and <img class="math" src="_images/math/05828ed4feb79128b2e290b0ec46e6fa8f16a5ab.png" alt="x_2 = 0"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Csendes">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Csendes</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Csendes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Csendes test objective function.</p>
+<p>This class defines the Csendes global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/6650d8daa1463524b982efd049240b36a7c8a193.png" alt="f_{\text{Csendes}}(\mathbf{x}) = \sum_{i=1}^n x_i^6 \left[ 2 + \sin \left( \frac{1}{x_i} \right ) \right]"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/69d20098894c45659a72bd07f85a904ff6726b1e.png" alt="x_i \in [-1, 1]"/> for <img class="math" src="_images/math/0bbc84ad7cf66af0e4f33c3415a5be5caf83efbb.png" alt="i=1,...,N"/>.</p>
+<div class="figure align-center">
+<img alt="Csendes function" src="_images/Csendes.png" />
+<p class="caption"><strong>Two-dimensional Csendes function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/cd95f5af33014209054fd8efcac99754f0937c94.png" alt="f(x_i) = 0.0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/0bbc84ad7cf66af0e4f33c3415a5be5caf83efbb.png" alt="i=1,...,N"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Cube">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Cube</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Cube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cube test objective function.</p>
+<p>This class defines the Cube global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/5660adb4b6e1694bbdb3cc0b502c7b67216daa7c.png" alt="f_{\text{Cube}}(\mathbf{x}) = 100(x_2 - x_1^3)^2 + (1 - x1)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/0bbc84ad7cf66af0e4f33c3415a5be5caf83efbb.png" alt="i=1,...,N"/>.</p>
+<div class="figure align-center">
+<img alt="Cube function" src="_images/Cube.png" />
+<p class="caption"><strong>Two-dimensional Cube function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/cd95f5af33014209054fd8efcac99754f0937c94.png" alt="f(x_i) = 0.0"/> for <img class="math" src="_images/math/7dafdca30782528518941cafca8f36e16afc0d35.png" alt="\mathbf{x} = [1, 1]"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_B.html"
+                        title="previous chapter"> N-D Test Functions B</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_D.html"
+                        title="next chapter"> N-D Test Functions D</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_C.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_D.html" title="N-D Test Functions D"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_B.html" title="N-D Test Functions B"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions C</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

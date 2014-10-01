@@ -1,0 +1,27 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions Q:
+
+|test_functions| N-D Test Functions Q
+======================================
+
+
+
+.. autoclass:: go_benchmark.Qing
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Quadratic
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Quintic
+

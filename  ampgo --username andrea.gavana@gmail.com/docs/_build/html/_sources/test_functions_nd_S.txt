@@ -1,0 +1,189 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions S:
+
+|test_functions| N-D Test Functions S
+======================================
+
+
+
+.. autoclass:: go_benchmark.Salomon
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Sargan
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schaffer01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schaffer02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schaffer03
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schaffer04
+
+-----
+
+
+
+.. autoclass:: go_benchmark.SchmidtVetters
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel04
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel06
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel20
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel21
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel22
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel26
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Schwefel36
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Shekel05
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Shekel07
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Shekel10
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Shubert01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Shubert03
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Shubert04
+
+-----
+
+
+
+.. autoclass:: go_benchmark.SineEnvelope
+
+-----
+
+
+
+.. autoclass:: go_benchmark.SixHumpCamel
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Sodp
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Sphere
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Step
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Stochastic
+
+-----
+
+
+
+.. autoclass:: go_benchmark.StretchedV
+
+-----
+
+
+
+.. autoclass:: go_benchmark.StyblinskiTang
+

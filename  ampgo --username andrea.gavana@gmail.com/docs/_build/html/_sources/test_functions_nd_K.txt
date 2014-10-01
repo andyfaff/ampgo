@@ -1,0 +1,27 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions K:
+
+|test_functions| N-D Test Functions K
+======================================
+
+
+
+.. autoclass:: go_benchmark.Katsuura
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Keane
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Kowalik
+

@@ -1,0 +1,98 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _1-D test functions:
+
+|test_functions| 1-D Test Functions
+===================================
+
+
+.. autoclass:: go_benchmark.Problem02
+
+--------------
+
+.. autoclass:: go_benchmark.Problem03
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem04
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem05
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem06
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem07
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem08
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem09
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem10
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem11
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem12
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem13
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem14
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem15
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem18
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem20
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem21
+
+--------------
+
+
+.. autoclass:: go_benchmark.Problem22
+

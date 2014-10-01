@@ -1,0 +1,33 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions N:
+
+|test_functions| N-D Test Functions N
+======================================
+
+
+
+.. autoclass:: go_benchmark.NeedleEye
+
+-----
+
+
+
+.. autoclass:: go_benchmark.NewFunction01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.NewFunction02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.NewFunction03
+

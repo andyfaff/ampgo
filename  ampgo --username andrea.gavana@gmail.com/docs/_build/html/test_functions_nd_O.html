@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions O &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions P" href="test_functions_nd_P.html" />
+    <link rel="prev" title="N-D Test Functions N" href="test_functions_nd_N.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_P.html" title="N-D Test Functions P"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_N.html" title="N-D Test Functions N"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions O</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-o">
+<span id="n-d-test-functions-o"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions O<a class="headerlink" href="#test-functions-n-d-test-functions-o" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.OddSquare">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">OddSquare</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.OddSquare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Odd Square test objective function.</p>
+<p>This class defines the Odd Square global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/377c3efa151feb5ac482218d221205f410481144.png" alt="f_{\text{OddSquare}}(\mathbf{x}) = -e^{-\frac{d}{2\pi}} \cos(\pi d) \left( 1 + \frac{0.02h}{d + 0.01} \right )"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/a3e47ee52e313a22ab5f7d351951666fa88a20fc.png" alt="\begin{cases} d = n \cdot \smash{\displaystyle\max_{1 \leq i \leq n}} \left[ (x_i - b_i)^2 \right ] \\
+\\
+h = \sum_{i=1}^{n} (x_i - b_i)^2 \end{cases}"/></p>
+</div><p>And <img class="math" src="_images/math/93161555b77bbe8cdc27ee8ff162b93ce7382ba2.png" alt="\mathbf{b} = [1, 1.3, 0.8, -0.4, -1.3, 1.6, -0.2, -0.6, 0.5, 1.4, 1, 1.3, 0.8, -0.4, -1.3, 1.6, -0.2, -0.6, 0.5, 1.4]"/></p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/9ead79d48a1352d2714e209c28d941fefb44a04e.png" alt="x_i \in [-5 \pi, 5 \pi]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/> and <img class="math" src="_images/math/34602e888b7436e02a484f56b1f6139c7c407dd7.png" alt="n \leq 20"/>.</p>
+<div class="figure align-center">
+<img alt="Odd Square function" src="_images/OddSquare.png" />
+<p class="caption"><strong>Two-dimensional Odd Square function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/0269905ef54b5094320a1707ec20b7f12b6b12d5.png" alt="f(x_i) = -1.0084"/> for <img class="math" src="_images/math/6a93d0f3b7ced1f41fd05e1cd9fce0f13b212068.png" alt="\mathbf{x} \approx b"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_N.html"
+                        title="previous chapter"> N-D Test Functions N</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_P.html"
+                        title="next chapter"> N-D Test Functions P</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_O.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_P.html" title="N-D Test Functions P"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_N.html" title="N-D Test Functions N"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions O</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

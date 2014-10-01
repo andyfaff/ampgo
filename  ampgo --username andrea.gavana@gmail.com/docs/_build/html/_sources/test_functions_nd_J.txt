@@ -1,0 +1,21 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions J:
+
+|test_functions| N-D Test Functions J
+======================================
+
+
+
+.. autoclass:: go_benchmark.JennrichSampson
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Judge
+

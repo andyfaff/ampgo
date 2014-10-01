@@ -1,0 +1,81 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions B:
+
+|test_functions| N-D Test Functions B
+======================================
+
+
+
+.. autoclass:: go_benchmark.BartelsConn
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Beale
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Bird
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Bohachevsky
+
+-----
+
+
+
+.. autoclass:: go_benchmark.BoxBetts
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Branin01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Branin02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Brent
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Brown
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Bukin02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Bukin04
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Bukin06
+

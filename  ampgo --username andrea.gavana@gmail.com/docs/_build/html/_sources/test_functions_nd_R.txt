@@ -1,0 +1,57 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions R:
+
+|test_functions| N-D Test Functions R
+======================================
+
+
+
+.. autoclass:: go_benchmark.Rana
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Rastrigin
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Ripple01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Ripple25
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Rosenbrock
+
+-----
+
+
+
+.. autoclass:: go_benchmark.RosenbrockModified
+
+-----
+
+
+
+.. autoclass:: go_benchmark.RotatedEllipse01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.RotatedEllipse02
+

@@ -1,0 +1,431 @@
+.. currentmodule:: ampgo
+
+.. include:: headings.inc
+
+.. _AMPGO:
+
+================
+The AMPGO Solver
+================
+
+**AMPGO** stands for `Adaptive Memory Programming for Global Optimization`, and its detailed
+implementation is described in the paper "Adaptive Memory Programming for Constrained 
+Global Optimization" located here:
+
+http://leeds-faculty.colorado.edu/glover/fred%20pubs/416%20-%20AMP%20(TS)%20for%20Constrained%20Global%20Opt%20w%20Lasdon%20et%20al%20.pdf
+
+The following figure provides a pseudo-code description of the Tabu Tunneling algorithm, which
+is the basis of the global search in **AMPGO**:
+
+.. figure:: figures/pseudo_code.png
+   :align: center
+   :alt: AMPGO pseudo code
+
+   **AMPGO** Pseudo code - tabu tunnelling algorithm
+   
+|
+
+|python_logo| **AMPGO** Function Signature in Python
+====================================================
+
+The call signature of **AMPGO**'s Python implementation follows very closely the standard signature for 
+the minimization functions in the `scipy.optimize` package in `scipy <www.scipy.org>`_.
+
+.. function:: AMPGO(objfun, x0, args=(), local='L-BFGS-B', bounds=None, maxfunevals=None, totaliter=20, maxiter=5, glbtol=1e-5, eps1=0.02, eps2=0.1, tabulistsize=5, tabustrategy='farthest', fmin=-numpy.inf, disp=None)
+   :noindex:
+
+   Finds the global minimum of a function using the AMPGO (Adaptive Memory Programming for
+   Global Optimization) algorithm.
+
+   :param `objfun`: Function to be optimized, in the form ``f(x, *args)``.
+   :type `objfun`: callable
+   :param `args`: Additional arguments passed to `objfun`.
+   :type `args`: tuple
+   :param `local`: The local minimization method (e.g. ``"L-BFGS-B"``). It can be one of the available
+    `scipy` local solvers or `OpenOpt` solvers.
+   :type `local`: string
+   :param `bounds`: A list of tuples specifying the lower and upper bound for each independent variable
+    [(`xl0`, `xu0`), (`xl1`, `xu1`), ...]
+   :type `bounds`: list
+   :param `maxfunevals`: The maximum number of function evaluations allowed.
+   :type `maxfunevals`: integer
+   :param `totaliter`: The maximum number of global iterations allowed.
+   :type `totaliter`: integer
+   :param `maxiter`: The maximum number of `Tabu Tunnelling` iterations allowed during each global iteration.
+   :type `maxiter`: integer
+   :param `glbtol`: The optimization will stop if the absolute difference between the current minimum objective
+    function value and the provided global optimum (`fmin`) is less than `glbtol`.
+   :type `glbtol`: float
+   :param `eps1`: A constant used to define an aspiration value for the objective function during the Tunnelling phase.
+   :type `eps1`: float
+   :param `eps2`: Perturbation factor used to move away from the latest local minimum at the start of a Tunnelling phase.
+   :type `eps2`: float
+   :param `tabulistsize`: The size of the tabu search list (a circular list).
+   :type `tabulistsize`: integer
+   :param `tabustrategy`: The strategy to use when the size of the tabu list exceeds `tabulistsize`. It can be
+    'oldest' to drop the oldest point from the tabu list or 'farthest' to drop the element farthest from
+    the last local minimum found.
+   :type `tabustrategy`: string
+   :param `fmin`: If known, the objective function global optimum value.
+   :type `fmin`: float
+   :param `disp`: If zero or defaulted, then no output is printed on screen. If a positive number, then status
+    messages are printed.
+   :type `disp`: integer
+
+   :returns: A tuple of 5 elements, in the following order:
+
+    1. **best_x** (`array_like`): the estimated position of the global minimum.
+    2. **best_f** (`float`): the value of `objfun` at the minimum.
+    3. **evaluations** (`integer`): the number of function evaluations.
+    4. **msg** (`string`): a message describes the cause of the termination.
+    5. **tunnel_info** (`tuple`): a tuple containing the total number of Tunnelling phases performed and the
+       successful ones.
+
+   :rtype: `tuple`
+
+
+|
+
+|sensitivity| Sensitivities on the **AMPGO** Input Parameters
+=============================================================
+
+This sections presents a number of sensitivities on the **AMPGO** input parameters, which may be helpful in guiding
+the choice of the parameters themselves depending on the difficulty of the optimization problem at hand. The most
+fundamental argument is evidently the local solver, followed by the maximum number of `Tabu Tunnelling` iterations
+allowed and the length of the list containing the "tabu points" (i.e., the previous local minima found by the method).
+
+
+The Local Solver
+----------------
+
+The **AMPGO** Python implementation supports a number of local solvers, from `scipy <http://www.scipy.org>`_ and
+`OpenOpt <http://www.openopt.org/>`_ . The available solvers can be categorized as follows:
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: Scipy-related local solvers supported by **AMPGO**
+
+    +---------------------+---------------------------------------------+
+    | Scipy Solver        | Description                                 |
+    +=====================+=============================================+
+    | Nelder-Mead         | Downhill Simplex algorithm                  |
+    +---------------------+---------------------------------------------+
+    | L-BFGS-B            | L-BFGS-B algorithm                          |
+    +---------------------+---------------------------------------------+
+    | Powell              | Powell's conjugate direction method         |
+    +---------------------+---------------------------------------------+
+    | SLSQP               | Sequential Least Squares Programming        |
+    +---------------------+---------------------------------------------+
+    | TNC                 | Truncated Newton algorithm                  |
+    +---------------------+---------------------------------------------+
+
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: OpenOpt-related local solvers supported by **AMPGO**
+
+    +---------------------+---------------------------------------------+
+    | OpenOpt Solver      | Description                                 |
+    +=====================+=============================================+
+    | AUGLAG              | Augmented Lagrangian method                 |
+    +---------------------+---------------------------------------------+
+    | BOBYQA              | Powell's derivative-free method             |
+    +---------------------+---------------------------------------------+
+    | MMA                 | Method of moving asymptotes                 |
+    +---------------------+---------------------------------------------+
+    | PTN                 | Preconditioned truncated Newton method      |
+    +---------------------+---------------------------------------------+
+    | RALG                | R-algorithm with adaptive space dilation    |
+    +---------------------+---------------------------------------------+
+    | SLMVM2              | Shifted limited-memory variable-metric      |
+    +---------------------+---------------------------------------------+
+    | SQLCP               | Sequential Quadratic Programming            |
+    +---------------------+---------------------------------------------+
+
+|
+
+I applied **AMPGO** to the entire benchmark suite of N-D optimization problems, considering
+for every benchmark function 100 random starting points. As there are currently 12 local solvers
+supported by **AMPGO**, I re-run the same suite 12 times changing the local solver.
+
+The results obtained are shown in the following table:
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: Sensitivity on **AMPGO** local solvers
+
+    +---------------------+---------------------+-----------------------+
+    | Optimization Method | Overall Success (%) | Functions Evaluations |
+    +=====================+=====================+=======================+
+    | AUGLAG              | 57.957              | 1633                  |
+    +---------------------+---------------------+-----------------------+
+    | BOBYQA              | 70.418              | 813                   |
+    +---------------------+---------------------+-----------------------+
+    | L-BFGS-B            | 79.027              | 611                   |
+    +---------------------+---------------------+-----------------------+
+    | MMA                 | 57.489              | 1656                  |
+    +---------------------+---------------------+-----------------------+
+    | Nelder-Mead         | 65.587              | 1008                  |
+    +---------------------+---------------------+-----------------------+
+    | Powell              | 63.636              | 1248                  |
+    +---------------------+---------------------+-----------------------+
+    | PTN                 | 60.777              | 1042                  |
+    +---------------------+---------------------+-----------------------+
+    | RALG                | 64.565              | 952                   |
+    +---------------------+---------------------+-----------------------+
+    | SLMVM2              | 67.054              | 861                   |
+    +---------------------+---------------------+-----------------------+
+    | SLSQP               | 65.484              | 3039                  |
+    +---------------------+---------------------+-----------------------+
+    | SQLCP               | 46.902              | 1231                  |
+    +---------------------+---------------------+-----------------------+
+    | TNC                 | 63.804              | 861                   |
+    +---------------------+---------------------+-----------------------+
+
+
+|
+
+So, for example, **AMPGO** with ``L-BFGS-B`` local solver was able to solve, on average, 79.0% of all the test functions for
+all the 100 random starting points using, on average, 611 functions evaluations. This is also shown graphically in
+the picture below.
+
+|
+
+.. figure:: figures/solvers_sensitivity.png
+   :align: center
+   :alt: AMPGO local solvers sensitivity
+
+   **AMPGO** - Local solvers sensitivity
+
+|
+
+
+Number of Tabu Tunnelling Phases (`maxiter`)
+--------------------------------------------
+
+One of the parameters you can supply to the **AMPGO** optimization routine is the maximum number of `Tabu Tunnelling`
+iterations allowed during each global iteration (`maxiter`). Once a local minimum is found, **AMPGO** will start
+a Tunnelling phase to try and move away from this local optimum; if no better point is found, it will start again
+from another point and try to move away from this local minimum. It will do so for `maxiter` times.
+
+The table below highlights the various experiments I have run by applying **AMPGO** to the entire benchmark suite
+of N-D optimization problems, considering for every benchmark function 100 random starting points.
+The `maxiter` parameter has been allowed to range between 1 and 8, but the results are inconclusive: 2 seems to be
+the absolute minimum to get a higher level of global convergence, but then there isn't much of a difference between
+choosing `maxiter=3` and `maxiter=8`.
+
+The results obtained are shown in the following table:
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: Sensitivity on the number of Tabu Tunnelling phases
+
+    +------------------------+---------------------+-----------------------+
+    | Tabu Tunnelling Phases | Overall Success (%) | Functions Evaluations |
+    +========================+=====================+=======================+
+    | 1                      | 76.783              | 635                   |
+    +------------------------+---------------------+-----------------------+
+    | 2                      | 78.837              | 607                   |
+    +------------------------+---------------------+-----------------------+
+    | 3                      | 78.875              | 615                   |
+    +------------------------+---------------------+-----------------------+
+    | 4                      | 78.685              | 619                   |
+    +------------------------+---------------------+-----------------------+
+    | 5                      | 79.027              | 611                   |
+    +------------------------+---------------------+-----------------------+
+    | 6                      | 78.864              | 625                   |
+    +------------------------+---------------------+-----------------------+
+    | 7                      | 78.750              | 623                   |
+    +------------------------+---------------------+-----------------------+
+    | 8                      | 78.647              | 635                   |
+    +------------------------+---------------------+-----------------------+
+
+|
+
+The results appear slightly more interesting if we remove from the analysis all the N-D benchmark functions for which
+**AMPGO** achieved global convergence irrespectively of the number of Tabu Tunnelling phases. This information is
+condensed in the following table:
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: Sensitivity on the number of Tabu Tunnelling phases
+
+    +------------------------+---------------------+-----------------------+
+    | Tabu Tunnelling Phases | Overall Success (%) | Functions Evaluations |
+    +========================+=====================+=======================+
+    | 1                      | 49.143              | 1319                  |
+    +------------------------+---------------------+-----------------------+
+    | 2                      | 53.643              | 1256                  |
+    +------------------------+---------------------+-----------------------+
+    | 3                      | 53.726              | 1274                  |
+    +------------------------+---------------------+-----------------------+
+    | 4                      | 53.310              | 1281                  |
+    +------------------------+---------------------+-----------------------+
+    | 5                      | 54.060              | 1262                  |
+    +------------------------+---------------------+-----------------------+
+    | 6                      | 53.702              | 1292                  |
+    +------------------------+---------------------+-----------------------+
+    | 7                      | 53.452              | 1288                  |
+    +------------------------+---------------------+-----------------------+
+    | 8                      | 53.226              | 1315                  |
+    +------------------------+---------------------+-----------------------+
+
+|
+
+The above results are also shown graphically in the next figure; all in all, the default choice of `maxiter=5` in
+the **AMPGO** code appears to be a sensible one.
+
+|
+
+.. figure:: figures/maxiter_sensitivity.png
+   :align: center
+   :alt: AMPGO Number of tabu tunnelling phases sensitivity
+
+   **AMPGO** - Number of tabu tunnelling phases sensitivity
+
+|
+
+Size of the Tabu List (`tabulistsize`)
+--------------------------------------
+
+Another parameter you can supply to the **AMPGO** optimization routine is the maximum size of the `Tabu List`, which
+is a list containing the latest `tabulistsize` local minima found by the optimizer. This is a list of
+points from which to move away, including both the most recent local solution of the original minimization problem,
+and recent solutions of tunneling sub-problems which failed to achieve the desired condition.
+
+The table below highlights the various experiments I have run by applying **AMPGO** to the entire benchmark suite
+of N-D optimization problems, considering for every benchmark function 100 random starting points.
+
+The `tabulistsize` parameter has been allowed to range between 2 and 8, but again the results are inconclusive: There
+appear to be little difference between choosing 2 over 8, even though for real-life problems (with many local minima)
+I would suggest to keep the `tabulistsize` number greater than 2.
+
+The results obtained are shown in the following table:
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: Sensitivity on the size of the tabu list
+
+    +----------------+---------------------+-----------------------+
+    | Tabu List Size | Overall Success (%) | Functions Evaluations |
+    +================+=====================+=======================+
+    | 2              | 77.272              | 633                   |
+    +----------------+---------------------+-----------------------+
+    | 3              | 78.652              | 626                   |
+    +----------------+---------------------+-----------------------+
+    | 4              | 78.880              | 618                   |
+    +----------------+---------------------+-----------------------+
+    | 5              | 79.027              | 611                   |
+    +----------------+---------------------+-----------------------+
+    | 6              | 79.190              | 620                   |
+    +----------------+---------------------+-----------------------+
+    | 7              | 79.114              | 617                   |
+    +----------------+---------------------+-----------------------+
+    | 8              | 79.527              | 604                   |
+    +----------------+---------------------+-----------------------+
+
+|
+
+Again, removing from the analysis all the N-D benchmark functions for which **AMPGO** achieved global convergence
+irrespectively of the size of the tabu list shows some more interesting trend, as depicted in the following table:
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: Sensitivity on the size of the tabu list
+
+    +----------------+---------------------+-----------------------+
+    | Tabu List Size | Overall Success (%) | Functions Evaluations |
+    +================+=====================+=======================+
+    | 2              | 53.011              | 1243                  |
+    +----------------+---------------------+-----------------------+
+    | 3              | 55.865              | 1232                  |
+    +----------------+---------------------+-----------------------+
+    | 4              | 56.337              | 1217                  |
+    +----------------+---------------------+-----------------------+
+    | 5              | 56.640              | 1202                  |
+    +----------------+---------------------+-----------------------+
+    | 6              | 56.978              | 1223                  |
+    +----------------+---------------------+-----------------------+
+    | 7              | 56.820              | 1215                  |
+    +----------------+---------------------+-----------------------+
+    | 8              | 57.674              | 1190                  |
+    +----------------+---------------------+-----------------------+
+
+|
+
+The above results are also shown graphically in the next figure; all in all, it appears that choosing a high enough
+size of the tabu list slightly improves the optimization results.
+
+|
+
+.. figure:: figures/tabulistsize_sensitivity.png
+   :align: center
+   :alt: AMPGO Size of the tabu list sensitivity
+
+   **AMPGO** - Size of the tabu list sensitivity
+
+|
+
+Tabu List Strategy (`tabustrategy`)
+-----------------------------------
+
+Another parameter you can supply to the **AMPGO** optimization routine is the `Tabu List` strategy, which
+is the strategy to use when the size of the tabu list exceeds `tabulistsize`. It can be
+'oldest' to drop the oldest point from the tabu list or 'farthest' to drop the element farthest from
+the last local minimum found.
+
+The table below highlights the various experiments I have run by applying **AMPGO** to the entire benchmark suite
+of N-D optimization problems, considering for every benchmark function 100 random starting points.
+
+The `tabustrategy` parameter has been allowed to range between 'oldest' and 'farthest'.
+
+The results obtained are shown in the following table:
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: Sensitivity on the `tabustrategy` parameter
+
+    +---------------+---------------------+-----------------------+
+    | Tabu Strategy | Overall Success (%) | Functions Evaluations |
+    +===============+=====================+=======================+
+    | farthest      | 79.027              | 611                   |
+    +---------------+---------------------+-----------------------+
+    | oldest        | 78.750              | 630                   |
+    +---------------+---------------------+-----------------------+
+
+|
+
+This time, removing from the analysis all the N-D benchmark functions for which **AMPGO** achieved global convergence
+irrespectively of the `tabustrategy` value shows very little difference between the two strategies, so any user's
+choice should be sensible in this respect.
+
+|
+
+.. cssclass:: pretty-table
+
+.. table:: Sensitivity on the `tabustrategy` parameter
+
+    +---------------+---------------------+-----------------------+
+    | Tabu Strategy | Overall Success (%) | Functions Evaluations |
+    +===============+=====================+=======================+
+    | farthest      | 50.526              | 1347                  |
+    +---------------+---------------------+-----------------------+
+    | oldest        | 49.872              | 1390                  |
+    +---------------+---------------------+-----------------------+
+

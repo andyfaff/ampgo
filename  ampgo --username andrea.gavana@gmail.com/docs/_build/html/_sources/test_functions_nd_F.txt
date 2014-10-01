@@ -1,0 +1,15 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions F:
+
+|test_functions| N-D Test Functions F
+======================================
+
+
+
+.. autoclass:: go_benchmark.FreudensteinRoth
+

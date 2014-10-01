@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions U &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions V" href="test_functions_nd_V.html" />
+    <link rel="prev" title="N-D Test Functions T" href="test_functions_nd_T.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_V.html" title="N-D Test Functions V"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_T.html" title="N-D Test Functions T"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions U</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-u">
+<span id="n-d-test-functions-u"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions U<a class="headerlink" href="#test-functions-n-d-test-functions-u" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.Ursem01">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Ursem01</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Ursem01" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ursem 1 test objective function.</p>
+<p>This class defines the Ursem 1 global optimization problem. This 
+is a unimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/939abbc9218075fd3afc41cac6d19f463975c79a.png" alt="f_{\text{Ursem01}}(\mathbf{x}) = - \sin(2x_1 - 0.5 \pi) - 3 \cos(x_2) - 0.5x_1"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/69603cd07bd82a424c482930373352d2f9f8b9d3.png" alt="x_1 \in [-2.5, 3]"/>, <img class="math" src="_images/math/9217e1eab45a4763bba67af221a49dd040b53d7b.png" alt="x_2 \in [-2, 2]"/>.</p>
+<div class="figure align-center">
+<img alt="Ursem 1 function" src="_images/Ursem01.png" />
+<p class="caption"><strong>Two-dimensional Ursem 1 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/a1bc0d89aa679d0ea093e2e3bc9f184d3fbf0d9c.png" alt="f(x_i) = -4.8168"/> for <img class="math" src="_images/math/bebab4683be9d26ce3b1d3f505bd8214ce19ab4c.png" alt="\mathbf{x} = [1.69714, 0.0]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Ursem03">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Ursem03</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Ursem03" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ursem 3 test objective function.</p>
+<p>This class defines the Ursem 3 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/23011c52bbfd25bcc60c333a41f0190fa20d8275.png" alt="f_{\text{Ursem03}}(\mathbf{x}) = - \sin(2.2 \pi x_1 + 0.5 \pi) \frac{2 - \lvert x_1 \rvert}{2} \frac{3 - \lvert x_1 \rvert}{2} - \sin(2.2 \pi x_2 + 0.5 \pi) \frac{2 - \lvert x_2 \rvert}{2} \frac{3 - \lvert x_2 \rvert}{2}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/b8015ed2833b045f624a5d328834954a1654fa1f.png" alt="x_1 \in [-2, 2]"/>, <img class="math" src="_images/math/4fbb6c96a8e6f78a4276b1d597d9777d441c380d.png" alt="x_2 \in [-1.5, 1.5]"/>.</p>
+<div class="figure align-center">
+<img alt="Ursem 3 function" src="_images/Ursem03.png" />
+<p class="caption"><strong>Two-dimensional Ursem 3 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/e537f7d422fbcabdd123e5315c3e543d61660a64.png" alt="f(x_i) = -3"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Ursem04">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Ursem04</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Ursem04" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ursem 4 test objective function.</p>
+<p>This class defines the Ursem 4 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/ba2888e100e45e795c575a6c1119bf3f6d9d4d99.png" alt="f_{\text{Ursem04}}(\mathbf{x}) = -3 \sin(0.5 \pi x_1 + 0.5 \pi) \frac{2 - \sqrt{x_1^2 + x_2 ^ 2}}{4}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/3220cc226a0abf06f00e70257db97b5c754120f7.png" alt="x_i \in [-2, 2]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Ursem 4 function" src="_images/Ursem04.png" />
+<p class="caption"><strong>Two-dimensional Ursem 4 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/13cb9ea8975ad44a14d2f4ae884e6dcd336dcc7a.png" alt="f(x_i) = -1.5"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.UrsemWaves">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">UrsemWaves</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.UrsemWaves" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ursem Waves test objective function.</p>
+<p>This class defines the Ursem Waves global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/18e950b5e64b56ac04ed4c2b6a0165a93daa143f.png" alt="f_{\text{UrsemWaves}}(\mathbf{x}) = -0.9x_1^2 + (x_2^2 - 4.5x_2^2)x_1x_2 + 4.7 \cos \left[ 2x_1 - x_2^2(2 + x_1) \right ] \sin(2.5 \pi x_1)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/967f44a5282ef8f67b47dc9043d2620efecc0297.png" alt="x_1 \in [-0.9, 1.2]"/>, <img class="math" src="_images/math/a3942a3d02a52ef92edc194d8dc6ae3fe5f6f24d.png" alt="x_2 \in [-1.2, 1.2]"/>.</p>
+<div class="figure align-center">
+<img alt="Ursem Waves function" src="_images/UrsemWaves.png" />
+<p class="caption"><strong>Two-dimensional Ursem Waves function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/590185dbfbe96ff9e595f56683c7dc0669a0b14f.png" alt="f(x_i) = -8.5536"/> for <img class="math" src="_images/math/27dd15dc8f47dc5d1a4735ac76ef0a564d1462cc.png" alt="x_i = 1.2"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_T.html"
+                        title="previous chapter"> N-D Test Functions T</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_V.html"
+                        title="next chapter"> N-D Test Functions V</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_U.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_V.html" title="N-D Test Functions V"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_T.html" title="N-D Test Functions T"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions U</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

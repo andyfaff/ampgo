@@ -1,0 +1,338 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Global Optimization Benchmarks and AMPGO &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="#" />
+    <link rel="next" title="The AMPGO Solver" href="ampgo.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ampgo.html" title="The AMPGO Solver"
+             accesskey="N">next</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> Global Optimization Benchmarks and <strong>AMPGO</strong></li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="infinity-global-optimization-benchmarks-and-ampgo">
+<h1><img alt="infinity" class="align-middle" src="_images/infinity77.png" style="width: 32px;" /> Global Optimization Benchmarks and <strong>AMPGO</strong><a class="headerlink" href="#infinity-global-optimization-benchmarks-and-ampgo" title="Permalink to this headline">¶</a></h1>
+<p><strong>AMPGO</strong> stands for <cite>Adaptive Memory Programming for Global Optimization</cite>, an algorithm I
+found on the web and I implemented in Python.</p>
+<p>A generic and basic description of the algorithm, together with a number of sensitivities on
+the input parameters for the Python function, are described in the dedicated <a class="reference internal" href="ampgo.html#ampgo"><em>The AMPGO Solver</em></a> page.</p>
+<div class="section" id="introduction-introduction">
+<h2><img alt="introduction" class="align-middle" src="_images/introduction.png" style="width: 32px;" /> Introduction<a class="headerlink" href="#introduction-introduction" title="Permalink to this headline">¶</a></h2>
+<p>These HTML pages contain a series of benchmarks to test a number of numerical Global
+Optimization algorithms; the algorithms are applied to multi-modal/difficult
+univariate and multi-dimensional test functions.</p>
+</div>
+<div class="section" id="motivation-motivation">
+<h2><img alt="motivation" class="align-middle" src="_images/motivation.png" style="width: 32px;" /> Motivation<a class="headerlink" href="#motivation-motivation" title="Permalink to this headline">¶</a></h2>
+<p>This effort stems from the fact that I got fed up with the current attitude of most
+mathematicians/numerical optimization experts, who tend to demonstrate the advantages of
+an algorithm based on &#8220;elapsed time&#8221; or &#8220;CPU time&#8221; or similar meaningless performance
+indicators.</p>
+<p>I deal with real-life optimization problems, as most of us do.</p>
+<p>Most real life optimization problems require intensive and time consuming simulations
+for every <strong>function evaluation</strong>; the time spent by the solver itself doing its
+calculations simply disappears in front of the real process simulation. I know it because
+our simulations take between 2 and 48 hours to run, so what&#8217;s 300 seconds more or less in
+the solver calculations?</p>
+</div>
+<div class="section" id="rules-the-rules">
+<span id="the-rules"></span><h2><img alt="rules" class="align-middle" src="_images/rules.png" style="width: 32px;" /> The Rules<a class="headerlink" href="#rules-the-rules" title="Permalink to this headline">¶</a></h2>
+<p>In order to be eligible for the competition, a Global Optimization algorithm <strong>must</strong> satisfy
+the following constraints:</p>
+<ol class="arabic">
+<li><p class="first">It should run on my PCs, equipped with Windows 7 64 bit and Python 2.7 64 bit. This means
+that the algorithm should be coded in pure Python, or the developer should provide a
+Windows installer, or it should be of easy compilation using standard Python tools plus
+Visual Studio, Intel Fortran and <a class="reference external" href="http://www.scipy.org/F2py">f2py</a>.</p>
+<p>See <a class="reference internal" href="#the-great-excluded"><em> The Great Excluded</em></a> section for a few examples of algorithms written by people
+living in their dream world.</p>
+</li>
+<li><p class="first">No gradient-based procedures allowed: the problems I deal with in real life are so
+horrendously complex that you can&#8217;t even mention the word &#8220;gradient&#8221;.
+Derivative-free algorithms only.</p>
+</li>
+<li><p class="first">No unconstrained optimization routines allowed: I mostly care about box-bounded problems,
+so the algorithm should support bounds on independent variables as a minimum condition
+for eligibility.</p>
+</li>
+</ol>
+<p>The test suite is executed in the following manner:</p>
+<ol class="arabic">
+<li><p class="first">Every optimization algorithm is fed with all the test functions, using 100 different random
+starting points. For any test function, the starting point is the same for all the
+algorithms.</p>
+<p>Benchmark repeatability is enforced through the use of the same random seed every time the
+test suite is run.</p>
+</li>
+<li><p class="first">No tuning of parameters is allowed: all the algorithms have been run with their default
+settings, irrespective of the dimensionality of the problem, the starting point or any
+other consideration.</p>
+</li>
+<li><p class="first">The maximum number of function evaluations is set to <strong>2,000</strong>, irrespective of the algorithm,
+the dimensionality of the problem, the starting point or any other consideration.
+This is non-negotiable.</p>
+<p>If this limit is exceeded, the test is considered as &#8220;failed&#8221;. Otherwise the number of function
+evaluations reported by the algorithm is recorded for later statistical analysis.</p>
+</li>
+<li><p class="first">All the test functions have known global optimum values: I considered an algorithm to be
+successful if:</p>
+<div class="math">
+<p><img src="_images/math/018cbce7b6673b9fb1bef8a950d188a6c0fd46b3.png" alt="\lvert F_{known \hspace{3pt} minimum} - F_{algorithm \hspace{3pt} minimum} \rvert \leq 10^{-6}"/></p>
+</div><p>While still respecting the condition at point (2).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="test-functions-test-functions">
+<h2><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> Test Functions<a class="headerlink" href="#test-functions-test-functions" title="Permalink to this headline">¶</a></h2>
+<p>All the test functions have been taken from the mathematical literature on Global Optimization.
+The test suite currently contains:</p>
+<ol class="arabic simple">
+<li>18 one-dimensional test functions with multiple local/global minima;</li>
+<li>184 multivariate problems (where the number of independent variables ranges from 2 to 17),
+again with multiple local/global minima.</li>
+</ol>
+<p>The index of the test function is in <a class="reference internal" href="test_functions.html#test-functions-index"><em> Test Functions Index</em></a> page: as the list is quite large,
+their definition has been split into multiple pages using the first letter of their name.
+Whenever possible, a 2D or 3D plot of the test function has been provided.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you wish to contribute to the test suite (i.e., to add a new benchmark problem), please
+do send me an email to <a class="reference external" href="mailto:andrea&#46;gavana&#37;&#52;&#48;gmail&#46;com">andrea<span>&#46;</span>gavana<span>&#64;</span>gmail<span>&#46;</span>com</a>, I&#8217;ll integrate your contribution with due
+credits and I will re-run the algorithms comparison.</p>
+</div>
+</div>
+<div class="section" id="excluded-the-great-excluded">
+<span id="the-great-excluded"></span><h2><img alt="excluded" class="align-middle" src="_images/excluded.png" style="width: 32px;" /> The Great Excluded<a class="headerlink" href="#excluded-the-great-excluded" title="Permalink to this headline">¶</a></h2>
+<p>This section presents a (possibly incomplete) list of algorithms/libraries that have been
+excluded from the benchmark competition, as they do not comply with one or more of the rules
+spelled out in <a class="reference internal" href="#the-rules"><em> The Rules</em></a> section.</p>
+<ol class="arabic">
+<li><p class="first"><strong>ALGENCAN</strong>: praised by many for its robustness and convergence qualities, you can get a
+copy of the source code from here:</p>
+<p><a class="reference external" href="http://www.ime.usp.br/~egbirgin/tango/codes.php">http://www.ime.usp.br/~egbirgin/tango/codes.php</a></p>
+<p>Unfortunately, no Windows installer is available and the code is not easily compilable on Windows.</p>
+<p>Fail.</p>
+</li>
+<li><p class="first"><strong>PyGMO</strong>: based on the C++ code of PaGMO, it contains a lot of different optimizers and seems
+very promising:</p>
+<p><a class="reference external" href="http://pagmo.sourceforge.net/pygmo/index.html">http://pagmo.sourceforge.net/pygmo/index.html</a></p>
+<p>Unfortunately, the Windows version is 32 bit-only, and compilation seems to be a
+<a class="reference external" href="http://sourceforge.net/mailarchive/message.php?msg_id=28542939">very problematic matter</a>.</p>
+<p>Fail.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="algorithms-tested-algorithms">
+<h2><img alt="algorithms" class="align-middle" src="_images/algorithms.png" style="width: 32px;" /> Tested Algorithms<a class="headerlink" href="#algorithms-tested-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>I have tried a number of global optimization algorithms on the entire set of benchmarks,
+considering <strong>bound constrained problems only</strong>, and specifically the following ones:</p>
+<ol class="arabic">
+<li><p class="first"><strong>AMPGO</strong>: Adaptive Memory Programming for Global Optimization: this is my Python
+implementation of the algorithm described here:</p>
+<p><a class="reference external" href="http://leeds-faculty.colorado.edu/glover/fred%20pubs/416%20-%20AMP%20(TS)%20for%20Constrained%20Global%20Opt%20w%20Lasdon%20et%20al%20.pdf">http://leeds-faculty.colorado.edu/glover/fred%20pubs/416%20-%20AMP%20(TS)%20for%20Constrained%20Global%20Opt%20w%20Lasdon%20et%20al%20.pdf</a></p>
+<p>I have added a few improvements here and there based on my Master Thesis work on the standard
+Tunnelling Algorithm of Levy, Montalvo and Gomez. A generic and basic description of the algorithm,
+together with a number of sensitivities on the input parameters for the Python function, are
+described in the dedicated <a class="reference internal" href="ampgo.html#ampgo"><em>The AMPGO Solver</em></a> page.</p>
+</li>
+<li><p class="first"><strong>BasinHopping</strong>: Basin hopping is a random algorithm which attempts to find the global minimum
+of a smooth scalar function of one or more variables. The algorithm was originally described by
+David Wales:</p>
+<p><a class="reference external" href="http://www-wales.ch.cam.ac.uk/">http://www-wales.ch.cam.ac.uk/</a></p>
+</li>
+<li><p class="first"><strong>CMA-ES</strong>: Covariance Matrix Adaptation Evolution Strategy, based on the following algorithm:</p>
+<p><a class="reference external" href="http://www.lri.fr/~hansen/cmaesintro.html">http://www.lri.fr/~hansen/cmaesintro.html</a></p>
+<p><a class="reference external" href="http://www.lri.fr/~hansen/cmaes_inmatlab.html#python">http://www.lri.fr/~hansen/cmaes_inmatlab.html#python</a> (Python code for the algorithm)</p>
+</li>
+<li><p class="first"><strong>CRS2</strong>: Controlled Random Search with Local Mutation, as implemented in the
+<a class="reference external" href="http://ab-initio.mit.edu/wiki/index.php/NLopt">NLOpt</a> package:</p>
+<p><a class="reference external" href="http://ab-initio.mit.edu/wiki/index.php/NLopt_Algorithms#Controlled_Random_Search_.28CRS.29_with_local_mutation">http://ab-initio.mit.edu/wiki/index.php/NLopt_Algorithms#Controlled_Random_Search_.28CRS.29_with_local_mutation</a></p>
+</li>
+<li><p class="first"><strong>DE</strong>: Differential Evolution, described in the following page:</p>
+<p><a class="reference external" href="http://www1.icsi.berkeley.edu/~storn/code.html">http://www1.icsi.berkeley.edu/~storn/code.html</a></p>
+<p>The Python algorithm is implemented in <a class="reference external" href="http://openopt.org">OpenOpt</a>.</p>
+</li>
+<li><p class="first"><strong>DIRECT</strong>: the DIviding RECTangles procedure, described in:</p>
+<p><a class="reference external" href="https://www.tol-project.org/export/2776/tolp/OfficialTolArchiveNetwork/NonLinGloOpt/doc/DIRECT_Lipschitzian%20optimization%20without%20the%20lipschitz%20constant.pdf">https://www.tol-project.org/export/2776/tolp/OfficialTolArchiveNetwork/NonLinGloOpt/doc/DIRECT_Lipschitzian%20optimization%20without%20the%20lipschitz%20constant.pdf</a></p>
+<p><a class="reference external" href="http://ab-initio.mit.edu/wiki/index.php/NLopt_Algorithms#DIRECT_and_DIRECT-L">http://ab-initio.mit.edu/wiki/index.php/NLopt_Algorithms#DIRECT_and_DIRECT-L</a> (Python code for the algorithm)</p>
+</li>
+<li><p class="first"><strong>Firefly</strong>: the Firefly algorithm, this is my Python implementation of the procedure described here:</p>
+<p><a class="reference external" href="http://www.mathworks.com/matlabcentral/fileexchange/29693-firefly-algorithm">http://www.mathworks.com/matlabcentral/fileexchange/29693-firefly-algorithm</a></p>
+</li>
+<li><p class="first"><strong>Galileo</strong>: Genetic Algorithm-based optimization solver. The Python algorithm is implemented in <a class="reference external" href="http://openopt.org">OpenOpt</a>.</p>
+</li>
+<li><p class="first"><strong>MLSL</strong>: Multi-Level Single Linkage algorithm, implemented in <a class="reference external" href="http://ab-initio.mit.edu/wiki/index.php/NLopt">NLOpt</a>
+and described here:</p>
+<p><a class="reference external" href="http://ab-initio.mit.edu/wiki/index.php/NLopt_Algorithms#MLSL_.28Multi-Level_Single-Linkage.29">http://ab-initio.mit.edu/wiki/index.php/NLopt_Algorithms#MLSL_.28Multi-Level_Single-Linkage.29</a></p>
+</li>
+<li><p class="first"><strong>PSWARM</strong>: Particle Swarm optimization algorithm, it has been described in many online papers.
+I have used the version available in <a class="reference external" href="http://openopt.org">OpenOpt</a>, via a previous
+compilation of the C source code from:</p>
+<p><a class="reference external" href="http://www.norg.uminho.pt/aivaz/pswarm/">http://www.norg.uminho.pt/aivaz/pswarm/</a></p>
+</li>
+<li><p class="first"><strong>SCE</strong>: Shuffled Complex Evolution, described in:</p>
+<p>Duan, Q., S. Sorooshian, and V. Gupta,
+Effective and efficient global optimization for conceptual rainfall-runoff models, Water Resour. Res., 28, 1015-1031, 1992.</p>
+<p>The version I used was graciously made available by Matthias Cuntz via a personal e-mail.</p>
+</li>
+<li><p class="first"><strong>SIMANN</strong>: The <cite>scipy</cite> version of Simulated Annealing, which can be found in <cite>scipy.optimize.anneal</cite>.
+Some docs here:</p>
+<p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.anneal.html">http://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.anneal.html</a></p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please feel free to contact me if you think I have missed one (or more) algorithm/library, or
+if you have a procedure you would like to benchmark against. Do send me an email to
+<a class="reference external" href="mailto:andrea&#46;gavana&#37;&#52;&#48;gmail&#46;com">andrea<span>&#46;</span>gavana<span>&#64;</span>gmail<span>&#46;</span>com</a>, I&#8217;ll integrate your contribution with due credits and I will re-run
+the algorithms comparison.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+<div class="section" id="indices-indices-and-tables">
+<h1><img alt="indices" class="align-middle" src="_images/indices.png" style="width: 32px;" /> Indices and tables<a class="headerlink" href="#indices-indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"> Global Optimization Benchmarks and <strong>AMPGO</strong></a><ul>
+<li><a class="reference internal" href="#introduction-introduction"> Introduction</a></li>
+<li><a class="reference internal" href="#motivation-motivation"> Motivation</a></li>
+<li><a class="reference internal" href="#rules-the-rules"> The Rules</a></li>
+<li><a class="reference internal" href="#test-functions-test-functions"> Test Functions</a></li>
+<li><a class="reference internal" href="#excluded-the-great-excluded"> The Great Excluded</a></li>
+<li><a class="reference internal" href="#algorithms-tested-algorithms"> Tested Algorithms</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-indices-and-tables"> Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ampgo.html"
+                        title="next chapter">The AMPGO Solver</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ampgo.html" title="The AMPGO Solver"
+             >next</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> Global Optimization Benchmarks and <strong>AMPGO</strong></li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

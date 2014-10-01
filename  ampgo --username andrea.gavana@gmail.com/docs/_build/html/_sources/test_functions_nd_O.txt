@@ -1,0 +1,15 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions O:
+
+|test_functions| N-D Test Functions O
+======================================
+
+
+
+.. autoclass:: go_benchmark.OddSquare
+

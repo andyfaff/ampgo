@@ -1,0 +1,105 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions P:
+
+|test_functions| N-D Test Functions P
+======================================
+
+
+
+.. autoclass:: go_benchmark.Parsopoulos
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Pathological
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Paviani
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Penalty01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Penalty02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.PenHolder
+
+-----
+
+
+
+.. autoclass:: go_benchmark.PermFunction01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.PermFunction02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Pinter
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Plateau
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Powell
+
+-----
+
+
+
+.. autoclass:: go_benchmark.PowerSum
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Price01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Price02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Price03
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Price04
+

@@ -1,0 +1,57 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions T:
+
+|test_functions| N-D Test Functions T
+======================================
+
+
+
+.. autoclass:: go_benchmark.TestTubeHolder
+
+-----
+
+
+
+.. autoclass:: go_benchmark.ThreeHumpCamel
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Treccani
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Trefethen
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Trid
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Trigonometric01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Trigonometric02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Tripod
+

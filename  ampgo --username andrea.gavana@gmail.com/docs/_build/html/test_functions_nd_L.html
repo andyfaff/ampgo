@@ -1,0 +1,252 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions L &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions M" href="test_functions_nd_M.html" />
+    <link rel="prev" title="N-D Test Functions K" href="test_functions_nd_K.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_M.html" title="N-D Test Functions M"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_K.html" title="N-D Test Functions K"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions L</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-l">
+<span id="n-d-test-functions-l"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions L<a class="headerlink" href="#test-functions-n-d-test-functions-l" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.Langermann">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Langermann</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Langermann" title="Permalink to this definition">¶</a></dt>
+<dd><p>Langermann test objective function.</p>
+<p>This class defines the Langermann global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/594f49ae185e13d3fd0b742b2ac3f81633790223.png" alt="f_{\text{Langermann}}(\mathbf{x}) = - \sum_{i=1}^{5} \frac{c_i \cos\left\{\pi \left[\left(x_{1}- a_i\right)^{2} + \left(x_{2} - b_i \right)^{2}\right]\right\}}{e^{\frac{\left( x_{1} - a_i\right)^{2} + \left( x_{2} - b_i\right)^{2}}{\pi}}}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/04492218e68759ff19d07231a62fe3a092015dfc.png" alt="x_i \in [0, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Langermann function" src="_images/Langermann.png" />
+<p class="caption"><strong>Two-dimensional Langermann function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/13fb948e7911349705af794bbb9fea128d84ac03.png" alt="f(x_i) = -5.1621259"/> for <img class="math" src="_images/math/4d8c9390a87c503555d18005da4d9fc0e39976e6.png" alt="\mathbf{x} = [2.00299219, 1.006096]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.LennardJones">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">LennardJones</tt><big>(</big><em>dimensions=6</em><big>)</big><a class="headerlink" href="#go_benchmark.LennardJones" title="Permalink to this definition">¶</a></dt>
+<dd><p>LennardJones test objective function.</p>
+<p>This class defines the Lennard-Jones global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/6bbda64bc845f2f3ea6dc8095d0ac18b00df17b0.png" alt="f_{\text{LennardJones}}(\mathbf{x}) = \sum_{i=0}^{n-2}\sum_{j&gt;1}^{n-1}\frac{1}{r_{ij}^{12}} - \frac{1}{r_{ij}^{6}}"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/7e4fc140220304267a343c9252f4c7481c67324d.png" alt="r_{ij} = \sqrt{(x_{3i}-x_{3j})^2 + (x_{3i+1}-x_{3j+1})^2) + (x_{3i+2}-x_{3j+2})^2}"/></p>
+</div><p>Valid for any dimension, <img class="math" src="_images/math/1cee475c4f255ad8cf206b7d7cfc858d6967f6ab.png" alt="n = 3*k, k=2,3,4,...,20"/>. <img class="math" src="_images/math/8c325612684d41304b9751c175df7bcc0f61f64f.png" alt="k"/> is the number of atoms in 3-D space
+constraints: unconstrained type: multi-modal with one global minimum; non-separable</p>
+<p>Value-to-reach: <img class="math" src="_images/math/ba1e6d335ea3c9e008913328b1e880949fad3ba5.png" alt="minima[k-2] + 0.0001"/>. See array of minima below; additional minima available at
+the Cambridge cluster database:</p>
+<p><a class="reference external" href="http://www-wales.ch.cam.ac.uk/~jon/structures/LJ/tables.150.html">http://www-wales.ch.cam.ac.uk/~jon/structures/LJ/tables.150.html</a></p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/8368ca122c49eafe214d1fd60919e78f69b60fc1.png" alt="x_i \in [-4, 4]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<p><em>Global optimum</em>:</p>
+<div class="math">
+<p><img src="_images/math/561e39e42e2aa58f1f7ff7e55d73fad0965b603a.png" alt="minima = [-1.,-3.,-6.,-9.103852,-12.712062,-16.505384,-19.821489,-24.113360, \\
+-28.422532,-32.765970,-37.967600,-44.326801,-47.845157,-52.322627, \\
+-56.815742,-61.317995, -66.530949,-72.659782,-77.1777043]"/></p>
+</div></dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Leon">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Leon</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Leon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Leon test objective function.</p>
+<p>This class defines the Leon global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/b79564b8b0877bcf1a2b4843a5081afa29a7a879.png" alt="f_{\text{Leon}}(\mathbf{x}) = \left(1 - x_{1}\right)^{2} + 100 \left(x_{2} - x_{1}^{2} \right)^{2}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/8665444e183b5eddb24dc54c05ed5e5f7f1f269a.png" alt="x_i \in [-1.2, 1.2]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Leon function" src="_images/Leon.png" />
+<p class="caption"><strong>Two-dimensional Leon function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/6c75eb8978ee0840709244e93e95693ba1825888.png" alt="x_i = 1"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Levy03">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Levy03</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Levy03" title="Permalink to this definition">¶</a></dt>
+<dd><p>Levy 3 test objective function.</p>
+<p>This class defines the Levy 3 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/ede8ef160dbeb592ad23ef62fb2a4d2f6ad446d1.png" alt="f_{\text{Levy03}}(\mathbf{x}) = \sin^2(\pi y_1)+\sum_{i=1}^{n-1}(y_i-1)^2[1+10\sin^2(\pi y_{i+1})]+(y_n-1)^2"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/2845c04155b919ddf30dd1bc81ba97ae665a2d53.png" alt="y_i=1+\frac{x_i-1}{4}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Levy 3 function" src="_images/Levy03.png" />
+<p class="caption"><strong>Two-dimensional Levy 3 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/6c75eb8978ee0840709244e93e95693ba1825888.png" alt="x_i = 1"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Levy05">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Levy05</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Levy05" title="Permalink to this definition">¶</a></dt>
+<dd><p>Levy 5 test objective function.</p>
+<p>This class defines the Levy 5 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/2d94d681bf2dfbe33e12b0368180954e523689b5.png" alt="f_{\text{Levy05}}(\mathbf{x}) = \sum_{i=1}^{5} i \cos \left[(i-1)x_1 + i \right] \times \sum_{j=1}^{5} j \cos \left[(j+1)x_2 + j \right] + (x_1 + 1.42513)^2 + (x_2 + 0.80032)^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Levy 5 function" src="_images/Levy05.png" />
+<p class="caption"><strong>Two-dimensional Levy 5 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/d126380834b8d62cbcaecc238c6a6e078a7c7294.png" alt="f(x_i) = -176.1375"/> for <img class="math" src="_images/math/73f3e5d3ebcf103a196d5b2c8cda8465cff331bf.png" alt="\mathbf{x} = [-1.3068, -1.4248]"/>.</p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Levy13">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Levy13</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Levy13" title="Permalink to this definition">¶</a></dt>
+<dd><p>Levy13 test objective function.</p>
+<p>This class defines the Levy13 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/0bd059389be1db8f08016928127b1695153b4e90.png" alt="f_{\text{Levy13}}(\mathbf{x}) = \left(x_{1} -1\right)^{2} \left[\sin^{2}\left(3 \pi x_{2}\right) + 1\right] + \left(x_{2} -1\right)^{2} \left[\sin^{2}\left(2 \pi x_{2}\right) + 1\right] + \sin^{2}\left(3 \pi x_{1}\right)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Levy13 function" src="_images/Levy13.png" />
+<p class="caption"><strong>Two-dimensional Levy13 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/6c75eb8978ee0840709244e93e95693ba1825888.png" alt="x_i = 1"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_K.html"
+                        title="previous chapter"> N-D Test Functions K</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_M.html"
+                        title="next chapter"> N-D Test Functions M</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_L.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_M.html" title="N-D Test Functions M"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_K.html" title="N-D Test Functions K"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions L</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

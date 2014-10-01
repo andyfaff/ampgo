@@ -1,0 +1,105 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions M:
+
+|test_functions| N-D Test Functions M
+======================================
+
+
+
+.. autoclass:: go_benchmark.Matyas
+
+-----
+
+
+
+.. autoclass:: go_benchmark.McCormick
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Michalewicz
+
+-----
+
+
+
+.. autoclass:: go_benchmark.MieleCantrell
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra03
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra04
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra05
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra06
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra07
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra08
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra09
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra10
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Mishra11
+
+-----
+
+
+
+.. autoclass:: go_benchmark.MultiModal
+

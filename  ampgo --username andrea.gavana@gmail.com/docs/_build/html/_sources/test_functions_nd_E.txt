@@ -1,0 +1,45 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions E:
+
+|test_functions| N-D Test Functions E
+======================================
+
+
+
+.. autoclass:: go_benchmark.Easom
+
+-----
+
+
+
+.. autoclass:: go_benchmark.EggCrate
+
+-----
+
+
+
+.. autoclass:: go_benchmark.EggHolder
+
+-----
+
+
+
+.. autoclass:: go_benchmark.ElAttarVidyasagarDutta
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Exp2
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Exponential
+

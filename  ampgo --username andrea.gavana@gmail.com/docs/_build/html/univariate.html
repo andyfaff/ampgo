@@ -1,0 +1,742 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Univariate Benchmarks Results &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="Test Functions Index" href="test_functions.html" />
+    <link rel="prev" title="Multidimensional Benchmarks Results" href="multidimensional.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions.html" title="Test Functions Index"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="multidimensional.html" title="Multidimensional Benchmarks Results"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li>Univariate Benchmarks Results</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="univariate-benchmarks-results">
+<h1>Univariate Benchmarks Results<a class="headerlink" href="#univariate-benchmarks-results" title="Permalink to this headline">¶</a></h1>
+<p>This page shows the results obtained by applying a number of Global optimization algorithms
+to the entire benchmark suite of 1-D optimization problems, together with some statistics
+on the algorithm performances.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>CRS2</strong> and <strong>DIRECT</strong> algorithms from <a class="reference external" href="http://ab-initio.mit.edu/wiki/index.php/NLopt">NLOpt</a>
+did not qualify for the univariate benchmark as I am constantly getting useless <tt class="docutils literal"><span class="pre">ValueError</span></tt>
+every time I try them.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>CMA-ES</strong> algorithm from <a class="reference external" href="http://www.lri.fr/~hansen/cmaesintro.html">CMA-ES</a>
+did not qualify for the univariate benchmark as the Python implementation does not support
+optimization in 1-D.</p>
+</div>
+<div class="section" id="test-functions-univariate-1d-test-functions">
+<h2><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> Univariate (1D) Test Functions<a class="headerlink" href="#test-functions-univariate-1d-test-functions" title="Permalink to this headline">¶</a></h2>
+<p>The following table shows the overall success of all Global Optimization algorithms, considering
+for every benchmark function 100 random starting points.</p>
+<p>So, for example, <strong>AMPGO</strong> was able to solve, on average, 96.2% of all the test functions for
+all the 100 random starting points using, on average, 182 functions evaluations.</p>
+<table border="1" class="pretty-table docutils">
+<caption>Optimization algorithms performances (1-dimensional)</caption>
+<colgroup>
+<col width="32%" />
+<col width="32%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Optimization Method</th>
+<th class="head">Overall Success (%)</th>
+<th class="head">Functions Evaluations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AMPGO</td>
+<td>96.222</td>
+<td>182</td>
+</tr>
+<tr class="row-odd"><td>ASA</td>
+<td>58.944</td>
+<td>318</td>
+</tr>
+<tr class="row-even"><td>BasinHopping</td>
+<td>71.222</td>
+<td>509</td>
+</tr>
+<tr class="row-odd"><td>DE</td>
+<td>88.889</td>
+<td>483</td>
+</tr>
+<tr class="row-even"><td>Firefly</td>
+<td>99.000</td>
+<td>490</td>
+</tr>
+<tr class="row-odd"><td>Galileo</td>
+<td>1.556</td>
+<td>54</td>
+</tr>
+<tr class="row-even"><td>MLSL</td>
+<td>13.833</td>
+<td>6161</td>
+</tr>
+<tr class="row-odd"><td>PSWARM</td>
+<td>84.222</td>
+<td>726</td>
+</tr>
+<tr class="row-even"><td>SCE</td>
+<td>99.889</td>
+<td>105</td>
+</tr>
+<tr class="row-odd"><td>SIMANN</td>
+<td>5.167</td>
+<td>1903</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>These results are also depicted in the next figure, which clearly shows that <strong>AMPGO</strong> is one of the better-performing
+optimization algorithms as far as the current benchmark is considered.</p>
+<div class="figure align-center">
+<img alt="AMPGO 1-D results" src="_images/1d_results.png" />
+<p class="caption"><strong>AMPGO</strong> Optimization algorithms performances (1-dimensional)</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The following table is a split-by-benchmark function of the first table, showing the percentage of
+successful optimizations per benchmark, considering 100 random starting points.</p>
+<table border="1" class="pretty-table docutils">
+<caption>Optimization algorithms performances (1-dimensional)</caption>
+<colgroup>
+<col width="16%" />
+<col width="8%" />
+<col width="5%" />
+<col width="15%" />
+<col width="5%" />
+<col width="10%" />
+<col width="10%" />
+<col width="7%" />
+<col width="9%" />
+<col width="5%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function Name</th>
+<th class="head">AMPGO</th>
+<th class="head">ASA</th>
+<th class="head">BasinHopping</th>
+<th class="head">DE</th>
+<th class="head">Firefly</th>
+<th class="head">Galileo</th>
+<th class="head">MLSL</th>
+<th class="head">PSWARM</th>
+<th class="head">SCE</th>
+<th class="head">SIMANN</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Problem02</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>99</td>
+<td>0</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>Problem03</td>
+<td>100</td>
+<td>0</td>
+<td>43</td>
+<td>100</td>
+<td>99</td>
+<td>0</td>
+<td>49</td>
+<td>36</td>
+<td>100</td>
+<td>6</td>
+</tr>
+<tr class="row-even"><td>Problem04</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>1</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>Problem05</td>
+<td>100</td>
+<td>99</td>
+<td>100</td>
+<td>100</td>
+<td>96</td>
+<td>1</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>18</td>
+</tr>
+<tr class="row-even"><td>Problem06</td>
+<td>100</td>
+<td>100</td>
+<td>32</td>
+<td>100</td>
+<td>100</td>
+<td>2</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>Problem07</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>98</td>
+<td>1</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>Problem08</td>
+<td>100</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+<td>0</td>
+<td>26</td>
+<td>100</td>
+<td>9</td>
+</tr>
+<tr class="row-odd"><td>Problem09</td>
+<td>100</td>
+<td>75</td>
+<td>41</td>
+<td>100</td>
+<td>98</td>
+<td>0</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>Problem10</td>
+<td>88</td>
+<td>0</td>
+<td>36</td>
+<td>0</td>
+<td>100</td>
+<td>0</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>17</td>
+</tr>
+<tr class="row-odd"><td>Problem11</td>
+<td>100</td>
+<td>100</td>
+<td>82</td>
+<td>100</td>
+<td>100</td>
+<td>2</td>
+<td>0</td>
+<td>65</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>Problem12</td>
+<td>100</td>
+<td>0</td>
+<td>81</td>
+<td>100</td>
+<td>100</td>
+<td>4</td>
+<td>100</td>
+<td>46</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>Problem13</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>8</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Problem14</td>
+<td>100</td>
+<td>100</td>
+<td>84</td>
+<td>100</td>
+<td>99</td>
+<td>1</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>Problem15</td>
+<td>100</td>
+<td>100</td>
+<td>54</td>
+<td>100</td>
+<td>100</td>
+<td>5</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>Problem18</td>
+<td>100</td>
+<td>87</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>1</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>Problem20</td>
+<td>100</td>
+<td>0</td>
+<td>36</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>Problem21</td>
+<td>43</td>
+<td>0</td>
+<td>24</td>
+<td>100</td>
+<td>100</td>
+<td>1</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+<td>32</td>
+</tr>
+<tr class="row-odd"><td>Problem22</td>
+<td>100</td>
+<td>0</td>
+<td>67</td>
+<td>0</td>
+<td>93</td>
+<td>0</td>
+<td>0</td>
+<td>43</td>
+<td>98</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The following table is a split-by-benchmark function of the first table, showing the average
+number of functions evaluations <strong>for successful optimizations only</strong>, considering 100 random
+starting points.</p>
+<table border="1" class="pretty-table docutils">
+<caption>Optimization algorithms performances (1-dimensional)</caption>
+<colgroup>
+<col width="16%" />
+<col width="8%" />
+<col width="5%" />
+<col width="15%" />
+<col width="7%" />
+<col width="10%" />
+<col width="10%" />
+<col width="7%" />
+<col width="9%" />
+<col width="5%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function Name</th>
+<th class="head">AMPGO</th>
+<th class="head">ASA</th>
+<th class="head">BasinHopping</th>
+<th class="head">DE</th>
+<th class="head">Firefly</th>
+<th class="head">Galileo</th>
+<th class="head">MLSL</th>
+<th class="head">PSWARM</th>
+<th class="head">SCE</th>
+<th class="head">SIMANN</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Problem02</td>
+<td>38</td>
+<td>296</td>
+<td>671</td>
+<td>235</td>
+<td>509</td>
+<td>51</td>
+<td>7303</td>
+<td>194</td>
+<td>77</td>
+<td>2001</td>
+</tr>
+<tr class="row-odd"><td>Problem03</td>
+<td>254</td>
+<td>&#8211;</td>
+<td>400</td>
+<td>469</td>
+<td>939</td>
+<td>56</td>
+<td>3909</td>
+<td>2360</td>
+<td>265</td>
+<td>1283</td>
+</tr>
+<tr class="row-even"><td>Problem04</td>
+<td>6</td>
+<td>340</td>
+<td>511</td>
+<td>246</td>
+<td>219</td>
+<td>52</td>
+<td>7341</td>
+<td>167</td>
+<td>44</td>
+<td>2000</td>
+</tr>
+<tr class="row-odd"><td>Problem05</td>
+<td>116</td>
+<td>323</td>
+<td>732</td>
+<td>92</td>
+<td>477</td>
+<td>56</td>
+<td>7026</td>
+<td>360</td>
+<td>126</td>
+<td>1945</td>
+</tr>
+<tr class="row-even"><td>Problem06</td>
+<td>145</td>
+<td>310</td>
+<td>256</td>
+<td>323</td>
+<td>604</td>
+<td>54</td>
+<td>7294</td>
+<td>309</td>
+<td>76</td>
+<td>2001</td>
+</tr>
+<tr class="row-odd"><td>Problem07</td>
+<td>47</td>
+<td>322</td>
+<td>640</td>
+<td>279</td>
+<td>397</td>
+<td>53</td>
+<td>7419</td>
+<td>214</td>
+<td>65</td>
+<td>1997</td>
+</tr>
+<tr class="row-even"><td>Problem08</td>
+<td>138</td>
+<td>&#8211;</td>
+<td>766</td>
+<td>283</td>
+<td>915</td>
+<td>58</td>
+<td>5254</td>
+<td>2579</td>
+<td>252</td>
+<td>1251</td>
+</tr>
+<tr class="row-odd"><td>Problem09</td>
+<td>66</td>
+<td>316</td>
+<td>443</td>
+<td>224</td>
+<td>541</td>
+<td>57</td>
+<td>7289</td>
+<td>291</td>
+<td>124</td>
+<td>2001</td>
+</tr>
+<tr class="row-even"><td>Problem10</td>
+<td>543</td>
+<td>&#8211;</td>
+<td>533</td>
+<td>2005</td>
+<td>553</td>
+<td>55</td>
+<td>7554</td>
+<td>211</td>
+<td>74</td>
+<td>1944</td>
+</tr>
+<tr class="row-odd"><td>Problem11</td>
+<td>17</td>
+<td>316</td>
+<td>507</td>
+<td>905</td>
+<td>482</td>
+<td>56</td>
+<td>6647</td>
+<td>1296</td>
+<td>93</td>
+<td>2001</td>
+</tr>
+<tr class="row-even"><td>Problem12</td>
+<td>120</td>
+<td>&#8211;</td>
+<td>584</td>
+<td>190</td>
+<td>419</td>
+<td>46</td>
+<td>59</td>
+<td>1737</td>
+<td>87</td>
+<td>2001</td>
+</tr>
+<tr class="row-odd"><td>Problem13</td>
+<td>7</td>
+<td>334</td>
+<td>722</td>
+<td>169</td>
+<td>150</td>
+<td>55</td>
+<td>7450</td>
+<td>174</td>
+<td>36</td>
+<td>1996</td>
+</tr>
+<tr class="row-even"><td>Problem14</td>
+<td>67</td>
+<td>302</td>
+<td>637</td>
+<td>257</td>
+<td>185</td>
+<td>58</td>
+<td>6977</td>
+<td>293</td>
+<td>104</td>
+<td>2000</td>
+</tr>
+<tr class="row-odd"><td>Problem15</td>
+<td>51</td>
+<td>325</td>
+<td>411</td>
+<td>286</td>
+<td>218</td>
+<td>57</td>
+<td>7897</td>
+<td>201</td>
+<td>46</td>
+<td>2001</td>
+</tr>
+<tr class="row-even"><td>Problem18</td>
+<td>5</td>
+<td>321</td>
+<td>354</td>
+<td>1730</td>
+<td>420</td>
+<td>57</td>
+<td>191</td>
+<td>180</td>
+<td>59</td>
+<td>2001</td>
+</tr>
+<tr class="row-odd"><td>Problem20</td>
+<td>89</td>
+<td>&#8211;</td>
+<td>259</td>
+<td>428</td>
+<td>379</td>
+<td>52</td>
+<td>7233</td>
+<td>274</td>
+<td>67</td>
+<td>2001</td>
+</tr>
+<tr class="row-even"><td>Problem21</td>
+<td>1545</td>
+<td>&#8211;</td>
+<td>272</td>
+<td>356</td>
+<td>722</td>
+<td>51</td>
+<td>7314</td>
+<td>197</td>
+<td>79</td>
+<td>1843</td>
+</tr>
+<tr class="row-odd"><td>Problem22</td>
+<td>25</td>
+<td>&#8211;</td>
+<td>472</td>
+<td>223</td>
+<td>708</td>
+<td>55</td>
+<td>6743</td>
+<td>2046</td>
+<td>216</td>
+<td>2001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Univariate Benchmarks Results</a><ul>
+<li><a class="reference internal" href="#test-functions-univariate-1d-test-functions"> Univariate (1D) Test Functions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="multidimensional.html"
+                        title="previous chapter">Multidimensional Benchmarks Results</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions.html"
+                        title="next chapter"> Test Functions Index</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/univariate.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions.html" title="Test Functions Index"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="multidimensional.html" title="Multidimensional Benchmarks Results"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li>Univariate Benchmarks Results</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

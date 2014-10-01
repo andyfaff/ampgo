@@ -1,0 +1,39 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions A:
+
+|test_functions| N-D Test Functions A
+======================================
+
+
+
+.. autoclass:: go_benchmark.Ackley
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Adjiman
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Alpine01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Alpine02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.AMGM
+

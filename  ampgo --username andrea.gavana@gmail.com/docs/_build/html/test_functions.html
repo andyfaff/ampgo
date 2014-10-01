@@ -1,0 +1,1304 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Test Functions Index &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions A" href="test_functions_nd_A.html" />
+    <link rel="prev" title="Univariate Benchmarks Results" href="univariate.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_A.html" title="N-D Test Functions A"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="univariate.html" title="Univariate Benchmarks Results"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> Test Functions Index</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-test-functions-index">
+<span id="test-functions-index"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> Test Functions Index<a class="headerlink" href="#test-functions-test-functions-index" title="Permalink to this headline">¶</a></h1>
+<p>This page contains the general index of the benchmark problems used to test different
+Global Optimization algorithms. It also shows some statistics on the &#8220;difficulty&#8221; of a multi-modal test problem, based
+on the average successful minimization across all the Global Optimizers tested in this benchmark exercise.</p>
+<p>The test suite currently contains:</p>
+<ol class="arabic simple">
+<li>18 one-dimensional test functions with multiple local/global minima;</li>
+<li>184 multivariate problems (where the number of independent variables ranges from 2 to 17),
+again with multiple local/global minima.</li>
+</ol>
+<p>Some of the multivariate problems are well known in the mathematical literature; for the less well-known
+functions, I have taken their definitions mostly from the following references:</p>
+<ul class="simple">
+<li>A Literature Survey of Benchmark Functions For Global Optimization Problems (<a class="reference external" href="http://arxiv.org/pdf/1308.4008v1.pdf">http://arxiv.org/pdf/1308.4008v1.pdf</a>)</li>
+<li>Test functions for optimization needs (<a class="reference external" href="http://www.zsd.ict.pwr.wroc.pl/files/docs/functions.pdf">http://www.zsd.ict.pwr.wroc.pl/files/docs/functions.pdf</a>)</li>
+<li>A Numerical Evaluation of Several Stochastic Algorithms on Selected Continuous Global
+Optimization Test Problems (<a class="reference external" href="http://folk.uib.no/ssu029/Pdf_file/Ali05.pdf">http://folk.uib.no/ssu029/Pdf_file/Ali05.pdf</a>)</li>
+</ul>
+<div class="section" id="test-functions-hardness">
+<h2>Test Functions &#8220;Hardness&#8221;<a class="headerlink" href="#test-functions-hardness" title="Permalink to this headline">¶</a></h2>
+<p>The test suite contains a variety of Global Optimization problems, some of them are harder to solve than others,
+irrespectively of the algorithm chosen to minimize the test function. The following table has been obtained by
+running all the Global Optimizers available against all the N-D test functions for a collection of 100 random starting
+points, and then averaging the successful minimizations across all the optimizers.</p>
+<p>It can be easily seen that the <a class="reference internal" href="test_functions_nd_D.html#go_benchmark.DeVilliersGlasser02" title="go_benchmark.DeVilliersGlasser02"><tt class="xref py py-class docutils literal"><span class="pre">DeVilliersGlasser02</span></tt></a>, <a class="reference internal" href="test_functions_nd_D.html#go_benchmark.Damavandi" title="go_benchmark.Damavandi"><tt class="xref py py-class docutils literal"><span class="pre">Damavandi</span></tt></a> and
+<a class="reference internal" href="test_functions_nd_C.html#go_benchmark.CrossLegTable" title="go_benchmark.CrossLegTable"><tt class="xref py py-class docutils literal"><span class="pre">CrossLegTable</span></tt></a> were always hard problems for all the algorithms, while others like
+<a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Bukin02" title="go_benchmark.Bukin02"><tt class="xref py py-class docutils literal"><span class="pre">Bukin02</span></tt></a> and <a class="reference internal" href="test_functions_nd_C.html#go_benchmark.CosineMixture" title="go_benchmark.CosineMixture"><tt class="xref py py-class docutils literal"><span class="pre">CosineMixture</span></tt></a> are amongst the easiest ones.</p>
+<table border="1" class="pretty-table docutils">
+<caption>Benchmark test functions &#8220;hardness&#8221;</caption>
+<colgroup>
+<col width="55%" />
+<col width="7%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Optimization Method</th>
+<th class="head">N</th>
+<th class="head">Overall Success (%)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DeVilliersGlasser02</td>
+<td>5</td>
+<td>0.00</td>
+</tr>
+<tr class="row-odd"><td>Damavandi</td>
+<td>2</td>
+<td>0.25</td>
+</tr>
+<tr class="row-even"><td>CrossLegTable</td>
+<td>2</td>
+<td>0.83</td>
+</tr>
+<tr class="row-odd"><td>XinSheYang03</td>
+<td>2</td>
+<td>1.08</td>
+</tr>
+<tr class="row-even"><td>SineEnvelope</td>
+<td>2</td>
+<td>2.17</td>
+</tr>
+<tr class="row-odd"><td>Whitley</td>
+<td>2</td>
+<td>4.92</td>
+</tr>
+<tr class="row-even"><td>Zimmerman</td>
+<td>2</td>
+<td>4.92</td>
+</tr>
+<tr class="row-odd"><td>Griewank</td>
+<td>2</td>
+<td>6.08</td>
+</tr>
+<tr class="row-even"><td>Trefethen</td>
+<td>2</td>
+<td>6.58</td>
+</tr>
+<tr class="row-odd"><td>Bukin06</td>
+<td>2</td>
+<td>6.83</td>
+</tr>
+<tr class="row-even"><td>Cola</td>
+<td>17</td>
+<td>7.50</td>
+</tr>
+<tr class="row-odd"><td>CrownedCross</td>
+<td>2</td>
+<td>8.42</td>
+</tr>
+<tr class="row-even"><td>RosenbrockModified</td>
+<td>2</td>
+<td>8.42</td>
+</tr>
+<tr class="row-odd"><td>Salomon</td>
+<td>2</td>
+<td>10.33</td>
+</tr>
+<tr class="row-even"><td>PowerSum</td>
+<td>4</td>
+<td>10.50</td>
+</tr>
+<tr class="row-odd"><td>Gulf</td>
+<td>3</td>
+<td>10.92</td>
+</tr>
+<tr class="row-even"><td>NewFunction02</td>
+<td>2</td>
+<td>13.33</td>
+</tr>
+<tr class="row-odd"><td>Mishra04</td>
+<td>2</td>
+<td>13.50</td>
+</tr>
+<tr class="row-even"><td>Stochastic</td>
+<td>2</td>
+<td>14.17</td>
+</tr>
+<tr class="row-odd"><td>Kowalik</td>
+<td>4</td>
+<td>14.83</td>
+</tr>
+<tr class="row-even"><td>ZeroSum</td>
+<td>2</td>
+<td>15.08</td>
+</tr>
+<tr class="row-odd"><td>DeVilliersGlasser01</td>
+<td>4</td>
+<td>16.92</td>
+</tr>
+<tr class="row-even"><td>Price02</td>
+<td>2</td>
+<td>18.00</td>
+</tr>
+<tr class="row-odd"><td>EggHolder</td>
+<td>2</td>
+<td>18.92</td>
+</tr>
+<tr class="row-even"><td>Ripple01</td>
+<td>2</td>
+<td>19.25</td>
+</tr>
+<tr class="row-odd"><td>Mishra03</td>
+<td>2</td>
+<td>20.42</td>
+</tr>
+<tr class="row-even"><td>XinSheYang01</td>
+<td>2</td>
+<td>20.92</td>
+</tr>
+<tr class="row-odd"><td>NewFunction01</td>
+<td>2</td>
+<td>21.17</td>
+</tr>
+<tr class="row-even"><td>DropWave</td>
+<td>2</td>
+<td>21.25</td>
+</tr>
+<tr class="row-odd"><td>Watson</td>
+<td>6</td>
+<td>21.58</td>
+</tr>
+<tr class="row-even"><td>Branin02</td>
+<td>2</td>
+<td>23.50</td>
+</tr>
+<tr class="row-odd"><td>Schaffer01</td>
+<td>2</td>
+<td>23.67</td>
+</tr>
+<tr class="row-even"><td>Schaffer03</td>
+<td>2</td>
+<td>25.92</td>
+</tr>
+<tr class="row-odd"><td>Easom</td>
+<td>2</td>
+<td>26.08</td>
+</tr>
+<tr class="row-even"><td>XinSheYang04</td>
+<td>2</td>
+<td>26.33</td>
+</tr>
+<tr class="row-odd"><td>Tripod</td>
+<td>2</td>
+<td>27.33</td>
+</tr>
+<tr class="row-even"><td>Weierstrass</td>
+<td>2</td>
+<td>27.75</td>
+</tr>
+<tr class="row-odd"><td>Deceptive</td>
+<td>2</td>
+<td>28.25</td>
+</tr>
+<tr class="row-even"><td>Schaffer04</td>
+<td>2</td>
+<td>28.75</td>
+</tr>
+<tr class="row-odd"><td>XinSheYang02</td>
+<td>2</td>
+<td>31.33</td>
+</tr>
+<tr class="row-even"><td>OddSquare</td>
+<td>2</td>
+<td>31.75</td>
+</tr>
+<tr class="row-odd"><td>Powell</td>
+<td>4</td>
+<td>32.58</td>
+</tr>
+<tr class="row-even"><td>Exp2</td>
+<td>2</td>
+<td>32.67</td>
+</tr>
+<tr class="row-odd"><td>Paviani</td>
+<td>10</td>
+<td>33.33</td>
+</tr>
+<tr class="row-even"><td>Pathological</td>
+<td>2</td>
+<td>33.75</td>
+</tr>
+<tr class="row-odd"><td>Schwefel06</td>
+<td>2</td>
+<td>34.67</td>
+</tr>
+<tr class="row-even"><td>HelicalValley</td>
+<td>3</td>
+<td>34.75</td>
+</tr>
+<tr class="row-odd"><td>Shekel05</td>
+<td>4</td>
+<td>35.42</td>
+</tr>
+<tr class="row-even"><td>Wavy</td>
+<td>2</td>
+<td>37.00</td>
+</tr>
+<tr class="row-odd"><td>WayburnSeader02</td>
+<td>2</td>
+<td>37.33</td>
+</tr>
+<tr class="row-even"><td>Shubert03</td>
+<td>2</td>
+<td>37.92</td>
+</tr>
+<tr class="row-odd"><td>TestTubeHolder</td>
+<td>2</td>
+<td>37.92</td>
+</tr>
+<tr class="row-even"><td>Corana</td>
+<td>4</td>
+<td>38.08</td>
+</tr>
+<tr class="row-odd"><td>YaoLiu09</td>
+<td>2</td>
+<td>38.42</td>
+</tr>
+<tr class="row-even"><td>Dolan</td>
+<td>5</td>
+<td>39.00</td>
+</tr>
+<tr class="row-odd"><td>Shubert01</td>
+<td>2</td>
+<td>39.42</td>
+</tr>
+<tr class="row-even"><td>Rastrigin</td>
+<td>2</td>
+<td>39.50</td>
+</tr>
+<tr class="row-odd"><td>Schaffer02</td>
+<td>2</td>
+<td>39.58</td>
+</tr>
+<tr class="row-even"><td>Chichinadze</td>
+<td>2</td>
+<td>40.33</td>
+</tr>
+<tr class="row-odd"><td>Penalty02</td>
+<td>2</td>
+<td>41.08</td>
+</tr>
+<tr class="row-even"><td>Levy05</td>
+<td>2</td>
+<td>41.17</td>
+</tr>
+<tr class="row-odd"><td>UrsemWaves</td>
+<td>2</td>
+<td>41.33</td>
+</tr>
+<tr class="row-even"><td>Price03</td>
+<td>2</td>
+<td>41.50</td>
+</tr>
+<tr class="row-odd"><td>FreudensteinRoth</td>
+<td>2</td>
+<td>41.58</td>
+</tr>
+<tr class="row-even"><td>Xor</td>
+<td>9</td>
+<td>41.83</td>
+</tr>
+<tr class="row-odd"><td>Hansen</td>
+<td>2</td>
+<td>41.92</td>
+</tr>
+<tr class="row-even"><td>Leon</td>
+<td>2</td>
+<td>42.50</td>
+</tr>
+<tr class="row-odd"><td>Schwefel21</td>
+<td>2</td>
+<td>42.92</td>
+</tr>
+<tr class="row-even"><td>Trid</td>
+<td>6</td>
+<td>43.83</td>
+</tr>
+<tr class="row-odd"><td>Rosenbrock</td>
+<td>2</td>
+<td>44.17</td>
+</tr>
+<tr class="row-even"><td>Langermann</td>
+<td>2</td>
+<td>45.67</td>
+</tr>
+<tr class="row-odd"><td>Ripple25</td>
+<td>2</td>
+<td>46.33</td>
+</tr>
+<tr class="row-even"><td>Shekel10</td>
+<td>4</td>
+<td>47.83</td>
+</tr>
+<tr class="row-odd"><td>Ackley</td>
+<td>2</td>
+<td>48.25</td>
+</tr>
+<tr class="row-even"><td>Hartmann6</td>
+<td>6</td>
+<td>48.50</td>
+</tr>
+<tr class="row-odd"><td>ElAttarVidyasagarDutta</td>
+<td>2</td>
+<td>48.67</td>
+</tr>
+<tr class="row-even"><td>Shekel07</td>
+<td>4</td>
+<td>48.83</td>
+</tr>
+<tr class="row-odd"><td>LennardJones</td>
+<td>6</td>
+<td>49.08</td>
+</tr>
+<tr class="row-even"><td>Ursem03</td>
+<td>2</td>
+<td>49.50</td>
+</tr>
+<tr class="row-odd"><td>VenterSobiezcczanskiSobieski</td>
+<td>2</td>
+<td>49.58</td>
+</tr>
+<tr class="row-even"><td>Trigonometric02</td>
+<td>2</td>
+<td>49.58</td>
+</tr>
+<tr class="row-odd"><td>Price04</td>
+<td>2</td>
+<td>49.83</td>
+</tr>
+<tr class="row-even"><td>Cube</td>
+<td>2</td>
+<td>49.92</td>
+</tr>
+<tr class="row-odd"><td>BartelsConn</td>
+<td>2</td>
+<td>50.00</td>
+</tr>
+<tr class="row-even"><td>MieleCantrell</td>
+<td>4</td>
+<td>50.83</td>
+</tr>
+<tr class="row-odd"><td>Mishra05</td>
+<td>2</td>
+<td>50.92</td>
+</tr>
+<tr class="row-even"><td>PermFunction01</td>
+<td>2</td>
+<td>51.00</td>
+</tr>
+<tr class="row-odd"><td>BoxBetts</td>
+<td>3</td>
+<td>52.17</td>
+</tr>
+<tr class="row-even"><td>Mishra08</td>
+<td>2</td>
+<td>53.25</td>
+</tr>
+<tr class="row-odd"><td>Decanomial</td>
+<td>2</td>
+<td>53.92</td>
+</tr>
+<tr class="row-even"><td>Shubert04</td>
+<td>2</td>
+<td>54.92</td>
+</tr>
+<tr class="row-odd"><td>Mishra09</td>
+<td>3</td>
+<td>55.58</td>
+</tr>
+<tr class="row-even"><td>WayburnSeader01</td>
+<td>2</td>
+<td>55.83</td>
+</tr>
+<tr class="row-odd"><td>JennrichSampson</td>
+<td>2</td>
+<td>56.25</td>
+</tr>
+<tr class="row-even"><td>Mishra06</td>
+<td>2</td>
+<td>57.08</td>
+</tr>
+<tr class="row-odd"><td>Cigar</td>
+<td>2</td>
+<td>57.50</td>
+</tr>
+<tr class="row-even"><td>Step</td>
+<td>2</td>
+<td>58.25</td>
+</tr>
+<tr class="row-odd"><td>Judge</td>
+<td>2</td>
+<td>58.33</td>
+</tr>
+<tr class="row-even"><td>Bird</td>
+<td>2</td>
+<td>59.00</td>
+</tr>
+<tr class="row-odd"><td>Schwefel20</td>
+<td>2</td>
+<td>59.33</td>
+</tr>
+<tr class="row-even"><td>Schwefel22</td>
+<td>2</td>
+<td>59.42</td>
+</tr>
+<tr class="row-odd"><td>DeflectedCorrugatedSpring</td>
+<td>2</td>
+<td>59.50</td>
+</tr>
+<tr class="row-even"><td>Hartmann3</td>
+<td>3</td>
+<td>59.83</td>
+</tr>
+<tr class="row-odd"><td>Schwefel36</td>
+<td>2</td>
+<td>60.33</td>
+</tr>
+<tr class="row-even"><td>Quintic</td>
+<td>2</td>
+<td>62.67</td>
+</tr>
+<tr class="row-odd"><td>Schwefel26</td>
+<td>2</td>
+<td>62.67</td>
+</tr>
+<tr class="row-even"><td>Rana</td>
+<td>2</td>
+<td>63.25</td>
+</tr>
+<tr class="row-odd"><td>Penalty01</td>
+<td>2</td>
+<td>64.50</td>
+</tr>
+<tr class="row-even"><td>PermFunction02</td>
+<td>2</td>
+<td>64.75</td>
+</tr>
+<tr class="row-odd"><td>EggCrate</td>
+<td>2</td>
+<td>64.92</td>
+</tr>
+<tr class="row-even"><td>Alpine01</td>
+<td>2</td>
+<td>65.17</td>
+</tr>
+<tr class="row-odd"><td>GoldsteinPrice</td>
+<td>2</td>
+<td>65.50</td>
+</tr>
+<tr class="row-even"><td>YaoLiu04</td>
+<td>2</td>
+<td>65.67</td>
+</tr>
+<tr class="row-odd"><td>Pinter</td>
+<td>2</td>
+<td>66.25</td>
+</tr>
+<tr class="row-even"><td>Beale</td>
+<td>2</td>
+<td>66.25</td>
+</tr>
+<tr class="row-odd"><td>Levy13</td>
+<td>2</td>
+<td>66.33</td>
+</tr>
+<tr class="row-even"><td>Ursem04</td>
+<td>2</td>
+<td>66.42</td>
+</tr>
+<tr class="row-odd"><td>StretchedV</td>
+<td>2</td>
+<td>68.00</td>
+</tr>
+<tr class="row-even"><td>Gear</td>
+<td>4</td>
+<td>68.08</td>
+</tr>
+<tr class="row-odd"><td>Alpine02</td>
+<td>2</td>
+<td>68.17</td>
+</tr>
+<tr class="row-even"><td>Mishra10</td>
+<td>2</td>
+<td>68.33</td>
+</tr>
+<tr class="row-odd"><td>Bukin04</td>
+<td>2</td>
+<td>68.92</td>
+</tr>
+<tr class="row-even"><td>RotatedEllipse01</td>
+<td>2</td>
+<td>69.25</td>
+</tr>
+<tr class="row-odd"><td>Branin01</td>
+<td>2</td>
+<td>69.50</td>
+</tr>
+<tr class="row-even"><td>NeedleEye</td>
+<td>2</td>
+<td>69.58</td>
+</tr>
+<tr class="row-odd"><td>Holzman</td>
+<td>3</td>
+<td>69.75</td>
+</tr>
+<tr class="row-even"><td>Mishra11</td>
+<td>2</td>
+<td>70.08</td>
+</tr>
+<tr class="row-odd"><td>HimmelBlau</td>
+<td>2</td>
+<td>70.50</td>
+</tr>
+<tr class="row-even"><td>StyblinskiTang</td>
+<td>2</td>
+<td>70.50</td>
+</tr>
+<tr class="row-odd"><td>Levy03</td>
+<td>2</td>
+<td>71.83</td>
+</tr>
+<tr class="row-even"><td>Colville</td>
+<td>4</td>
+<td>72.00</td>
+</tr>
+<tr class="row-odd"><td>Matyas</td>
+<td>2</td>
+<td>72.00</td>
+</tr>
+<tr class="row-even"><td>NewFunction03</td>
+<td>2</td>
+<td>72.42</td>
+</tr>
+<tr class="row-odd"><td>Qing</td>
+<td>2</td>
+<td>73.17</td>
+</tr>
+<tr class="row-even"><td>CrossInTray</td>
+<td>2</td>
+<td>74.08</td>
+</tr>
+<tr class="row-odd"><td>Price01</td>
+<td>2</td>
+<td>74.33</td>
+</tr>
+<tr class="row-even"><td>RotatedEllipse02</td>
+<td>2</td>
+<td>74.92</td>
+</tr>
+<tr class="row-odd"><td>Wolfe</td>
+<td>3</td>
+<td>75.00</td>
+</tr>
+<tr class="row-even"><td>CarromTable</td>
+<td>2</td>
+<td>75.17</td>
+</tr>
+<tr class="row-odd"><td>Mishra07</td>
+<td>2</td>
+<td>75.33</td>
+</tr>
+<tr class="row-even"><td>Deb02</td>
+<td>2</td>
+<td>75.42</td>
+</tr>
+<tr class="row-odd"><td>Deb01</td>
+<td>2</td>
+<td>75.50</td>
+</tr>
+<tr class="row-even"><td>Zirilli</td>
+<td>2</td>
+<td>76.58</td>
+</tr>
+<tr class="row-odd"><td>Treccani</td>
+<td>2</td>
+<td>78.08</td>
+</tr>
+<tr class="row-even"><td>PenHolder</td>
+<td>2</td>
+<td>78.42</td>
+</tr>
+<tr class="row-odd"><td>ThreeHumpCamel</td>
+<td>2</td>
+<td>78.83</td>
+</tr>
+<tr class="row-even"><td>Schwefel04</td>
+<td>2</td>
+<td>79.75</td>
+</tr>
+<tr class="row-odd"><td>HolderTable</td>
+<td>2</td>
+<td>80.08</td>
+</tr>
+<tr class="row-even"><td>Parsopoulos</td>
+<td>2</td>
+<td>80.50</td>
+</tr>
+<tr class="row-odd"><td>DeckkersAarts</td>
+<td>2</td>
+<td>81.17</td>
+</tr>
+<tr class="row-even"><td>Michalewicz</td>
+<td>2</td>
+<td>81.25</td>
+</tr>
+<tr class="row-odd"><td>Sargan</td>
+<td>2</td>
+<td>81.25</td>
+</tr>
+<tr class="row-even"><td>McCormick</td>
+<td>2</td>
+<td>81.50</td>
+</tr>
+<tr class="row-odd"><td>DixonPrice</td>
+<td>2</td>
+<td>81.58</td>
+</tr>
+<tr class="row-even"><td>MultiModal</td>
+<td>2</td>
+<td>81.67</td>
+</tr>
+<tr class="row-odd"><td>Bohachevsky</td>
+<td>2</td>
+<td>81.75</td>
+</tr>
+<tr class="row-even"><td>Brent</td>
+<td>2</td>
+<td>81.92</td>
+</tr>
+<tr class="row-odd"><td>Zettl</td>
+<td>2</td>
+<td>81.92</td>
+</tr>
+<tr class="row-even"><td>Adjiman</td>
+<td>2</td>
+<td>82.08</td>
+</tr>
+<tr class="row-odd"><td>Schwefel01</td>
+<td>2</td>
+<td>82.08</td>
+</tr>
+<tr class="row-even"><td>Brown</td>
+<td>2</td>
+<td>82.17</td>
+</tr>
+<tr class="row-odd"><td>SixHumpCamel</td>
+<td>2</td>
+<td>82.17</td>
+</tr>
+<tr class="row-even"><td>Zacharov</td>
+<td>2</td>
+<td>82.33</td>
+</tr>
+<tr class="row-odd"><td>Sphere</td>
+<td>2</td>
+<td>82.75</td>
+</tr>
+<tr class="row-even"><td>Schwefel02</td>
+<td>2</td>
+<td>83.00</td>
+</tr>
+<tr class="row-odd"><td>Quadratic</td>
+<td>2</td>
+<td>83.17</td>
+</tr>
+<tr class="row-even"><td>Mishra01</td>
+<td>2</td>
+<td>83.83</td>
+</tr>
+<tr class="row-odd"><td>Csendes</td>
+<td>2</td>
+<td>84.17</td>
+</tr>
+<tr class="row-even"><td>Infinity</td>
+<td>2</td>
+<td>84.67</td>
+</tr>
+<tr class="row-odd"><td>Ursem01</td>
+<td>2</td>
+<td>84.67</td>
+</tr>
+<tr class="row-even"><td>Giunta</td>
+<td>2</td>
+<td>85.00</td>
+</tr>
+<tr class="row-odd"><td>Vincent</td>
+<td>2</td>
+<td>85.00</td>
+</tr>
+<tr class="row-even"><td>Hosaki</td>
+<td>2</td>
+<td>85.00</td>
+</tr>
+<tr class="row-odd"><td>Exponential</td>
+<td>2</td>
+<td>85.33</td>
+</tr>
+<tr class="row-even"><td>SchmidtVetters</td>
+<td>3</td>
+<td>89.25</td>
+</tr>
+<tr class="row-odd"><td>Plateau</td>
+<td>2</td>
+<td>89.42</td>
+</tr>
+<tr class="row-even"><td>Trigonometric01</td>
+<td>2</td>
+<td>90.83</td>
+</tr>
+<tr class="row-odd"><td>Katsuura</td>
+<td>2</td>
+<td>91.00</td>
+</tr>
+<tr class="row-even"><td>Sodp</td>
+<td>2</td>
+<td>91.25</td>
+</tr>
+<tr class="row-odd"><td>Mishra02</td>
+<td>2</td>
+<td>91.67</td>
+</tr>
+<tr class="row-even"><td>Keane</td>
+<td>2</td>
+<td>92.83</td>
+</tr>
+<tr class="row-odd"><td>AMGM</td>
+<td>2</td>
+<td>95.17</td>
+</tr>
+<tr class="row-even"><td>Bukin02</td>
+<td>2</td>
+<td>100.00</td>
+</tr>
+<tr class="row-odd"><td>CosineMixture</td>
+<td>2</td>
+<td>100.00</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="multidimensional-test-functions-index">
+<h2>Multidimensional Test Functions Index<a class="headerlink" href="#multidimensional-test-functions-index" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_A.html#n-d-test-functions-a"><em> N-D Test Functions A</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_A.html#go_benchmark.Ackley" title="go_benchmark.Ackley"><tt class="xref py py-class docutils literal"><span class="pre">Ackley</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_A.html#go_benchmark.Adjiman" title="go_benchmark.Adjiman"><tt class="xref py py-class docutils literal"><span class="pre">Adjiman</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_A.html#go_benchmark.Alpine01" title="go_benchmark.Alpine01"><tt class="xref py py-class docutils literal"><span class="pre">Alpine01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_A.html#go_benchmark.Alpine02" title="go_benchmark.Alpine02"><tt class="xref py py-class docutils literal"><span class="pre">Alpine02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_A.html#go_benchmark.AMGM" title="go_benchmark.AMGM"><tt class="xref py py-class docutils literal"><span class="pre">AMGM</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_B.html#n-d-test-functions-b"><em> N-D Test Functions B</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.BartelsConn" title="go_benchmark.BartelsConn"><tt class="xref py py-class docutils literal"><span class="pre">BartelsConn</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Beale" title="go_benchmark.Beale"><tt class="xref py py-class docutils literal"><span class="pre">Beale</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Bird" title="go_benchmark.Bird"><tt class="xref py py-class docutils literal"><span class="pre">Bird</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Bohachevsky" title="go_benchmark.Bohachevsky"><tt class="xref py py-class docutils literal"><span class="pre">Bohachevsky</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.BoxBetts" title="go_benchmark.BoxBetts"><tt class="xref py py-class docutils literal"><span class="pre">BoxBetts</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Branin01" title="go_benchmark.Branin01"><tt class="xref py py-class docutils literal"><span class="pre">Branin01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Branin02" title="go_benchmark.Branin02"><tt class="xref py py-class docutils literal"><span class="pre">Branin02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Brent" title="go_benchmark.Brent"><tt class="xref py py-class docutils literal"><span class="pre">Brent</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Brown" title="go_benchmark.Brown"><tt class="xref py py-class docutils literal"><span class="pre">Brown</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Bukin02" title="go_benchmark.Bukin02"><tt class="xref py py-class docutils literal"><span class="pre">Bukin02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Bukin04" title="go_benchmark.Bukin04"><tt class="xref py py-class docutils literal"><span class="pre">Bukin04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_B.html#go_benchmark.Bukin06" title="go_benchmark.Bukin06"><tt class="xref py py-class docutils literal"><span class="pre">Bukin06</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_C.html#n-d-test-functions-c"><em> N-D Test Functions C</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.CarromTable" title="go_benchmark.CarromTable"><tt class="xref py py-class docutils literal"><span class="pre">CarromTable</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.Chichinadze" title="go_benchmark.Chichinadze"><tt class="xref py py-class docutils literal"><span class="pre">Chichinadze</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.Cigar" title="go_benchmark.Cigar"><tt class="xref py py-class docutils literal"><span class="pre">Cigar</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.Cola" title="go_benchmark.Cola"><tt class="xref py py-class docutils literal"><span class="pre">Cola</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.Colville" title="go_benchmark.Colville"><tt class="xref py py-class docutils literal"><span class="pre">Colville</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.Corana" title="go_benchmark.Corana"><tt class="xref py py-class docutils literal"><span class="pre">Corana</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.CosineMixture" title="go_benchmark.CosineMixture"><tt class="xref py py-class docutils literal"><span class="pre">CosineMixture</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.CrossInTray" title="go_benchmark.CrossInTray"><tt class="xref py py-class docutils literal"><span class="pre">CrossInTray</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.CrossLegTable" title="go_benchmark.CrossLegTable"><tt class="xref py py-class docutils literal"><span class="pre">CrossLegTable</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.CrownedCross" title="go_benchmark.CrownedCross"><tt class="xref py py-class docutils literal"><span class="pre">CrownedCross</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.Csendes" title="go_benchmark.Csendes"><tt class="xref py py-class docutils literal"><span class="pre">Csendes</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_C.html#go_benchmark.Cube" title="go_benchmark.Cube"><tt class="xref py py-class docutils literal"><span class="pre">Cube</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_D.html#n-d-test-functions-d"><em> N-D Test Functions D</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.Damavandi" title="go_benchmark.Damavandi"><tt class="xref py py-class docutils literal"><span class="pre">Damavandi</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.Deb01" title="go_benchmark.Deb01"><tt class="xref py py-class docutils literal"><span class="pre">Deb01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.Deb02" title="go_benchmark.Deb02"><tt class="xref py py-class docutils literal"><span class="pre">Deb02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.Decanomial" title="go_benchmark.Decanomial"><tt class="xref py py-class docutils literal"><span class="pre">Decanomial</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.Deceptive" title="go_benchmark.Deceptive"><tt class="xref py py-class docutils literal"><span class="pre">Deceptive</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.DeckkersAarts" title="go_benchmark.DeckkersAarts"><tt class="xref py py-class docutils literal"><span class="pre">DeckkersAarts</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.DeflectedCorrugatedSpring" title="go_benchmark.DeflectedCorrugatedSpring"><tt class="xref py py-class docutils literal"><span class="pre">DeflectedCorrugatedSpring</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.DeVilliersGlasser01" title="go_benchmark.DeVilliersGlasser01"><tt class="xref py py-class docutils literal"><span class="pre">DeVilliersGlasser01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.DeVilliersGlasser02" title="go_benchmark.DeVilliersGlasser02"><tt class="xref py py-class docutils literal"><span class="pre">DeVilliersGlasser02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.DixonPrice" title="go_benchmark.DixonPrice"><tt class="xref py py-class docutils literal"><span class="pre">DixonPrice</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.Dolan" title="go_benchmark.Dolan"><tt class="xref py py-class docutils literal"><span class="pre">Dolan</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_D.html#go_benchmark.DropWave" title="go_benchmark.DropWave"><tt class="xref py py-class docutils literal"><span class="pre">DropWave</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_E.html#n-d-test-functions-e"><em> N-D Test Functions E</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_E.html#go_benchmark.Easom" title="go_benchmark.Easom"><tt class="xref py py-class docutils literal"><span class="pre">Easom</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_E.html#go_benchmark.EggCrate" title="go_benchmark.EggCrate"><tt class="xref py py-class docutils literal"><span class="pre">EggCrate</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_E.html#go_benchmark.EggHolder" title="go_benchmark.EggHolder"><tt class="xref py py-class docutils literal"><span class="pre">EggHolder</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_E.html#go_benchmark.ElAttarVidyasagarDutta" title="go_benchmark.ElAttarVidyasagarDutta"><tt class="xref py py-class docutils literal"><span class="pre">ElAttarVidyasagarDutta</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_E.html#go_benchmark.Exp2" title="go_benchmark.Exp2"><tt class="xref py py-class docutils literal"><span class="pre">Exp2</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_E.html#go_benchmark.Exponential" title="go_benchmark.Exponential"><tt class="xref py py-class docutils literal"><span class="pre">Exponential</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_F.html#n-d-test-functions-f"><em> N-D Test Functions F</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_F.html#go_benchmark.FreudensteinRoth" title="go_benchmark.FreudensteinRoth"><tt class="xref py py-class docutils literal"><span class="pre">FreudensteinRoth</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_G.html#n-d-test-functions-g"><em> N-D Test Functions G</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_G.html#go_benchmark.Gear" title="go_benchmark.Gear"><tt class="xref py py-class docutils literal"><span class="pre">Gear</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_G.html#go_benchmark.Giunta" title="go_benchmark.Giunta"><tt class="xref py py-class docutils literal"><span class="pre">Giunta</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_G.html#go_benchmark.GoldsteinPrice" title="go_benchmark.GoldsteinPrice"><tt class="xref py py-class docutils literal"><span class="pre">GoldsteinPrice</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_G.html#go_benchmark.Griewank" title="go_benchmark.Griewank"><tt class="xref py py-class docutils literal"><span class="pre">Griewank</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_G.html#go_benchmark.Gulf" title="go_benchmark.Gulf"><tt class="xref py py-class docutils literal"><span class="pre">Gulf</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_H.html#n-d-test-functions-h"><em> N-D Test Functions H</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_H.html#go_benchmark.Hansen" title="go_benchmark.Hansen"><tt class="xref py py-class docutils literal"><span class="pre">Hansen</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_H.html#go_benchmark.Hartmann3" title="go_benchmark.Hartmann3"><tt class="xref py py-class docutils literal"><span class="pre">Hartmann3</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_H.html#go_benchmark.Hartmann6" title="go_benchmark.Hartmann6"><tt class="xref py py-class docutils literal"><span class="pre">Hartmann6</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_H.html#go_benchmark.HelicalValley" title="go_benchmark.HelicalValley"><tt class="xref py py-class docutils literal"><span class="pre">HelicalValley</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_H.html#go_benchmark.HimmelBlau" title="go_benchmark.HimmelBlau"><tt class="xref py py-class docutils literal"><span class="pre">HimmelBlau</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_H.html#go_benchmark.HolderTable" title="go_benchmark.HolderTable"><tt class="xref py py-class docutils literal"><span class="pre">HolderTable</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_H.html#go_benchmark.Holzman" title="go_benchmark.Holzman"><tt class="xref py py-class docutils literal"><span class="pre">Holzman</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_H.html#go_benchmark.Hosaki" title="go_benchmark.Hosaki"><tt class="xref py py-class docutils literal"><span class="pre">Hosaki</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_I.html#n-d-test-functions-i"><em> N-D Test Functions I</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_I.html#go_benchmark.Infinity" title="go_benchmark.Infinity"><tt class="xref py py-class docutils literal"><span class="pre">Infinity</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_J.html#n-d-test-functions-j"><em> N-D Test Functions J</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_J.html#go_benchmark.JennrichSampson" title="go_benchmark.JennrichSampson"><tt class="xref py py-class docutils literal"><span class="pre">JennrichSampson</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_J.html#go_benchmark.Judge" title="go_benchmark.Judge"><tt class="xref py py-class docutils literal"><span class="pre">Judge</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_K.html#n-d-test-functions-k"><em> N-D Test Functions K</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_K.html#go_benchmark.Katsuura" title="go_benchmark.Katsuura"><tt class="xref py py-class docutils literal"><span class="pre">Katsuura</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_K.html#go_benchmark.Keane" title="go_benchmark.Keane"><tt class="xref py py-class docutils literal"><span class="pre">Keane</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_K.html#go_benchmark.Kowalik" title="go_benchmark.Kowalik"><tt class="xref py py-class docutils literal"><span class="pre">Kowalik</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_L.html#n-d-test-functions-l"><em> N-D Test Functions L</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_L.html#go_benchmark.Langermann" title="go_benchmark.Langermann"><tt class="xref py py-class docutils literal"><span class="pre">Langermann</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_L.html#go_benchmark.LennardJones" title="go_benchmark.LennardJones"><tt class="xref py py-class docutils literal"><span class="pre">LennardJones</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_L.html#go_benchmark.Leon" title="go_benchmark.Leon"><tt class="xref py py-class docutils literal"><span class="pre">Leon</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_L.html#go_benchmark.Levy03" title="go_benchmark.Levy03"><tt class="xref py py-class docutils literal"><span class="pre">Levy03</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_L.html#go_benchmark.Levy05" title="go_benchmark.Levy05"><tt class="xref py py-class docutils literal"><span class="pre">Levy05</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_L.html#go_benchmark.Levy13" title="go_benchmark.Levy13"><tt class="xref py py-class docutils literal"><span class="pre">Levy13</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_M.html#n-d-test-functions-m"><em> N-D Test Functions M</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Matyas" title="go_benchmark.Matyas"><tt class="xref py py-class docutils literal"><span class="pre">Matyas</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.McCormick" title="go_benchmark.McCormick"><tt class="xref py py-class docutils literal"><span class="pre">McCormick</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Michalewicz" title="go_benchmark.Michalewicz"><tt class="xref py py-class docutils literal"><span class="pre">Michalewicz</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.MieleCantrell" title="go_benchmark.MieleCantrell"><tt class="xref py py-class docutils literal"><span class="pre">MieleCantrell</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra01" title="go_benchmark.Mishra01"><tt class="xref py py-class docutils literal"><span class="pre">Mishra01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra02" title="go_benchmark.Mishra02"><tt class="xref py py-class docutils literal"><span class="pre">Mishra02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra03" title="go_benchmark.Mishra03"><tt class="xref py py-class docutils literal"><span class="pre">Mishra03</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra04" title="go_benchmark.Mishra04"><tt class="xref py py-class docutils literal"><span class="pre">Mishra04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra05" title="go_benchmark.Mishra05"><tt class="xref py py-class docutils literal"><span class="pre">Mishra05</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra06" title="go_benchmark.Mishra06"><tt class="xref py py-class docutils literal"><span class="pre">Mishra06</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra07" title="go_benchmark.Mishra07"><tt class="xref py py-class docutils literal"><span class="pre">Mishra07</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra08" title="go_benchmark.Mishra08"><tt class="xref py py-class docutils literal"><span class="pre">Mishra08</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra09" title="go_benchmark.Mishra09"><tt class="xref py py-class docutils literal"><span class="pre">Mishra09</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra10" title="go_benchmark.Mishra10"><tt class="xref py py-class docutils literal"><span class="pre">Mishra10</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.Mishra11" title="go_benchmark.Mishra11"><tt class="xref py py-class docutils literal"><span class="pre">Mishra11</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_M.html#go_benchmark.MultiModal" title="go_benchmark.MultiModal"><tt class="xref py py-class docutils literal"><span class="pre">MultiModal</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_N.html#n-d-test-functions-n"><em> N-D Test Functions N</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_N.html#go_benchmark.NeedleEye" title="go_benchmark.NeedleEye"><tt class="xref py py-class docutils literal"><span class="pre">NeedleEye</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_N.html#go_benchmark.NewFunction01" title="go_benchmark.NewFunction01"><tt class="xref py py-class docutils literal"><span class="pre">NewFunction01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_N.html#go_benchmark.NewFunction02" title="go_benchmark.NewFunction02"><tt class="xref py py-class docutils literal"><span class="pre">NewFunction02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_N.html#go_benchmark.NewFunction03" title="go_benchmark.NewFunction03"><tt class="xref py py-class docutils literal"><span class="pre">NewFunction03</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_O.html#n-d-test-functions-o"><em> N-D Test Functions O</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_O.html#go_benchmark.OddSquare" title="go_benchmark.OddSquare"><tt class="xref py py-class docutils literal"><span class="pre">OddSquare</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_P.html#n-d-test-functions-p"><em> N-D Test Functions P</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Parsopoulos" title="go_benchmark.Parsopoulos"><tt class="xref py py-class docutils literal"><span class="pre">Parsopoulos</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Pathological" title="go_benchmark.Pathological"><tt class="xref py py-class docutils literal"><span class="pre">Pathological</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Paviani" title="go_benchmark.Paviani"><tt class="xref py py-class docutils literal"><span class="pre">Paviani</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Penalty01" title="go_benchmark.Penalty01"><tt class="xref py py-class docutils literal"><span class="pre">Penalty01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Penalty02" title="go_benchmark.Penalty02"><tt class="xref py py-class docutils literal"><span class="pre">Penalty02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.PenHolder" title="go_benchmark.PenHolder"><tt class="xref py py-class docutils literal"><span class="pre">PenHolder</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.PermFunction01" title="go_benchmark.PermFunction01"><tt class="xref py py-class docutils literal"><span class="pre">PermFunction01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.PermFunction02" title="go_benchmark.PermFunction02"><tt class="xref py py-class docutils literal"><span class="pre">PermFunction02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Pinter" title="go_benchmark.Pinter"><tt class="xref py py-class docutils literal"><span class="pre">Pinter</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Plateau" title="go_benchmark.Plateau"><tt class="xref py py-class docutils literal"><span class="pre">Plateau</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Powell" title="go_benchmark.Powell"><tt class="xref py py-class docutils literal"><span class="pre">Powell</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.PowerSum" title="go_benchmark.PowerSum"><tt class="xref py py-class docutils literal"><span class="pre">PowerSum</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Price01" title="go_benchmark.Price01"><tt class="xref py py-class docutils literal"><span class="pre">Price01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Price02" title="go_benchmark.Price02"><tt class="xref py py-class docutils literal"><span class="pre">Price02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Price03" title="go_benchmark.Price03"><tt class="xref py py-class docutils literal"><span class="pre">Price03</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_P.html#go_benchmark.Price04" title="go_benchmark.Price04"><tt class="xref py py-class docutils literal"><span class="pre">Price04</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_Q.html#n-d-test-functions-q"><em> N-D Test Functions Q</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_Q.html#go_benchmark.Qing" title="go_benchmark.Qing"><tt class="xref py py-class docutils literal"><span class="pre">Qing</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_Q.html#go_benchmark.Quadratic" title="go_benchmark.Quadratic"><tt class="xref py py-class docutils literal"><span class="pre">Quadratic</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_Q.html#go_benchmark.Quintic" title="go_benchmark.Quintic"><tt class="xref py py-class docutils literal"><span class="pre">Quintic</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_R.html#n-d-test-functions-r"><em> N-D Test Functions R</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_R.html#go_benchmark.Rana" title="go_benchmark.Rana"><tt class="xref py py-class docutils literal"><span class="pre">Rana</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_R.html#go_benchmark.Rastrigin" title="go_benchmark.Rastrigin"><tt class="xref py py-class docutils literal"><span class="pre">Rastrigin</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_R.html#go_benchmark.Ripple01" title="go_benchmark.Ripple01"><tt class="xref py py-class docutils literal"><span class="pre">Ripple01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_R.html#go_benchmark.Ripple25" title="go_benchmark.Ripple25"><tt class="xref py py-class docutils literal"><span class="pre">Ripple25</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_R.html#go_benchmark.Rosenbrock" title="go_benchmark.Rosenbrock"><tt class="xref py py-class docutils literal"><span class="pre">Rosenbrock</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_R.html#go_benchmark.RosenbrockModified" title="go_benchmark.RosenbrockModified"><tt class="xref py py-class docutils literal"><span class="pre">RosenbrockModified</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_R.html#go_benchmark.RotatedEllipse01" title="go_benchmark.RotatedEllipse01"><tt class="xref py py-class docutils literal"><span class="pre">RotatedEllipse01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_R.html#go_benchmark.RotatedEllipse02" title="go_benchmark.RotatedEllipse02"><tt class="xref py py-class docutils literal"><span class="pre">RotatedEllipse02</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_S.html#n-d-test-functions-s"><em> N-D Test Functions S</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Salomon" title="go_benchmark.Salomon"><tt class="xref py py-class docutils literal"><span class="pre">Salomon</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Sargan" title="go_benchmark.Sargan"><tt class="xref py py-class docutils literal"><span class="pre">Sargan</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schaffer01" title="go_benchmark.Schaffer01"><tt class="xref py py-class docutils literal"><span class="pre">Schaffer01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schaffer02" title="go_benchmark.Schaffer02"><tt class="xref py py-class docutils literal"><span class="pre">Schaffer02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schaffer03" title="go_benchmark.Schaffer03"><tt class="xref py py-class docutils literal"><span class="pre">Schaffer03</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schaffer04" title="go_benchmark.Schaffer04"><tt class="xref py py-class docutils literal"><span class="pre">Schaffer04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.SchmidtVetters" title="go_benchmark.SchmidtVetters"><tt class="xref py py-class docutils literal"><span class="pre">SchmidtVetters</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel01" title="go_benchmark.Schwefel01"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel02" title="go_benchmark.Schwefel02"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel04" title="go_benchmark.Schwefel04"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel06" title="go_benchmark.Schwefel06"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel06</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel20" title="go_benchmark.Schwefel20"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel20</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel21" title="go_benchmark.Schwefel21"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel21</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel22" title="go_benchmark.Schwefel22"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel22</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel26" title="go_benchmark.Schwefel26"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel26</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Schwefel36" title="go_benchmark.Schwefel36"><tt class="xref py py-class docutils literal"><span class="pre">Schwefel36</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Shekel05" title="go_benchmark.Shekel05"><tt class="xref py py-class docutils literal"><span class="pre">Shekel05</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Shekel07" title="go_benchmark.Shekel07"><tt class="xref py py-class docutils literal"><span class="pre">Shekel07</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Shekel10" title="go_benchmark.Shekel10"><tt class="xref py py-class docutils literal"><span class="pre">Shekel10</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Shubert01" title="go_benchmark.Shubert01"><tt class="xref py py-class docutils literal"><span class="pre">Shubert01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Shubert03" title="go_benchmark.Shubert03"><tt class="xref py py-class docutils literal"><span class="pre">Shubert03</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Shubert04" title="go_benchmark.Shubert04"><tt class="xref py py-class docutils literal"><span class="pre">Shubert04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.SineEnvelope" title="go_benchmark.SineEnvelope"><tt class="xref py py-class docutils literal"><span class="pre">SineEnvelope</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.SixHumpCamel" title="go_benchmark.SixHumpCamel"><tt class="xref py py-class docutils literal"><span class="pre">SixHumpCamel</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Sodp" title="go_benchmark.Sodp"><tt class="xref py py-class docutils literal"><span class="pre">Sodp</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Sphere" title="go_benchmark.Sphere"><tt class="xref py py-class docutils literal"><span class="pre">Sphere</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Step" title="go_benchmark.Step"><tt class="xref py py-class docutils literal"><span class="pre">Step</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.Stochastic" title="go_benchmark.Stochastic"><tt class="xref py py-class docutils literal"><span class="pre">Stochastic</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.StretchedV" title="go_benchmark.StretchedV"><tt class="xref py py-class docutils literal"><span class="pre">StretchedV</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_S.html#go_benchmark.StyblinskiTang" title="go_benchmark.StyblinskiTang"><tt class="xref py py-class docutils literal"><span class="pre">StyblinskiTang</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_T.html#n-d-test-functions-t"><em> N-D Test Functions T</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_T.html#go_benchmark.TestTubeHolder" title="go_benchmark.TestTubeHolder"><tt class="xref py py-class docutils literal"><span class="pre">TestTubeHolder</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_T.html#go_benchmark.ThreeHumpCamel" title="go_benchmark.ThreeHumpCamel"><tt class="xref py py-class docutils literal"><span class="pre">ThreeHumpCamel</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_T.html#go_benchmark.Treccani" title="go_benchmark.Treccani"><tt class="xref py py-class docutils literal"><span class="pre">Treccani</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_T.html#go_benchmark.Trefethen" title="go_benchmark.Trefethen"><tt class="xref py py-class docutils literal"><span class="pre">Trefethen</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_T.html#go_benchmark.Trid" title="go_benchmark.Trid"><tt class="xref py py-class docutils literal"><span class="pre">Trid</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_T.html#go_benchmark.Trigonometric01" title="go_benchmark.Trigonometric01"><tt class="xref py py-class docutils literal"><span class="pre">Trigonometric01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_T.html#go_benchmark.Trigonometric02" title="go_benchmark.Trigonometric02"><tt class="xref py py-class docutils literal"><span class="pre">Trigonometric02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_T.html#go_benchmark.Tripod" title="go_benchmark.Tripod"><tt class="xref py py-class docutils literal"><span class="pre">Tripod</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_U.html#n-d-test-functions-u"><em> N-D Test Functions U</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_U.html#go_benchmark.Ursem01" title="go_benchmark.Ursem01"><tt class="xref py py-class docutils literal"><span class="pre">Ursem01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_U.html#go_benchmark.Ursem03" title="go_benchmark.Ursem03"><tt class="xref py py-class docutils literal"><span class="pre">Ursem03</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_U.html#go_benchmark.Ursem04" title="go_benchmark.Ursem04"><tt class="xref py py-class docutils literal"><span class="pre">Ursem04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_U.html#go_benchmark.UrsemWaves" title="go_benchmark.UrsemWaves"><tt class="xref py py-class docutils literal"><span class="pre">UrsemWaves</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_V.html#n-d-test-functions-v"><em> N-D Test Functions V</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_V.html#go_benchmark.VenterSobiezcczanskiSobieski" title="go_benchmark.VenterSobiezcczanskiSobieski"><tt class="xref py py-class docutils literal"><span class="pre">VenterSobiezcczanskiSobieski</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_V.html#go_benchmark.Vincent" title="go_benchmark.Vincent"><tt class="xref py py-class docutils literal"><span class="pre">Vincent</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_W.html#n-d-test-functions-w"><em> N-D Test Functions W</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_W.html#go_benchmark.Watson" title="go_benchmark.Watson"><tt class="xref py py-class docutils literal"><span class="pre">Watson</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_W.html#go_benchmark.Wavy" title="go_benchmark.Wavy"><tt class="xref py py-class docutils literal"><span class="pre">Wavy</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_W.html#go_benchmark.WayburnSeader01" title="go_benchmark.WayburnSeader01"><tt class="xref py py-class docutils literal"><span class="pre">WayburnSeader01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_W.html#go_benchmark.WayburnSeader02" title="go_benchmark.WayburnSeader02"><tt class="xref py py-class docutils literal"><span class="pre">WayburnSeader02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_W.html#go_benchmark.Weierstrass" title="go_benchmark.Weierstrass"><tt class="xref py py-class docutils literal"><span class="pre">Weierstrass</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_W.html#go_benchmark.Whitley" title="go_benchmark.Whitley"><tt class="xref py py-class docutils literal"><span class="pre">Whitley</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_W.html#go_benchmark.Wolfe" title="go_benchmark.Wolfe"><tt class="xref py py-class docutils literal"><span class="pre">Wolfe</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_X.html#n-d-test-functions-x"><em> N-D Test Functions X</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_X.html#go_benchmark.XinSheYang01" title="go_benchmark.XinSheYang01"><tt class="xref py py-class docutils literal"><span class="pre">XinSheYang01</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_X.html#go_benchmark.XinSheYang02" title="go_benchmark.XinSheYang02"><tt class="xref py py-class docutils literal"><span class="pre">XinSheYang02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_X.html#go_benchmark.XinSheYang03" title="go_benchmark.XinSheYang03"><tt class="xref py py-class docutils literal"><span class="pre">XinSheYang03</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_X.html#go_benchmark.XinSheYang04" title="go_benchmark.XinSheYang04"><tt class="xref py py-class docutils literal"><span class="pre">XinSheYang04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_X.html#go_benchmark.Xor" title="go_benchmark.Xor"><tt class="xref py py-class docutils literal"><span class="pre">Xor</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_Y.html#n-d-test-functions-y"><em> N-D Test Functions Y</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_Y.html#go_benchmark.YaoLiu04" title="go_benchmark.YaoLiu04"><tt class="xref py py-class docutils literal"><span class="pre">YaoLiu04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_Y.html#go_benchmark.YaoLiu09" title="go_benchmark.YaoLiu09"><tt class="xref py py-class docutils literal"><span class="pre">YaoLiu09</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_nd_Z.html#n-d-test-functions-z"><em> N-D Test Functions Z</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_nd_Z.html#go_benchmark.Zacharov" title="go_benchmark.Zacharov"><tt class="xref py py-class docutils literal"><span class="pre">Zacharov</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_Z.html#go_benchmark.ZeroSum" title="go_benchmark.ZeroSum"><tt class="xref py py-class docutils literal"><span class="pre">ZeroSum</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_Z.html#go_benchmark.Zettl" title="go_benchmark.Zettl"><tt class="xref py py-class docutils literal"><span class="pre">Zettl</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_Z.html#go_benchmark.Zimmerman" title="go_benchmark.Zimmerman"><tt class="xref py py-class docutils literal"><span class="pre">Zimmerman</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_nd_Z.html#go_benchmark.Zirilli" title="go_benchmark.Zirilli"><tt class="xref py py-class docutils literal"><span class="pre">Zirilli</span></tt></a></li>
+</ol>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="univariate-test-functions-index">
+<h2>Univariate Test Functions Index<a class="headerlink" href="#univariate-test-functions-index" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="test_functions_1d.html#d-test-functions"><em> 1-D Test Functions</em></a><ol class="arabic">
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem02" title="go_benchmark.Problem02"><tt class="xref py py-class docutils literal"><span class="pre">Problem02</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem03" title="go_benchmark.Problem03"><tt class="xref py py-class docutils literal"><span class="pre">Problem03</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem04" title="go_benchmark.Problem04"><tt class="xref py py-class docutils literal"><span class="pre">Problem04</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem05" title="go_benchmark.Problem05"><tt class="xref py py-class docutils literal"><span class="pre">Problem05</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem06" title="go_benchmark.Problem06"><tt class="xref py py-class docutils literal"><span class="pre">Problem06</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem07" title="go_benchmark.Problem07"><tt class="xref py py-class docutils literal"><span class="pre">Problem07</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem08" title="go_benchmark.Problem08"><tt class="xref py py-class docutils literal"><span class="pre">Problem08</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem09" title="go_benchmark.Problem09"><tt class="xref py py-class docutils literal"><span class="pre">Problem09</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem10" title="go_benchmark.Problem10"><tt class="xref py py-class docutils literal"><span class="pre">Problem10</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem11" title="go_benchmark.Problem11"><tt class="xref py py-class docutils literal"><span class="pre">Problem11</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem12" title="go_benchmark.Problem12"><tt class="xref py py-class docutils literal"><span class="pre">Problem12</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem13" title="go_benchmark.Problem13"><tt class="xref py py-class docutils literal"><span class="pre">Problem13</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem14" title="go_benchmark.Problem14"><tt class="xref py py-class docutils literal"><span class="pre">Problem14</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem15" title="go_benchmark.Problem15"><tt class="xref py py-class docutils literal"><span class="pre">Problem15</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem18" title="go_benchmark.Problem18"><tt class="xref py py-class docutils literal"><span class="pre">Problem18</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem20" title="go_benchmark.Problem20"><tt class="xref py py-class docutils literal"><span class="pre">Problem20</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem21" title="go_benchmark.Problem21"><tt class="xref py py-class docutils literal"><span class="pre">Problem21</span></tt></a></li>
+<li><a class="reference internal" href="test_functions_1d.html#go_benchmark.Problem22" title="go_benchmark.Problem22"><tt class="xref py py-class docutils literal"><span class="pre">Problem22</span></tt></a></li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"> Test Functions Index</a><ul>
+<li><a class="reference internal" href="#test-functions-hardness">Test Functions &#8220;Hardness&#8221;</a></li>
+<li><a class="reference internal" href="#multidimensional-test-functions-index">Multidimensional Test Functions Index</a></li>
+<li><a class="reference internal" href="#univariate-test-functions-index">Univariate Test Functions Index</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="univariate.html"
+                        title="previous chapter">Univariate Benchmarks Results</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_A.html"
+                        title="next chapter"> N-D Test Functions A</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_A.html" title="N-D Test Functions A"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="univariate.html" title="Univariate Benchmarks Results"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> Test Functions Index</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

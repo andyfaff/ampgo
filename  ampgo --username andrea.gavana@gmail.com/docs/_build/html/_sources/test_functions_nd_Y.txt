@@ -1,0 +1,21 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions Y:
+
+|test_functions| N-D Test Functions Y
+======================================
+
+
+
+.. autoclass:: go_benchmark.YaoLiu04
+
+-----
+
+
+
+.. autoclass:: go_benchmark.YaoLiu09
+

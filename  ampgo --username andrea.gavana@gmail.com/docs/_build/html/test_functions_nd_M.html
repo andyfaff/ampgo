@@ -1,0 +1,409 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>N-D Test Functions M &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="N-D Test Functions N" href="test_functions_nd_N.html" />
+    <link rel="prev" title="N-D Test Functions L" href="test_functions_nd_L.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_N.html" title="N-D Test Functions N"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_L.html" title="N-D Test Functions L"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions M</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-n-d-test-functions-m">
+<span id="n-d-test-functions-m"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> N-D Test Functions M<a class="headerlink" href="#test-functions-n-d-test-functions-m" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.Matyas">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Matyas</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Matyas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matyas test objective function.</p>
+<p>This class defines the Matyas global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/a51bf48d90712b80ff027a42581806e163ef5153.png" alt="f_{\text{Matyas}}(\mathbf{x}) = 0.26(x_1^2 + x_2^2) - 0.48x_1x_2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Matyas function" src="_images/Matyas.png" />
+<p class="caption"><strong>Two-dimensional Matyas function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.McCormick">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">McCormick</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.McCormick" title="Permalink to this definition">¶</a></dt>
+<dd><p>McCormick test objective function.</p>
+<p>This class defines the McCormick global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/838319188c33c2be3c3ed73e1a71742744712f97.png" alt="f_{\text{McCormick}}(\mathbf{x}) = - x_{1} + 2 x_{2} + \left(x_{1} - x_{2}\right)^{2} + \sin\left(x_{1} + x_{2}\right) + 1"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/c222decd8b0efcfd109bde524102428dfc8ea55f.png" alt="x_1 \in [-1.5, 4]"/>, <img class="math" src="_images/math/a08c2638cc73d2c0c76fcebaf08d0531766bee9c.png" alt="x_2 \in [-3, 4]"/>.</p>
+<div class="figure align-center">
+<img alt="McCormick function" src="_images/McCormick.png" />
+<p class="caption"><strong>Two-dimensional McCormick function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6a1633c444aac8e7a82c5370bb9dc0a980946664.png" alt="f(x_i) = -1.913222954981037"/> for <img class="math" src="_images/math/7589ac6c12fcf8402683d2aedc57a631bbf48b20.png" alt="\mathbf{x} = [-0.5471975602214493, -1.547197559268372]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Michalewicz">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Michalewicz</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Michalewicz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Michalewicz test objective function.</p>
+<p>This class defines the Michalewicz global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/9b7e23cc8d15c75a208dcc0ab971b2c06c164bc3.png" alt="f_{\text{Michalewicz}}(\mathbf{x}) = - \sum_{i=1}^{2} \sin\left(x_i\right) \sin^{2 m}\left(\frac{i x_i^{2}}{\pi}\right)"/></p>
+</div><p>Where, in this exercise, <img class="math" src="_images/math/5f9c5bf97ea0e3c3046ed67ba3329e47397921dc.png" alt="m = 10"/>.</p>
+<p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/10b9f829ecf73e20ecc5c80159a1d1615d4c0f6a.png" alt="x_i \in [0, \pi]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Michalewicz function" src="_images/Michalewicz.png" />
+<p class="caption"><strong>Two-dimensional Michalewicz function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/2b82440b917edf8c16dffcff7d30b9760b950661.png" alt="f(x_i) = -1.8013"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.MieleCantrell">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">MieleCantrell</tt><big>(</big><em>dimensions=4</em><big>)</big><a class="headerlink" href="#go_benchmark.MieleCantrell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Miele-Cantrell test objective function.</p>
+<p>This class defines the Miele-Cantrell global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/5c1c2e8934d240855038886a2b105d11824aa998.png" alt="f_{\text{MieleCantrell}}(\mathbf{x}) = (e^{-x_1} - x_2)^4 + 100(x_2 - x_3)^6 + \tan^4(x_3 - x_4) + x_1^8"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/69d20098894c45659a72bd07f85a904ff6726b1e.png" alt="x_i \in [-1, 1]"/> for <img class="math" src="_images/math/b1f0b8415a7b4436fbd28f6d0bd9cb0e4ad35807.png" alt="i=1,...,4"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/cf25b6256b504a94eee8ba1895a66358db1fce20.png" alt="\mathbf{x} = [0, 1, 1, 1]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra01">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra01</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra01" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 1 test objective function.</p>
+<p>This class defines the Mishra 1 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/884a4fdbddcb90c4efcb29ed217be2c4bf2f196b.png" alt="f_{\text{Mishra01}}(\mathbf{x}) = (1 + x_n)^{x_n} \hspace{10pt} ; \hspace{10pt} x_n = n - \sum_{i=1}^{n-1} x_i"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/e365bfdf2ca5275ec86c322fa2fe576a37b0efd7.png" alt="x_i \in [0, 1]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 1 function" src="_images/Mishra01.png" />
+<p class="caption"><strong>Two-dimensional Mishra 1 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/5fee5c453b79ad871292fe955488293938e4cdf7.png" alt="f(x_i) = 2"/> for <img class="math" src="_images/math/6c75eb8978ee0840709244e93e95693ba1825888.png" alt="x_i = 1"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra02">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra02</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra02" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 2 test objective function.</p>
+<p>This class defines the Mishra 2 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/2232bf92a371e17979f9b6c0d04f96fa48e6620f.png" alt="f_{\text{Mishra02}}(\mathbf{x}) = (1 + x_n)^{x_n} \hspace{10pt} ; \hspace{10pt} x_n = n - \sum_{i=1}^{n-1} \frac{(x_i + x_{i+1})}{2}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/e365bfdf2ca5275ec86c322fa2fe576a37b0efd7.png" alt="x_i \in [0, 1]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 2 function" src="_images/Mishra02.png" />
+<p class="caption"><strong>Two-dimensional Mishra 2 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/5fee5c453b79ad871292fe955488293938e4cdf7.png" alt="f(x_i) = 2"/> for <img class="math" src="_images/math/6c75eb8978ee0840709244e93e95693ba1825888.png" alt="x_i = 1"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra03">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra03</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra03" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 3 test objective function.</p>
+<p>This class defines the Mishra 3 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/d7448eecc72d06ea492ad9e03de4d77c07c04f9a.png" alt="f_{\text{Mishra03}}(\mathbf{x}) = \sqrt{\lvert \cos{\sqrt{\lvert x_1^2 + x_2^2 \rvert}} \rvert} + 0.01(x_1 + x_2)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 3 function" src="_images/Mishra03.png" />
+<p class="caption"><strong>Two-dimensional Mishra 3 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/b525cd5b840a496860afc1c59336652c7c1732b0.png" alt="f(x_i) = -0.18467"/> for <img class="math" src="_images/math/5b52be7a4619b6fa9a8e7755b18c0f1084b45bc5.png" alt="x_i = -10"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra04">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra04</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra04" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 4 test objective function.</p>
+<p>This class defines the Mishra 4 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/68f862254d4e1a178212b63f99e931e81f8cda9f.png" alt="f_{\text{Mishra04}}(\mathbf{x}) = \sqrt{\lvert \sin{\sqrt{\lvert x_1^2 + x_2^2 \rvert}} \rvert} + 0.01(x_1 + x_2)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 4 function" src="_images/Mishra04.png" />
+<p class="caption"><strong>Two-dimensional Mishra 4 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/fae407b22a18e5b150b5e8618a4c3a89876dcc3f.png" alt="f(x_i) = -0.199409"/> for <img class="math" src="_images/math/5b52be7a4619b6fa9a8e7755b18c0f1084b45bc5.png" alt="x_i = -10"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra05">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra05</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra05" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 5 test objective function.</p>
+<p>This class defines the Mishra 5 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/876d51fe6b74d7fd64054297bcbd5881794253c9.png" alt="f_{\text{Mishra05}}(\mathbf{x}) = \left [ \sin^2 ((\cos(x_1) + \cos(x_2))^2) + \cos^2 ((\sin(x_1) + \sin(x_2))^2) + x_1 \right ]^2 + 0.01(x_1 + x_2)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 5 function" src="_images/Mishra05.png" />
+<p class="caption"><strong>Two-dimensional Mishra 5 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/97fec1db3f5ec023eda424eac6cf5e55adf061d1.png" alt="f(x_i) = -0.119829"/> for <img class="math" src="_images/math/2ecafdb455ba5f29d45e3003854ad66015fe5d36.png" alt="\mathbf{x} = [-1.98682, -10]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra06">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra06</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra06" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 6 test objective function.</p>
+<p>This class defines the Mishra 6 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/822c5b71e476eb2b5a19cf1604bf197186a411c4.png" alt="f_{\text{Mishra06}}(\mathbf{x}) = -\log{\left [ \sin^2 ((\cos(x_1) + \cos(x_2))^2) - \cos^2 ((\sin(x_1) + \sin(x_2))^2) + x_1 \right ]^2} + 0.01 \left[(x_1 -1)^2 + (x_2 - 1)^2 \right]"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 6 function" src="_images/Mishra06.png" />
+<p class="caption"><strong>Two-dimensional Mishra 6 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/4f8b04e721c79cbf04f48908f261a2d1de302903.png" alt="f(x_i) = -2.28395"/> for <img class="math" src="_images/math/db37b547caa191433d5a634312b8ab9354fb069e.png" alt="\mathbf{x} = [2.88631, 1.82326]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra07">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra07</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra07" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 7 test objective function.</p>
+<p>This class defines the Mishra 7 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/dea6c4fa424bd7f459f3e0ae0371816b77621268.png" alt="f_{\text{Mishra07}}(\mathbf{x}) = \left [\prod_{i=1}^{n} x_i - n! \right]^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 7 function" src="_images/Mishra07.png" />
+<p class="caption"><strong>Two-dimensional Mishra 7 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/96d3b69b2b3090bdb3b0f43c0851876fd268fac1.png" alt="x_i = \sqrt{n}"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra08">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra08</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra08" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 8 test objective function.</p>
+<p>This class defines the Mishra 8 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/e4a2b0f328dcfdd8fb8e8b246afb7555d05f19d9.png" alt="f_{\text{Mishra08}}(\mathbf{x}) = 0.001 \left[\lvert x_1^{10} - 20x_1^9 + 180x_1^8 - 960 x_1^7 + 3360x_1^6 - 8064x_1^5 + 13340x_1^4 - 15360x_1^3 + 11520x_1^2 - 5120x_1 + 2624 \rvert \lvert x_2^4 + 12x_2^3 + 54x_2^2 + 108x_2 + 81 \rvert \right]^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 8 function" src="_images/Mishra08.png" />
+<p class="caption"><strong>Two-dimensional Mishra 8 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/1927bebccf4c73e04b4474d988813aba0c4c9aa9.png" alt="\mathbf{x} = [2, -3]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra09">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra09</tt><big>(</big><em>dimensions=3</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra09" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 9 test objective function.</p>
+<p>This class defines the Mishra 9 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/28d97eb34f44e2f2aefe005ffd83925403e1fb01.png" alt="f_{\text{Mishra09}}(\mathbf{x}) = \left[ ab^2c + abc^2 + b^2 + (x_1 + x_2 - x_3)^2 \right]^2"/></p>
+</div><p>Where, in this exercise:</p>
+<div class="math">
+<p><img src="_images/math/7dee8b4fad2bccfd1a5d448c8dcc1891e4cfe5ad.png" alt="\begin{cases} a = 2x_1^3 + 5x_1x_2^2 + 4x_3 - 2x_1^2x_3 - 18 \\
+b = x_1 + x_2^3 + x_1x_3^2 - 22 \\
+c = 8x_1^2 + 2x_2x_3 + 2x_2^2 + 3x_2^3 - 52 \end{cases}"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/ebdc951cf2ca60ce8b5c97e2003726b5c2d40dde.png" alt="i=1,2,3"/>.</p>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/fdc5c9a7c44dcb0bce4123a6bb782bcbef1c1609.png" alt="\mathbf{x} = [1, 2, 3]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra10">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra10</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra10" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 10 test objective function.</p>
+<p>This class defines the Mishra 10 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/bfbc53e18ab8508cb144c76dfa1d510605ead898.png" alt="f_{\text{Mishra10}}(\mathbf{x}) = \left[ \lfloor x_1 \perp x_2 \rfloor - \lfloor x_1 \rfloor - \lfloor x_2 \rfloor \right]^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/7a65986e7d16d5bed7a9bcb5a83121c72289727c.png" alt="i=1,2"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 10 function" src="_images/Mishra10.png" />
+<p class="caption"><strong>Two-dimensional Mishra 10 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/cd386ccfd141f73b36f03fca835355fe54ed576c.png" alt="\mathbf{x} = [2, 2]"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Mishra11">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Mishra11</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.Mishra11" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mishra 11 test objective function.</p>
+<p>This class defines the Mishra 11 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/690ba65a511a2e2f3771d926d556c5bcecfb20e8.png" alt="f_{\text{Mishra11}}(\mathbf{x}) = \left [ \frac{1}{n} \sum_{i=1}^{n} \lvert x_i \rvert - \left(\prod_{i=1}^{n} \lvert x_i \rvert \right )^{\frac{1}{n}} \right]^2"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="Mishra 11 function" src="_images/Mishra11.png" />
+<p class="caption"><strong>Two-dimensional Mishra 11 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.MultiModal">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">MultiModal</tt><big>(</big><em>dimensions=2</em><big>)</big><a class="headerlink" href="#go_benchmark.MultiModal" title="Permalink to this definition">¶</a></dt>
+<dd><p>MultiModal test objective function.</p>
+<p>This class defines the MultiModal global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/b96a5bbde2dda54176e99a8c513e4a199244a886.png" alt="f_{\text{MultiModal}}(\mathbf{x}) = \left( \sum_{i=1}^n \lvert x_i \rvert \right) \left( \prod_{i=1}^n \lvert x_i \rvert \right)"/></p>
+</div><p>Here, <img class="math" src="_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> represents the number of dimensions and <img class="math" src="_images/math/d511ca3206c16bae3e3af3c02835f3fe9fb07286.png" alt="x_i \in [-10, 10]"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/>.</p>
+<div class="figure align-center">
+<img alt="MultiModal function" src="_images/MultiModal.png" />
+<p class="caption"><strong>Two-dimensional MultiModal function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/6b41573b3d12ccaf8c781caa82bbfb020b57faf8.png" alt="f(x_i) = 0"/> for <img class="math" src="_images/math/eec020b09f33839d9c5190e7ead679afcc68d1c5.png" alt="x_i = 0"/> for <img class="math" src="_images/math/f9db3747af89d0aef174e6cad0bb0fa89e4ec0b5.png" alt="i=1,...,n"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_L.html"
+                        title="previous chapter"> N-D Test Functions L</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test_functions_nd_N.html"
+                        title="next chapter"> N-D Test Functions N</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_nd_M.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_N.html" title="N-D Test Functions N"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="test_functions_nd_L.html" title="N-D Test Functions L"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> N-D Test Functions M</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

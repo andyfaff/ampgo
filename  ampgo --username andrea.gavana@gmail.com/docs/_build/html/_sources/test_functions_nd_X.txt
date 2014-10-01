@@ -1,0 +1,39 @@
+
+
+.. currentmodule:: go_benchmark
+
+.. include:: headings.inc
+
+.. _N-D test functions X:
+
+|test_functions| N-D Test Functions X
+======================================
+
+
+
+.. autoclass:: go_benchmark.XinSheYang01
+
+-----
+
+
+
+.. autoclass:: go_benchmark.XinSheYang02
+
+-----
+
+
+
+.. autoclass:: go_benchmark.XinSheYang03
+
+-----
+
+
+
+.. autoclass:: go_benchmark.XinSheYang04
+
+-----
+
+
+
+.. autoclass:: go_benchmark.Xor
+

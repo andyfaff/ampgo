@@ -1,0 +1,436 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1-D Test Functions &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="prev" title="N-D Test Functions Z" href="test_functions_nd_Z.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_Z.html" title="N-D Test Functions Z"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> 1-D Test Functions</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="test-functions-1-d-test-functions">
+<span id="d-test-functions"></span><h1><img alt="test_functions" class="align-middle" src="_images/test_functions.png" style="width: 32px;" /> 1-D Test Functions<a class="headerlink" href="#test-functions-1-d-test-functions" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="go_benchmark.Problem02">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem02</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem02" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem02 test objective function.</p>
+<p>This class defines the Univariate Problem02 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/ff500535858d6e8b3c73dbade0cd8d87a011e762.png" alt="f_{\text{Problem02}}(x) = \sin(x) + \sin \left(\frac{10}{3}x \right)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/ec2f2c81b0ea8fa6e1c86d43c2784bce83ba54af.png" alt="x \in [2.7, 7.5]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem02 function" src="_images/Problem02.png" />
+<p class="caption"><strong>Univariate Problem02 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/b4aff442dc9d4a44ada688b3bdd1b7a3c89b526a.png" alt="f(x)=-1.899599"/> for <img class="math" src="_images/math/74ccec6a0ab829cbb015e1c4e12c392ce482c6bd.png" alt="x = 5.145735"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem03">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem03</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem03" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem03 test objective function.</p>
+<p>This class defines the Univariate Problem03 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/6c5d04495e70e61b46d1fe31b8e416fd0d7edd2e.png" alt="f_{\text{Problem03}}(x) = - \sum_{k=1}^6 k \sin[(k+1)x+k]"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/b8a26eec4e1e5e01ac9a8e763e6c2753c67cb421.png" alt="x \in [-10, 10]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem03 function" src="_images/Problem03.png" />
+<p class="caption"><strong>Univariate Problem03 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/3e4faba249016ada8a0cc56623e7fcb7d42bdc68.png" alt="f(x)=-12.03124"/> for <img class="math" src="_images/math/e1dde36961f63cb4168e627b13e0d1fb156dcfd0.png" alt="x = -6.7745761"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem04">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem04</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem04" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem04 test objective function.</p>
+<p>This class defines the Univariate Problem04 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/7a44430aaa780cc12a1bc6012530a0ea1e303e86.png" alt="f_{\text{Problem04}}(x) = - \left(16x^2 - 24x + 5 \right) e^{-x}"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/52f8acc80d7297449440a32ced7d77b81efa100f.png" alt="x \in [1.9, 3.9]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem04 function" src="_images/Problem04.png" />
+<p class="caption"><strong>Univariate Problem04 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/195407d7e6f2dd5652395bd9459125c6b24c2c67.png" alt="f(x)=-3.85045"/> for <img class="math" src="_images/math/d2cd79af4e2a9b1cfc143144f1a02dd986aa7c08.png" alt="x = 2.868034"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem05">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem05</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem05" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem05 test objective function.</p>
+<p>This class defines the Univariate Problem05 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/30e314b9a86bb5074174cec77b67e12c192992ff.png" alt="f_{\text{Problem05}}(x) = - \left(1.4 - 3x \right) \sin(18x)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/9fb736a1dc384a7930a10d9b00159cfc8e3083c1.png" alt="x \in [0, 1.2]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem05 function" src="_images/Problem05.png" />
+<p class="caption"><strong>Univariate Problem05 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/5aa2961c5eb7129456e8e0e63f44469c8f2735f3.png" alt="f(x)=-1.48907"/> for <img class="math" src="_images/math/226d1f27d585cdeda7fcd6524dc52d51d0a6aae2.png" alt="x = 0.96609"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem06">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem06</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem06" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem06 test objective function.</p>
+<p>This class defines the Univariate Problem06 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/20785064f890c7ee54000fb57eb200780567fcf5.png" alt="f_{\text{Problem06}}(x) = - \left[x + \sin(x) \right] e^{-x^2}"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/b8a26eec4e1e5e01ac9a8e763e6c2753c67cb421.png" alt="x \in [-10, 10]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem06 function" src="_images/Problem06.png" />
+<p class="caption"><strong>Univariate Problem06 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/201f7f41e62a38e0c8d0aa1f385fd81a3ceed4bf.png" alt="f(x)=-0.824239"/> for <img class="math" src="_images/math/7fdf5797418078fd7f8848a73a00984a325ea312.png" alt="x = 0.67956"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem07">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem07</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem07" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem07 test objective function.</p>
+<p>This class defines the Univariate Problem07 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/6140a3b57c3e5cab231ccb236b9ac8e0939753a2.png" alt="f_{\text{Problem07}}(x) = \sin(x) + \sin \left(\frac{10}{3}x \right) + \log(x) - 0.84x + 3"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/ec2f2c81b0ea8fa6e1c86d43c2784bce83ba54af.png" alt="x \in [2.7, 7.5]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem07 function" src="_images/Problem07.png" />
+<p class="caption"><strong>Univariate Problem07 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/5dc53de1e59d3b047bcc60927297ea4d6cfe383d.png" alt="f(x)=-1.6013"/> for <img class="math" src="_images/math/0dd52d1689f4cab293f3d82901ba484e59b88627.png" alt="x = 5.19978"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem08">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem08</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem08" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem08 test objective function.</p>
+<p>This class defines the Univariate Problem08 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/07e22cc7c6456943f9b47290ea12f835def97e5b.png" alt="f_{\text{Problem08}}(x) = - \sum_{k=1}^6 k \cos[(k+1)x+k]"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/b8a26eec4e1e5e01ac9a8e763e6c2753c67cb421.png" alt="x \in [-10, 10]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem08 function" src="_images/Problem08.png" />
+<p class="caption"><strong>Univariate Problem08 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/779b1f0d0ed59d116b7bbed57cc34f5efc957ed0.png" alt="f(x)=-14.508"/> for <img class="math" src="_images/math/ac6bc6623ee241862a4da63132e14a9e28566351.png" alt="x = -7.083506"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem09">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem09</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem09" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem09 test objective function.</p>
+<p>This class defines the Univariate Problem09 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/94981bf869b60445ca95964f44b38826f316efbd.png" alt="f_{\text{Problem09}}(x) = \sin(x) + \sin \left(\frac{2}{3} x \right)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/4682f404099bed97ca124079cd959ec3a7f114e3.png" alt="x \in [3.1, 20.4]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem09 function" src="_images/Problem09.png" />
+<p class="caption"><strong>Univariate Problem09 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/9163afb6a61213f5b56fb6f7854051ac3a0cda4b.png" alt="f(x)=-1.90596"/> for <img class="math" src="_images/math/c35cad4f8f93fbfde762b4b1f20b4be765b9700b.png" alt="x = 17.039"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem10">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem10</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem10" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem10 test objective function.</p>
+<p>This class defines the Univariate Problem10 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/20881e5da2895db62df827b3320fee5ce83b2e1e.png" alt="f_{\text{Problem10}}(x) = -x\sin(x)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/40d7e1bd50984648495f59ec6939c266a658dfe9.png" alt="x \in [0, 10]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem10 function" src="_images/Problem10.png" />
+<p class="caption"><strong>Univariate Problem10 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/862a460d3815523bd0fa22e40338442cef3b65e3.png" alt="f(x)=-7.916727"/> for <img class="math" src="_images/math/fafbae63854a33402a6712e84b1ba9502f18531a.png" alt="x = 7.9787"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem11">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem11</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem11" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem11 test objective function.</p>
+<p>This class defines the Univariate Problem11 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/b9a950a2f179f251443f746a5c7ac5e249ac4042.png" alt="f_{\text{Problem11}}(x) = 2\cos(x) + \cos(2x)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/d23e260d5d2cfcce53772cffd51f2e3cd6b73d89.png" alt="x \in [-\pi/2, 2\pi]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem11 function" src="_images/Problem11.png" />
+<p class="caption"><strong>Univariate Problem11 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/0359dc3b2de589edabb305c0a77704ab044aa102.png" alt="f(x)=-1.5"/> for <img class="math" src="_images/math/e221d68ec276228b0bd4314d57eb8d89a24cba7f.png" alt="x = 2.09439"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem12">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem12</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem12" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem12 test objective function.</p>
+<p>This class defines the Univariate Problem12 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/2cdef991303c8c643a906149967dd6e91c9a1b9d.png" alt="f_{\text{Problem12}}(x) = \sin^3(x) + \cos^3(x)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/26cda4a30d6c603fe8ca703fc4eb88b236ff25c4.png" alt="x \in [0, 2\pi]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem12 function" src="_images/Problem12.png" />
+<p class="caption"><strong>Univariate Problem12 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/db09587bb1b0e7ea4f4a33d513da3201d240fb7b.png" alt="f(x)=-1"/> for <img class="math" src="_images/math/de10f212a1094f5a9d00e1cb089ed5121767251c.png" alt="x = \pi"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem13">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem13</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem13" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem13 test objective function.</p>
+<p>This class defines the Univariate Problem13 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/ddc9e975218f883630a30d50619baf7950310662.png" alt="f_{\text{Problem13}}(x) = -x^{2/3} - (1 - x^2)^{1/3}"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/61a986c007e8fe47579b05a3f37d5eaa6cb1c6ef.png" alt="x \in [0.001, 0.99]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem13 function" src="_images/Problem13.png" />
+<p class="caption"><strong>Univariate Problem13 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/91056f7f39c1c6adaaa7ca222dcc0e1d0e01aeef.png" alt="f(x)=-1.5874"/> for <img class="math" src="_images/math/6d67a2bf30ee7b928b18f650afb0a12b853db6b8.png" alt="x = 1/\sqrt(2)"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem14">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem14</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem14" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem14 test objective function.</p>
+<p>This class defines the Univariate Problem14 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/4df3a3f7d7a289d35717f2ada3c137ebf405b6c2.png" alt="f_{\text{Problem14}}(x) = -e^{-x} \sin(2\pi x)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/0dff12037967fa460f8179d7fb5a13bc9d59d9b2.png" alt="x \in [0, 4]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem14 function" src="_images/Problem14.png" />
+<p class="caption"><strong>Univariate Problem14 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/5b9a0e8ca1e8c63e566d88271cc9ba4ce804c649.png" alt="f(x)=-0.788685"/> for <img class="math" src="_images/math/9f0a120745f7a4eee2b39c6534a3c086f1462999.png" alt="x = 0.224885"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem15">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem15</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem15" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem15 test objective function.</p>
+<p>This class defines the Univariate Problem15 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/09640ce7dbc6a926fd0acf975754f8c1d84841d9.png" alt="f_{\text{Problem15}}(x) = \frac{x^{2} - 5 x + 6}{x^{2} + 1}"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/1d0143c5a97cefe62f90257e0d8be285594ccd0d.png" alt="x \in [-5, 5]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem15 function" src="_images/Problem15.png" />
+<p class="caption"><strong>Univariate Problem15 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/bdf14755666b4f4d3ed44ab5c21c0e069a3b48f1.png" alt="f(x)=-0.03553"/> for <img class="math" src="_images/math/c35f9650c9e629b4125e205c33680d8d8e162fe5.png" alt="x = 2.41422"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem18">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem18</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem18" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem18 test objective function.</p>
+<p>This class defines the Univariate Problem18 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/4f2812762003f311e899e64c48d2bdba5d1f3cd1.png" alt="f_{\text{Problem18}}(x) = \begin{cases}(x-2)^2 &amp; \textrm{if} \hspace{5pt} x \leq 3 \\
+                                         2\log(x-2)+1&amp;\textrm{otherwise}\end{cases}"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/8a526c4911114fce06dd822c5c4b6da64455f5ef.png" alt="x \in [0, 6]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem18 function" src="_images/Problem18.png" />
+<p class="caption"><strong>Univariate Problem18 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/a8c9cbf3e3c04dc46dea71f60acd0cb704eabc4d.png" alt="f(x)=0"/> for <img class="math" src="_images/math/2effc7979b1c93e59356b73253d75e2740b33105.png" alt="x = 2"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem20">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem20</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem20" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem20 test objective function.</p>
+<p>This class defines the Univariate Problem20 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/cf7f6851e41a41c9fd4d1514f625cbd5dd8726e7.png" alt="f_{\text{Problem20}}(x) = -[x-\sin(x)]e^{-x^2}"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/b8a26eec4e1e5e01ac9a8e763e6c2753c67cb421.png" alt="x \in [-10, 10]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem20 function" src="_images/Problem20.png" />
+<p class="caption"><strong>Univariate Problem20 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/4a92bf4cfa5f3c9c6c08b165e82eed79942ed2f8.png" alt="f(x)=-0.0634905"/> for <img class="math" src="_images/math/767701c2d2ba01e4aa4ad1d61e6d7b304bd8a310.png" alt="x = 1.195137"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem21">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem21</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem21" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem21 test objective function.</p>
+<p>This class defines the Univariate Problem21 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/1a560e974d72b732da012175bbe3e7e29e1b0cc1.png" alt="f_{\text{Problem21}}(x) = x \sin(x) + x \cos(2x)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/40d7e1bd50984648495f59ec6939c266a658dfe9.png" alt="x \in [0, 10]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem21 function" src="_images/Problem21.png" />
+<p class="caption"><strong>Univariate Problem21 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/926e103e7902123b6962c7e3714dd4d715f0081e.png" alt="f(x)=-9.50835"/> for <img class="math" src="_images/math/991fcc61451d538ed9fc8007556afd1050efb4d5.png" alt="x = 4.79507"/></p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="go_benchmark.Problem22">
+<em class="property">class </em><tt class="descclassname">go_benchmark.</tt><tt class="descname">Problem22</tt><big>(</big><em>dimensions=1</em><big>)</big><a class="headerlink" href="#go_benchmark.Problem22" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Problem22 test objective function.</p>
+<p>This class defines the Univariate Problem22 global optimization problem. This 
+is a multimodal minimization problem defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/a1fa3de1acd538d14662f97ff8703395203e76ae.png" alt="f_{\text{Problem22}}(x) = e^{-3x} - \sin^3(x)"/></p>
+</div><p>Bound constraints: <img class="math" src="_images/math/4e6b1c5b795744f3204a967cd73bc92993d569cf.png" alt="x \in [0, 20]"/></p>
+<div class="figure align-center">
+<img alt="Univariate Problem22 function" src="_images/Problem22.png" />
+<p class="caption"><strong>Univariate Problem22 function</strong></p>
+</div>
+<p><em>Global optimum</em>: <img class="math" src="_images/math/f9ad5969425f97a05326944501c8baf272d6c611.png" alt="f(x)=e^{-27\pi/2} - 1"/> for <img class="math" src="_images/math/0b171c770d1b90114776f6a415775af43d9014b2.png" alt="x = 9\pi/2"/></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="test_functions_nd_Z.html"
+                        title="previous chapter"> N-D Test Functions Z</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/test_functions_1d.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test_functions_nd_Z.html" title="N-D Test Functions Z"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li> 1-D Test Functions</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

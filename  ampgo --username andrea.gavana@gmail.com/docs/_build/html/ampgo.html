@@ -1,0 +1,734 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The AMPGO Solver &mdash; AMPGO 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/ampgo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/infinity_favicon.ico"/>
+    <link rel="top" title="AMPGO 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="Multidimensional Benchmarks Results" href="multidimensional.html" />
+    <link rel="prev" title="Global Optimization Benchmarks and AMPGO" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="multidimensional.html" title="Multidimensional Benchmarks Results"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Global Optimization Benchmarks and AMPGO"
+             accesskey="P">previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li>The AMPGO Solver</li>
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="body headerfix">
+      
+  <div class="section" id="the-ampgo-solver">
+<span id="ampgo"></span><h1>The AMPGO Solver<a class="headerlink" href="#the-ampgo-solver" title="Permalink to this headline">¶</a></h1>
+<p><strong>AMPGO</strong> stands for <cite>Adaptive Memory Programming for Global Optimization</cite>, and its detailed
+implementation is described in the paper &#8220;Adaptive Memory Programming for Constrained
+Global Optimization&#8221; located here:</p>
+<p><a class="reference external" href="http://leeds-faculty.colorado.edu/glover/fred%20pubs/416%20-%20AMP%20(TS)%20for%20Constrained%20Global%20Opt%20w%20Lasdon%20et%20al%20.pdf">http://leeds-faculty.colorado.edu/glover/fred%20pubs/416%20-%20AMP%20(TS)%20for%20Constrained%20Global%20Opt%20w%20Lasdon%20et%20al%20.pdf</a></p>
+<p>The following figure provides a pseudo-code description of the Tabu Tunneling algorithm, which
+is the basis of the global search in <strong>AMPGO</strong>:</p>
+<div class="figure align-center">
+<img alt="AMPGO pseudo code" src="_images/pseudo_code.png" />
+<p class="caption"><strong>AMPGO</strong> Pseudo code - tabu tunnelling algorithm</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="python-logo-ampgo-function-signature-in-python">
+<h2><img alt="python_logo" class="align-middle" src="_images/python_logo.png" style="width: 32px;" /> <strong>AMPGO</strong> Function Signature in Python<a class="headerlink" href="#python-logo-ampgo-function-signature-in-python" title="Permalink to this headline">¶</a></h2>
+<p>The call signature of <strong>AMPGO</strong>&#8216;s Python implementation follows very closely the standard signature for
+the minimization functions in the <cite>scipy.optimize</cite> package in <a class="reference external" href="www.scipy.org">scipy</a>.</p>
+<dl class="function">
+<dt>
+<tt class="descclassname">ampgo.</tt><tt class="descname">AMPGO</tt><big>(</big><em>objfun</em>, <em>x0</em>, <em>args=()</em>, <em>local='L-BFGS-B'</em>, <em>bounds=None</em>, <em>maxfunevals=None</em>, <em>totaliter=20</em>, <em>maxiter=5</em>, <em>glbtol=1e-5</em>, <em>eps1=0.02</em>, <em>eps2=0.1</em>, <em>tabulistsize=5</em>, <em>tabustrategy='farthest'</em>, <em>fmin=-numpy.inf</em>, <em>disp=None</em><big>)</big></dt>
+<dd><p>Finds the global minimum of a function using the AMPGO (Adaptive Memory Programming for
+Global Optimization) algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>objfun</strong> (<em>callable</em>) &#8211; Function to be optimized, in the form <tt class="docutils literal"><span class="pre">f(x,</span> <span class="pre">*args)</span></tt>.</li>
+<li><strong>args</strong> (<em>tuple</em>) &#8211; Additional arguments passed to <cite>objfun</cite>.</li>
+<li><strong>local</strong> (<em>string</em>) &#8211; The local minimization method (e.g. <tt class="docutils literal"><span class="pre">&quot;L-BFGS-B&quot;</span></tt>). It can be one of the available
+<cite>scipy</cite> local solvers or <cite>OpenOpt</cite> solvers.</li>
+<li><strong>bounds</strong> (<em>list</em>) &#8211; A list of tuples specifying the lower and upper bound for each independent variable
+[(<cite>xl0</cite>, <cite>xu0</cite>), (<cite>xl1</cite>, <cite>xu1</cite>), ...]</li>
+<li><strong>maxfunevals</strong> (<em>integer</em>) &#8211; The maximum number of function evaluations allowed.</li>
+<li><strong>totaliter</strong> (<em>integer</em>) &#8211; The maximum number of global iterations allowed.</li>
+<li><strong>maxiter</strong> (<em>integer</em>) &#8211; The maximum number of <cite>Tabu Tunnelling</cite> iterations allowed during each global iteration.</li>
+<li><strong>glbtol</strong> (<em>float</em>) &#8211; The optimization will stop if the absolute difference between the current minimum objective
+function value and the provided global optimum (<cite>fmin</cite>) is less than <cite>glbtol</cite>.</li>
+<li><strong>eps1</strong> (<em>float</em>) &#8211; A constant used to define an aspiration value for the objective function during the Tunnelling phase.</li>
+<li><strong>eps2</strong> (<em>float</em>) &#8211; Perturbation factor used to move away from the latest local minimum at the start of a Tunnelling phase.</li>
+<li><strong>tabulistsize</strong> (<em>integer</em>) &#8211; The size of the tabu search list (a circular list).</li>
+<li><strong>tabustrategy</strong> (<em>string</em>) &#8211; The strategy to use when the size of the tabu list exceeds <cite>tabulistsize</cite>. It can be
+&#8216;oldest&#8217; to drop the oldest point from the tabu list or &#8216;farthest&#8217; to drop the element farthest from
+the last local minimum found.</li>
+<li><strong>fmin</strong> (<em>float</em>) &#8211; If known, the objective function global optimum value.</li>
+<li><strong>disp</strong> (<em>integer</em>) &#8211; If zero or defaulted, then no output is printed on screen. If a positive number, then status
+messages are printed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>A tuple of 5 elements, in the following order:</p>
+<ol class="arabic simple">
+<li><strong>best_x</strong> (<cite>array_like</cite>): the estimated position of the global minimum.</li>
+<li><strong>best_f</strong> (<cite>float</cite>): the value of <cite>objfun</cite> at the minimum.</li>
+<li><strong>evaluations</strong> (<cite>integer</cite>): the number of function evaluations.</li>
+<li><strong>msg</strong> (<cite>string</cite>): a message describes the cause of the termination.</li>
+<li><strong>tunnel_info</strong> (<cite>tuple</cite>): a tuple containing the total number of Tunnelling phases performed and the
+successful ones.</li>
+</ol>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><cite>tuple</cite></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="sensitivity-sensitivities-on-the-ampgo-input-parameters">
+<h2><img alt="sensitivity" class="align-middle" src="_images/sensitivity.png" style="width: 32px;" /> Sensitivities on the <strong>AMPGO</strong> Input Parameters<a class="headerlink" href="#sensitivity-sensitivities-on-the-ampgo-input-parameters" title="Permalink to this headline">¶</a></h2>
+<p>This sections presents a number of sensitivities on the <strong>AMPGO</strong> input parameters, which may be helpful in guiding
+the choice of the parameters themselves depending on the difficulty of the optimization problem at hand. The most
+fundamental argument is evidently the local solver, followed by the maximum number of <cite>Tabu Tunnelling</cite> iterations
+allowed and the length of the list containing the &#8220;tabu points&#8221; (i.e., the previous local minima found by the method).</p>
+<div class="section" id="the-local-solver">
+<h3>The Local Solver<a class="headerlink" href="#the-local-solver" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>AMPGO</strong> Python implementation supports a number of local solvers, from <a class="reference external" href="http://www.scipy.org">scipy</a> and
+<a class="reference external" href="http://www.openopt.org/">OpenOpt</a> . The available solvers can be categorized as follows:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>Scipy-related local solvers supported by <strong>AMPGO</strong></caption>
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Scipy Solver</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Nelder-Mead</td>
+<td>Downhill Simplex algorithm</td>
+</tr>
+<tr class="row-odd"><td>L-BFGS-B</td>
+<td>L-BFGS-B algorithm</td>
+</tr>
+<tr class="row-even"><td>Powell</td>
+<td>Powell&#8217;s conjugate direction method</td>
+</tr>
+<tr class="row-odd"><td>SLSQP</td>
+<td>Sequential Least Squares Programming</td>
+</tr>
+<tr class="row-even"><td>TNC</td>
+<td>Truncated Newton algorithm</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>OpenOpt-related local solvers supported by <strong>AMPGO</strong></caption>
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">OpenOpt Solver</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AUGLAG</td>
+<td>Augmented Lagrangian method</td>
+</tr>
+<tr class="row-odd"><td>BOBYQA</td>
+<td>Powell&#8217;s derivative-free method</td>
+</tr>
+<tr class="row-even"><td>MMA</td>
+<td>Method of moving asymptotes</td>
+</tr>
+<tr class="row-odd"><td>PTN</td>
+<td>Preconditioned truncated Newton method</td>
+</tr>
+<tr class="row-even"><td>RALG</td>
+<td>R-algorithm with adaptive space dilation</td>
+</tr>
+<tr class="row-odd"><td>SLMVM2</td>
+<td>Shifted limited-memory variable-metric</td>
+</tr>
+<tr class="row-even"><td>SQLCP</td>
+<td>Sequential Quadratic Programming</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>I applied <strong>AMPGO</strong> to the entire benchmark suite of N-D optimization problems, considering
+for every benchmark function 100 random starting points. As there are currently 12 local solvers
+supported by <strong>AMPGO</strong>, I re-run the same suite 12 times changing the local solver.</p>
+<p>The results obtained are shown in the following table:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>Sensitivity on <strong>AMPGO</strong> local solvers</caption>
+<colgroup>
+<col width="32%" />
+<col width="32%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Optimization Method</th>
+<th class="head">Overall Success (%)</th>
+<th class="head">Functions Evaluations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AUGLAG</td>
+<td>57.957</td>
+<td>1633</td>
+</tr>
+<tr class="row-odd"><td>BOBYQA</td>
+<td>70.418</td>
+<td>813</td>
+</tr>
+<tr class="row-even"><td>L-BFGS-B</td>
+<td>79.027</td>
+<td>611</td>
+</tr>
+<tr class="row-odd"><td>MMA</td>
+<td>57.489</td>
+<td>1656</td>
+</tr>
+<tr class="row-even"><td>Nelder-Mead</td>
+<td>65.587</td>
+<td>1008</td>
+</tr>
+<tr class="row-odd"><td>Powell</td>
+<td>63.636</td>
+<td>1248</td>
+</tr>
+<tr class="row-even"><td>PTN</td>
+<td>60.777</td>
+<td>1042</td>
+</tr>
+<tr class="row-odd"><td>RALG</td>
+<td>64.565</td>
+<td>952</td>
+</tr>
+<tr class="row-even"><td>SLMVM2</td>
+<td>67.054</td>
+<td>861</td>
+</tr>
+<tr class="row-odd"><td>SLSQP</td>
+<td>65.484</td>
+<td>3039</td>
+</tr>
+<tr class="row-even"><td>SQLCP</td>
+<td>46.902</td>
+<td>1231</td>
+</tr>
+<tr class="row-odd"><td>TNC</td>
+<td>63.804</td>
+<td>861</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>So, for example, <strong>AMPGO</strong> with <tt class="docutils literal"><span class="pre">L-BFGS-B</span></tt> local solver was able to solve, on average, 79.0% of all the test functions for
+all the 100 random starting points using, on average, 611 functions evaluations. This is also shown graphically in
+the picture below.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<img alt="AMPGO local solvers sensitivity" src="_images/solvers_sensitivity.png" />
+<p class="caption"><strong>AMPGO</strong> - Local solvers sensitivity</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="number-of-tabu-tunnelling-phases-maxiter">
+<h3>Number of Tabu Tunnelling Phases (<cite>maxiter</cite>)<a class="headerlink" href="#number-of-tabu-tunnelling-phases-maxiter" title="Permalink to this headline">¶</a></h3>
+<p>One of the parameters you can supply to the <strong>AMPGO</strong> optimization routine is the maximum number of <cite>Tabu Tunnelling</cite>
+iterations allowed during each global iteration (<cite>maxiter</cite>). Once a local minimum is found, <strong>AMPGO</strong> will start
+a Tunnelling phase to try and move away from this local optimum; if no better point is found, it will start again
+from another point and try to move away from this local minimum. It will do so for <cite>maxiter</cite> times.</p>
+<p>The table below highlights the various experiments I have run by applying <strong>AMPGO</strong> to the entire benchmark suite
+of N-D optimization problems, considering for every benchmark function 100 random starting points.
+The <cite>maxiter</cite> parameter has been allowed to range between 1 and 8, but the results are inconclusive: 2 seems to be
+the absolute minimum to get a higher level of global convergence, but then there isn&#8217;t much of a difference between
+choosing <cite>maxiter=3</cite> and <cite>maxiter=8</cite>.</p>
+<p>The results obtained are shown in the following table:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>Sensitivity on the number of Tabu Tunnelling phases</caption>
+<colgroup>
+<col width="35%" />
+<col width="31%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tabu Tunnelling Phases</th>
+<th class="head">Overall Success (%)</th>
+<th class="head">Functions Evaluations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>76.783</td>
+<td>635</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>78.837</td>
+<td>607</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>78.875</td>
+<td>615</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>78.685</td>
+<td>619</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>79.027</td>
+<td>611</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>78.864</td>
+<td>625</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>78.750</td>
+<td>623</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>78.647</td>
+<td>635</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The results appear slightly more interesting if we remove from the analysis all the N-D benchmark functions for which
+<strong>AMPGO</strong> achieved global convergence irrespectively of the number of Tabu Tunnelling phases. This information is
+condensed in the following table:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>Sensitivity on the number of Tabu Tunnelling phases</caption>
+<colgroup>
+<col width="35%" />
+<col width="31%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tabu Tunnelling Phases</th>
+<th class="head">Overall Success (%)</th>
+<th class="head">Functions Evaluations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>49.143</td>
+<td>1319</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>53.643</td>
+<td>1256</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>53.726</td>
+<td>1274</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>53.310</td>
+<td>1281</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>54.060</td>
+<td>1262</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>53.702</td>
+<td>1292</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>53.452</td>
+<td>1288</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>53.226</td>
+<td>1315</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The above results are also shown graphically in the next figure; all in all, the default choice of <cite>maxiter=5</cite> in
+the <strong>AMPGO</strong> code appears to be a sensible one.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<img alt="AMPGO Number of tabu tunnelling phases sensitivity" src="_images/maxiter_sensitivity.png" />
+<p class="caption"><strong>AMPGO</strong> - Number of tabu tunnelling phases sensitivity</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="size-of-the-tabu-list-tabulistsize">
+<h3>Size of the Tabu List (<cite>tabulistsize</cite>)<a class="headerlink" href="#size-of-the-tabu-list-tabulistsize" title="Permalink to this headline">¶</a></h3>
+<p>Another parameter you can supply to the <strong>AMPGO</strong> optimization routine is the maximum size of the <cite>Tabu List</cite>, which
+is a list containing the latest <cite>tabulistsize</cite> local minima found by the optimizer. This is a list of
+points from which to move away, including both the most recent local solution of the original minimization problem,
+and recent solutions of tunneling sub-problems which failed to achieve the desired condition.</p>
+<p>The table below highlights the various experiments I have run by applying <strong>AMPGO</strong> to the entire benchmark suite
+of N-D optimization problems, considering for every benchmark function 100 random starting points.</p>
+<p>The <cite>tabulistsize</cite> parameter has been allowed to range between 2 and 8, but again the results are inconclusive: There
+appear to be little difference between choosing 2 over 8, even though for real-life problems (with many local minima)
+I would suggest to keep the <cite>tabulistsize</cite> number greater than 2.</p>
+<p>The results obtained are shown in the following table:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>Sensitivity on the size of the tabu list</caption>
+<colgroup>
+<col width="27%" />
+<col width="35%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tabu List Size</th>
+<th class="head">Overall Success (%)</th>
+<th class="head">Functions Evaluations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2</td>
+<td>77.272</td>
+<td>633</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>78.652</td>
+<td>626</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>78.880</td>
+<td>618</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>79.027</td>
+<td>611</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>79.190</td>
+<td>620</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>79.114</td>
+<td>617</td>
+</tr>
+<tr class="row-even"><td>8</td>
+<td>79.527</td>
+<td>604</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Again, removing from the analysis all the N-D benchmark functions for which <strong>AMPGO</strong> achieved global convergence
+irrespectively of the size of the tabu list shows some more interesting trend, as depicted in the following table:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>Sensitivity on the size of the tabu list</caption>
+<colgroup>
+<col width="27%" />
+<col width="35%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tabu List Size</th>
+<th class="head">Overall Success (%)</th>
+<th class="head">Functions Evaluations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2</td>
+<td>53.011</td>
+<td>1243</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>55.865</td>
+<td>1232</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>56.337</td>
+<td>1217</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>56.640</td>
+<td>1202</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>56.978</td>
+<td>1223</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>56.820</td>
+<td>1215</td>
+</tr>
+<tr class="row-even"><td>8</td>
+<td>57.674</td>
+<td>1190</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The above results are also shown graphically in the next figure; all in all, it appears that choosing a high enough
+size of the tabu list slightly improves the optimization results.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<img alt="AMPGO Size of the tabu list sensitivity" src="_images/tabulistsize_sensitivity.png" />
+<p class="caption"><strong>AMPGO</strong> - Size of the tabu list sensitivity</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="tabu-list-strategy-tabustrategy">
+<h3>Tabu List Strategy (<cite>tabustrategy</cite>)<a class="headerlink" href="#tabu-list-strategy-tabustrategy" title="Permalink to this headline">¶</a></h3>
+<p>Another parameter you can supply to the <strong>AMPGO</strong> optimization routine is the <cite>Tabu List</cite> strategy, which
+is the strategy to use when the size of the tabu list exceeds <cite>tabulistsize</cite>. It can be
+&#8216;oldest&#8217; to drop the oldest point from the tabu list or &#8216;farthest&#8217; to drop the element farthest from
+the last local minimum found.</p>
+<p>The table below highlights the various experiments I have run by applying <strong>AMPGO</strong> to the entire benchmark suite
+of N-D optimization problems, considering for every benchmark function 100 random starting points.</p>
+<p>The <cite>tabustrategy</cite> parameter has been allowed to range between &#8216;oldest&#8217; and &#8216;farthest&#8217;.</p>
+<p>The results obtained are shown in the following table:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>Sensitivity on the <cite>tabustrategy</cite> parameter</caption>
+<colgroup>
+<col width="25%" />
+<col width="36%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tabu Strategy</th>
+<th class="head">Overall Success (%)</th>
+<th class="head">Functions Evaluations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>farthest</td>
+<td>79.027</td>
+<td>611</td>
+</tr>
+<tr class="row-odd"><td>oldest</td>
+<td>78.750</td>
+<td>630</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This time, removing from the analysis all the N-D benchmark functions for which <strong>AMPGO</strong> achieved global convergence
+irrespectively of the <cite>tabustrategy</cite> value shows very little difference between the two strategies, so any user&#8217;s
+choice should be sensible in this respect.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="pretty-table docutils">
+<caption>Sensitivity on the <cite>tabustrategy</cite> parameter</caption>
+<colgroup>
+<col width="25%" />
+<col width="36%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tabu Strategy</th>
+<th class="head">Overall Success (%)</th>
+<th class="head">Functions Evaluations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>farthest</td>
+<td>50.526</td>
+<td>1347</td>
+</tr>
+<tr class="row-odd"><td>oldest</td>
+<td>49.872</td>
+<td>1390</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+    </div>
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The AMPGO Solver</a><ul>
+<li><a class="reference internal" href="#python-logo-ampgo-function-signature-in-python"> <strong>AMPGO</strong> Function Signature in Python</a></li>
+<li><a class="reference internal" href="#sensitivity-sensitivities-on-the-ampgo-input-parameters"> Sensitivities on the <strong>AMPGO</strong> Input Parameters</a><ul>
+<li><a class="reference internal" href="#the-local-solver">The Local Solver</a></li>
+<li><a class="reference internal" href="#number-of-tabu-tunnelling-phases-maxiter">Number of Tabu Tunnelling Phases (<cite>maxiter</cite>)</a></li>
+<li><a class="reference internal" href="#size-of-the-tabu-list-tabulistsize">Size of the Tabu List (<cite>tabulistsize</cite>)</a></li>
+<li><a class="reference internal" href="#tabu-list-strategy-tabustrategy">Tabu List Strategy (<cite>tabustrategy</cite>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter"> Global Optimization Benchmarks and <strong>AMPGO</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="multidimensional.html"
+                        title="next chapter">Multidimensional Benchmarks Results</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/ampgo.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="multidimensional.html" title="Multidimensional Benchmarks Results"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Global Optimization Benchmarks and AMPGO"
+             >previous</a> |</li>
+
+        <li><img src="_static/phoenix_small.png" alt="" style="vertical-align: middle; margin-top: 7px"/></li>
+        <li><a href="index.html" style="color: rgb(238, 152, 22); hover: rgb(53, 95, 124);">Home</a> &raquo; </li>
+<li id="searchbox" style="display: none; margin: 0 20px;" class="right">
+  <form class="search" action="search.html" method="get">
+    <span>Search:</span>
+    <input type="text" name="q" size="18" />
+    <input type="submit" value="Go" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</li>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+  <li>The AMPGO Solver</li>
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrea Gavana.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
